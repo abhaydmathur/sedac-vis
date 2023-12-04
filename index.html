@@ -22,14 +22,27 @@
       top: 10px; /* Adjust this value to set the distance from the top */
       left: 50%;
       transform: translateX(-50%);
+      width: 0px;
+      height: 0px;
+    }
+
+    #countrySearch {
+      position: absolute;
+      top: 10px; /* Adjust this value to set the distance from the top */
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px; /* Set the width of the search bar as needed */
     }
   </style>
 </head>
 <body onload="createViz()">
     <div id="main">
+        <input type="text" id="countrySearch" placeholder="Search for a country" oninput="filterCountries()" onchange="rotateToCountry()">
+        <datalist id="countryList"></datalist>
+
         <select id="countryDropdown" onchange="rotateToCountry()">
-            <!-- Options will be dynamically added here using JavaScript -->
-          </select>
+          <!-- Options will be dynamically added here using JavaScript -->
+        </select>
     </div>
 </body>
 </html>

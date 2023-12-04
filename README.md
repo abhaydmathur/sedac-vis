@@ -1,7 +1,11 @@
 # Visualising Global Socio-Economic Data with d3
 
-## Section 1
+## Usage
 
-```
-Lorem ipsum dolor sit amet.
-```
+Visit [abhaydmathur.github.io/sedac-vis](https://abhaydmathur.github.io/sedac-vis)
+
+## TODO
+
+1. Fix transitions btw nations
+2. Improve Search bar
+3. Get someone who isn't colourblind to decide colour schemes.

@@ -1,7 +1,7 @@
 ctx = {
     data:null,
-    w:300,
-    h:300,
+    w:500,
+    h:500,
     sensitivity:75,
     svg: null,
 };
@@ -20,13 +20,17 @@ let prev_path = null;
 
 function updateDropdown(data) {
     const select = document.getElementById("countryDropdown");
-  
+
+    // console.log(select);
+
     data.features.forEach((feature) => {
       const option = document.createElement("option");
       option.value = feature.properties.name.replaceAll(" ", "_");
       option.text = feature.properties.name;
       select.add(option);
     });
+
+    console.log(select)
 }
 
 function mean2d(coordinates) {
@@ -52,57 +56,74 @@ function mean2d(coordinates) {
     return columnMeans;
   }
   
-function rotateToCountry() {
-    console.log("rotating")
-    const selectedCountry = document.getElementById("countryDropdown").value;
-    const selectedPath = d3.selectAll(".country_" + selectedCountry.replaceAll(" ", "_"));
-    svg = ctx.svg;
 
-    if (prev_path != null){
-        prev_path.attr("fill", "white");
-    }
-    selectedPath.attr("fill", "yellow")
-    prev_path = selectedPath;
+function updateSearchList(data) {
+    console.log("updating search list")
+    const searchList = document.getElementById("countryList");
+    searchList.innerHTML = "";
   
+    data.features.forEach((feature) => {
+      const option = document.createElement("option");
+      option.value = feature.properties.name;
+      searchList.appendChild(option);
+    });
 
-    if (selectedPath.size() > 0) {
-        
-        var bounds = path.bounds(selectedPath.datum());   
-        var centroid = [(bounds[0][0] + bounds[1][0]) / 2, (bounds[0][1] + bounds[1][1]) / 2];
-        
-        console.log("centroid", centroid)
-
-
-        if(isNaN(centroid[0])){
-            console.log("Nan Encountered. Choose another country")
-            return;
-        }
-
-        // Calculate new rotation angles
-        var oldRotation = projection.rotate()
-        console.log("old", oldRotation)
-        var newRotation = projection.invert(centroid);
-        newRotation = [-newRotation[0], -newRotation[1], 0];
-        // Set new rotation values
-        projection.rotate(newRotation);
-    
-        console.log("new", projection.rotate())
-        svg.selectAll("path")
-          .transition()
-          .ease(d3.easeLinear)
-          .duration(1000)
-          .attr("d", path); // Update paths with the new projection
-    
-        // Optionally, update the zoom transform to reflect the changes
-        const scale = 1; // You may adjust the scale as needed
-        var translate = [ctx.w / 2, ctx.h / 2];
-        svg.transition()
-          .duration(1000)
-          .call(d3.zoom().transform, d3.zoomIdentity.translate(translate[0], translate[1]).scale(scale));
-      }
-    
+    console.log(searchList);
 }
   
+function filterCountries() {
+    console.log("searching")
+    updateSearchList(ctx.data)
+    const searchTerm = document.getElementById("countrySearch").value.toLowerCase();
+    const options = document.getElementById("countryList").options;
+  
+    for (let i = 0; i < options.length; i++) {
+      const option = options[i];
+      const countryName = option.value.toLowerCase();
+  
+      // Show or hide options based on the search term
+      option.style.display = countryName.includes(searchTerm) ? "block" : "none";
+    }
+}
+  
+  function rotateToCountry() {
+    const selectedCountry = document.getElementById("countrySearch").value;
+    const selectedPath = d3.selectAll(".country_" + selectedCountry.replaceAll(" ", "_"));
+    svg = ctx.svg;
+  
+    if (prev_path != null) {
+      prev_path.attr("fill", "white");
+    }
+    selectedPath.attr("fill", "yellow");
+    prev_path = selectedPath;
+  
+    if (selectedPath.size() > 0) {
+      var bounds = path.bounds(selectedPath.datum());
+      var centroid = [(bounds[0][0] + bounds[1][0]) / 2, (bounds[0][1] + bounds[1][1]) / 2];
+  
+      if (isNaN(centroid[0])) {
+        console.log("Nan Encountered. Choose another country");
+        return;
+      }
+  
+      var oldRotation = projection.rotate();
+      var newRotation = projection.invert(centroid);
+      newRotation = [-newRotation[0], -newRotation[1], 0];
+      projection.rotate(newRotation);
+  
+      svg.selectAll("path")
+        .transition()
+        .ease(d3.easeLinear)
+        .duration(1000)
+        .attr("d", path);
+  
+      const scale = 1;
+      var translate = [ctx.w / 2, ctx.h / 2];
+      svg.transition()
+        .duration(1000)
+        .call(d3.zoom().transform, d3.zoomIdentity.translate(translate[0], translate[1]).scale(scale));
+    }
+  }
 
 function drawGlobe(svg){
     
