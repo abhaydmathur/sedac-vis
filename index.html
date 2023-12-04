@@ -11,6 +11,19 @@
   <script src="https://cdn.jsdelivr.net/npm/d3-geo-projection@4"></script>
   <script src="https://cdn.jsdelivr.net/npm/versor@0.2"></script>
   <script type="text/javascript" src="js/draggable.js"></script>
+
+  <style>
+    #main {
+      position: relative;
+    }
+
+    #countryDropdown {
+      position: absolute;
+      top: 10px; /* Adjust this value to set the distance from the top */
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  </style>
 </head>
 <body onload="createViz()">
     <div id="main">

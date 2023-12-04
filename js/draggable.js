@@ -9,67 +9,108 @@ ctx = {
 let projection = d3.geoOrthographic()
                    .scale(ctx.w/2)
                    .center([0, 0])
-                   .rotate([0,-30])
+                   .rotate([0, -30])
                    .translate([ctx.w / 2, ctx.h / 2])
 
 
 const initialScale = projection.scale()
 let path = d3.geoPath().projection(projection)
 
+let prev_path = null;
 
 function updateDropdown(data) {
-    console.log("updating")
     const select = document.getElementById("countryDropdown");
   
     data.features.forEach((feature) => {
       const option = document.createElement("option");
-      option.value = feature.properties.name.replace(" ", "_");
+      option.value = feature.properties.name.replaceAll(" ", "_");
       option.text = feature.properties.name;
       select.add(option);
     });
 }
+
+function mean2d(coordinates) {
+    console.log("coords", coordinates)
+    const numRows = coordinates.length;
+    const numCols = coordinates[0].length;
+
+    console.log(numRows,numCols)
+  
+    // Initialize sums for each column
+    const columnSums = Array.from({ length: numCols }, () => 0);
+  
+    // Calculate sums
+    for (let i = 0; i < numRows; i++) {
+      for (let j = 0; j < numCols; j++) {
+        columnSums[j] += coordinates[i][j];
+      }
+    }
+  
+    // Calculate means
+    const columnMeans = columnSums.map((sum) => sum / numRows);
+  
+    return columnMeans;
+  }
   
 function rotateToCountry() {
-    let zoom = d3.zoom();
-    
-
     console.log("rotating")
     const selectedCountry = document.getElementById("countryDropdown").value;
-    const selectedPath = d3.selectAll(".country_" + selectedCountry);
-    console.log(selectedPath)
-    const bounds = path.bounds(selectedPath.datum());
-    const dx = bounds[1][0] - bounds[0][0];
-    const dy = bounds[1][1] - bounds[0][1];
-    const x = (bounds[0][0] + bounds[1][0]) / 2;
-    const y = (bounds[0][1] + bounds[1][1]) / 2;
-    const scale = Math.max(1, Math.min(ctx.sensitivity / Math.max(dx / ctx.w, dy / ctx.h), 8));
-    const translate = [ctx.w / 2 - scale * x, ctx.h / 2 - scale * y];
+    const selectedPath = d3.selectAll(".country_" + selectedCountry.replaceAll(" ", "_"));
+    svg = ctx.svg;
 
-    console.log("translate", translate);
+    if (prev_path != null){
+        prev_path.attr("fill", "white");
+    }
+    selectedPath.attr("fill", "yellow")
+    prev_path = selectedPath;
   
-    // ctx.svg.transition()
-    //   .duration(1000)
-    //   .call(zoom.transform, d3.zoomIdentity.translate(translate[0], translate[1]).scale(scale));
 
-    projection.rotate(translate)
-    path = d3.geoPath().projection(projection)
-    ctx.svg.selectAll("path")
-           .transition()
-           .duration(1000)
-           .attr("d", path)
+    if (selectedPath.size() > 0) {
+        
+        var bounds = path.bounds(selectedPath.datum());   
+        var centroid = [(bounds[0][0] + bounds[1][0]) / 2, (bounds[0][1] + bounds[1][1]) / 2];
+        
+        console.log("centroid", centroid)
 
-    console.log("Kuchh hua?")
-  }
+
+        if(isNaN(centroid[0])){
+            console.log("Nan Encountered. Choose another country")
+            return;
+        }
+
+        // Calculate new rotation angles
+        var oldRotation = projection.rotate()
+        console.log("old", oldRotation)
+        var newRotation = projection.invert(centroid);
+        newRotation = [-newRotation[0], -newRotation[1], 0];
+        // Set new rotation values
+        projection.rotate(newRotation);
+    
+        console.log("new", projection.rotate())
+        svg.selectAll("path")
+          .transition()
+          .ease(d3.easeLinear)
+          .duration(1000)
+          .attr("d", path); // Update paths with the new projection
+    
+        // Optionally, update the zoom transform to reflect the changes
+        const scale = 1; // You may adjust the scale as needed
+        var translate = [ctx.w / 2, ctx.h / 2];
+        svg.transition()
+          .duration(1000)
+          .call(d3.zoom().transform, d3.zoomIdentity.translate(translate[0], translate[1]).scale(scale));
+      }
+    
+}
   
 
 function drawGlobe(svg){
     
     data = ctx.data;
 
-    console.log(data)
-
     let globe = svg.append("circle")
-                   .attr("fill", "#EEE")
+                   .attr("fill", "blue")
+                   .attr("opacity", 0.3)
                    .attr("stroke", "#000")
                    .attr("stroke-width", "0.2")
                    .attr("cx", ctx.w/2)
@@ -79,11 +120,9 @@ function drawGlobe(svg){
     svg.call(d3.drag().on('drag', (event) => {
         const rotate = projection.rotate()
         const k = ctx.sensitivity / projection.scale()
-        // console.log(event)
         projection.rotate([
             rotate[0] + event.dx * k,
             rotate[1] - event.dy * k
-            // 0
         ])
         path = d3.geoPath().projection(projection)
         svg.selectAll("path").attr("d", path)
@@ -107,7 +146,7 @@ function drawGlobe(svg){
        .selectAll("path")
        .data(data.features)
        .enter().append("path")
-       .attr("class", d => "country_" + d.properties.name.replace(" ","_"))
+       .attr("class", d => "country_" + d.properties.name.replaceAll(" ","_"))
        .attr("d", path)
        .attr("fill", "white")
        .style('stroke', 'black')
