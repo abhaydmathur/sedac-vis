@@ -13,36 +13,41 @@
   <script type="text/javascript" src="js/draggable.js"></script>
 
   <style>
+
+    body {
+      background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+      /* background: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%); */
+      background-size:inherit;
+
+      
+    }
     #main {
       position: relative;
     }
 
-    #countryDropdown {
+    /* #countryDropdown {
       position: absolute;
-      top: 10px; /* Adjust this value to set the distance from the top */
+      top: 10px; 
       left: 50%;
       transform: translateX(-50%);
       width: 0px;
       height: 0px;
-    }
+    } */
 
     #countrySearch {
       position: absolute;
       top: 10px; /* Adjust this value to set the distance from the top */
       left: 50%;
       transform: translateX(-50%);
-      width: 200px; /* Set the width of the search bar as needed */
+      width: 400px; /* Set the width of the search bar as needed */
     }
   </style>
 </head>
 <body onload="createViz()">
     <div id="main">
-        <input type="text" id="countrySearch" placeholder="Search for a country" oninput="filterCountries()" onchange="rotateToCountry()">
+        <input type="text" id="countrySearch" placeholder="Search for a country" oninput="filterCountries()" onchange="rotateToCountry()" value="France">
         <datalist id="countryList"></datalist>
 
-        <select id="countryDropdown" onchange="rotateToCountry()">
-          <!-- Options will be dynamically added here using JavaScript -->
-        </select>
     </div>
 </body>
 </html>

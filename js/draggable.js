@@ -1,16 +1,18 @@
 ctx = {
     data:null,
-    w:500,
-    h:500,
+    globew:500,
+    globeh:500,
+    width:screen.width,
+    height:screen.height,
     sensitivity:75,
     svg: null,
 };
 
 let projection = d3.geoOrthographic()
-                   .scale(ctx.w/2)
+                   .scale(ctx.globew/2)
                    .center([0, 0])
                    .rotate([0, -30])
-                   .translate([ctx.w / 2, ctx.h / 2])
+                   .translate([ctx.globew / 2, ctx.globeh / 2])
 
 
 const initialScale = projection.scale()
@@ -18,20 +20,20 @@ let path = d3.geoPath().projection(projection)
 
 let prev_path = null;
 
-function updateDropdown(data) {
-    const select = document.getElementById("countryDropdown");
+// function updateDropdown(data) {
+//     const select = document.getElementById("countryDropdown");
 
-    // console.log(select);
+//     // console.log(select);
 
-    data.features.forEach((feature) => {
-      const option = document.createElement("option");
-      option.value = feature.properties.name.replaceAll(" ", "_");
-      option.text = feature.properties.name;
-      select.add(option);
-    });
+//     data.features.forEach((feature) => {
+//       const option = document.createElement("option");
+//       option.value = feature.properties.name.replaceAll(" ", "_");
+//       option.text = feature.properties.name;
+//       select.add(option);
+//     });
 
-    console.log(select)
-}
+//     console.log(select)
+// }
 
 function mean2d(coordinates) {
     console.log("coords", coordinates)
@@ -86,15 +88,15 @@ function filterCountries() {
     }
 }
   
-  function rotateToCountry() {
+function rotateToCountry() {
     const selectedCountry = document.getElementById("countrySearch").value;
     const selectedPath = d3.selectAll(".country_" + selectedCountry.replaceAll(" ", "_"));
     svg = ctx.svg;
   
     if (prev_path != null) {
-      prev_path.attr("fill", "white");
+      prev_path.attr("fill", "white").attr("opacity", 0.6);
     }
-    selectedPath.attr("fill", "yellow");
+    selectedPath.attr("fill", "yellow").attr("opacity", 1.0);
     prev_path = selectedPath;
   
     if (selectedPath.size() > 0) {
@@ -118,7 +120,7 @@ function filterCountries() {
         .attr("d", path);
   
       const scale = 1;
-      var translate = [ctx.w / 2, ctx.h / 2];
+      var translate = [ctx.globew / 2, ctx.globeh / 2];
       svg.transition()
         .duration(1000)
         .call(d3.zoom().transform, d3.zoomIdentity.translate(translate[0], translate[1]).scale(scale));
@@ -134,8 +136,8 @@ function drawGlobe(svg){
                    .attr("opacity", 0.3)
                    .attr("stroke", "#000")
                    .attr("stroke-width", "0.2")
-                   .attr("cx", ctx.w/2)
-                   .attr("cy", ctx.h/2)
+                   .attr("cx", ctx.globew/2)
+                   .attr("cy", ctx.globeh/2)
                    .attr("r", initialScale)
 
     svg.call(d3.drag().on('drag', (event) => {
@@ -172,11 +174,13 @@ function drawGlobe(svg){
        .attr("fill", "white")
        .style('stroke', 'black')
        .style('stroke-width', 0.3)
-       .style("opacity",0.8)
+       .style("opacity",0.6)
        .append("title")
        .text((d) => (d.properties.name));
 
-    updateDropdown(ctx.data);
+    updateSearchList(ctx.data);
+    rotateToCountry();
+    // updateDropdown(ctx.data);
 
 
     // d3.timer(function(elapsed) {
@@ -203,8 +207,8 @@ function loadData(svg){
 function createViz(){
     console.log("Using D3 v" + d3.version);
     let svgEl = d3.select("#main").append("svg");
-    svgEl.attr("width", ctx.w);
-    svgEl.attr("height", ctx.h);
+    svgEl.attr("width", ctx.width);
+    svgEl.attr("height", ctx.height);
     ctx.svg=svgEl;
     loadData(svgEl);
 }
