@@ -127,6 +127,10 @@ function rotateToCountry() {
             .transition()
             .duration(1000)
             .attr("d", path)
+            .on("end", function(){
+                selectedPath.attr("fill", "yellow").attr("opacity", 1.0);
+                prev_path = selectedPath;
+            })
 
         globe.attr("r", projection.scale())
         //  }))
@@ -138,8 +142,7 @@ function rotateToCountry() {
         //       .attr("d", path)
         //       .on("end", function(){
 
-        //         selectedPath.attr("fill", "yellow").attr("opacity", 1.0);
-        //         prev_path = selectedPath;
+        
         //       })   
     }
 }
