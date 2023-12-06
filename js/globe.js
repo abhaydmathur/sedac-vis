@@ -12,7 +12,7 @@ ctx = {
 let projection = d3.geoOrthographic()
     .scale(ctx.globew / 2)
     .center([0, 0])
-    .rotate([0, -30])
+    .rotate([-79, -22])
     .translate([ctx.globew / 2, ctx.globeh / 2])
 
 
@@ -37,11 +37,8 @@ let prev_path = null;
 // }
 
 function mean2d(coordinates) {
-    console.log("coords", coordinates)
     const numRows = coordinates.length;
     const numCols = coordinates[0].length;
-
-    console.log(numRows, numCols)
 
     // Initialize sums for each column
     const columnSums = Array.from({
@@ -74,7 +71,6 @@ function updateSearchList(data) {
 
 function filterCountries() {
     const searchTerm = document.getElementById("countrySearch").value.toLowerCase();
-    console.log(searchTerm);
     const searchList = document.getElementById("countryList");
 
     // Clear existing options
@@ -90,8 +86,13 @@ function filterCountries() {
         }
     });
 
-    console.log(searchList)
+    // console.log(searchList)
 
+}
+
+function getCountryCentroid(countryName) {
+    const countryFeature = ctx.data.features.find(feature => feature.properties.name === countryName);
+    return d3.geoCentroid(countryFeature);  
 }
 
 
@@ -99,7 +100,6 @@ function rotateToCountry(check_list = true) {
     if(check_list){ 
         ctx.selectedCountry = document.getElementById("countrySearch").value;    
         ctx.selectedPath = d3.selectAll(".country_" + ctx.selectedCountry.replaceAll(" ", "_"));
-        console.log(ctx.selectedCountry, ctx.selectedPath)
     }
     selectedCountry = ctx.selectedCountry
     selectedPath = ctx.selectedPath
@@ -110,8 +110,9 @@ function rotateToCountry(check_list = true) {
 
 
     if (selectedPath.size() > 0) {
-        var bounds = path.bounds(selectedPath.datum());
-        var centroid = [(bounds[0][0] + bounds[1][0]) / 2, (bounds[0][1] + bounds[1][1]) / 2];
+        
+        centroid = getCountryCentroid(selectedCountry);
+        console.log(centroid)
 
         if (isNaN(centroid[0])) {
             console.log("Nan Encountered. Choose another country");
@@ -119,20 +120,16 @@ function rotateToCountry(check_list = true) {
         }
 
         var oldRotation = projection.rotate();
-        var newRotation = projection.invert(centroid);
+        var newRotation = centroid;
         newRotation = [-newRotation[0], -newRotation[1], 0];
         var distance = d3.geoDistance(oldRotation, newRotation);
 
-        // Use a transition with a custom tween function to interpolate the rotation
         svg.transition()
           .duration(1000)
           .tween("rotate", function () {
             return function (t) {
-              // Interpolate between the current and target rotations
               var currentRotation = d3.interpolate(oldRotation, newRotation)(t);
               projection.rotate(currentRotation);
-    
-              // Update the paths with the new projection
               svg.selectAll("path").attr("d", path);
             };
           })
@@ -144,10 +141,8 @@ function rotateToCountry(check_list = true) {
 }
 
 function handleCountryDoubleClick(event, d){
-    console.log(d);
     ctx.selectedCountry = d.properties.name;    
     ctx.selectedPath = d3.selectAll(".country_" + ctx.selectedCountry.replaceAll(" ", "_"));
-    console.log(ctx.selectedCountry, ctx.selectedPath)
     rotateToCountry(false);
 };
 
@@ -166,7 +161,6 @@ function drawGlobe(svg) {
         .attr("r", initialScale)
 
     svg.call(d3.drag().on('drag', (event) => {
-            console.log("event", event)
             const rotate = projection.rotate();
             const k = ctx.sensitivity / projection.scale();
             
@@ -209,6 +203,7 @@ function loadData(svg) {
     d3.json("data/world.json").then(
         function(d) {
             ctx.data = d;
+            console.log(ctx.data.features)
             drawGlobe(svg);
         }
     )
