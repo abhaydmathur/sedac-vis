@@ -141,7 +141,8 @@ function rotateToCountry(check_list = true) {
 }
 
 function handleCountryDoubleClick(event, d){
-    ctx.selectedCountry = d.properties.name;    
+    ctx.selectedCountry = d.properties.name;  
+    document.getElementById("countrySearch").value = ctx.selectedCountry;  
     ctx.selectedPath = d3.selectAll(".country_" + ctx.selectedCountry.replaceAll(" ", "_"));
     rotateToCountry(false);
 };

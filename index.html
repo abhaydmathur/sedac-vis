@@ -18,8 +18,9 @@
 
     /* body {
       background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
-      background: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);
+      background: linear-gradient(135deg, #FC466B 0%, #3F5EFB 100%);
     } */
+
     #main {
       position: relative;
     }
@@ -38,12 +39,23 @@
     }
 
     #countrySearch {
-      position: absolute;
-      top: 10px; /* Adjust this value to set the distance from the top */
-      left: 50%;
+      background: transparent;
+      border: 0cap;
+      position: relative;
+      top: 0px; /* Adjust this value to set the distance from the top */
+      left: 240px;
       transform: translateX(-50%);
       width: 400px; /* Set the width of the search bar as needed */
+      height: 20px;
+      font: 1.5em sans-serif;
+      color: #333;
+      text-align: center;
+      /* text-decoration: underline; */
+      opacity: 1;
+      flood-opacity: 0;
+      background-color: 
     }
+
   </style>
 </head>
 <body onload="createViz()">
@@ -52,12 +64,5 @@
         <datalist id="countryList"></datalist>
         <!-- <input type="text" id="countrySearch" placeholder="Search for a country"> -->
       </div>
-    <!-- <script>
-      $(document).ready(function() {
-        $('#countrySearch').select2({
-          data: ctx.data.features.map(feature => feature.properties.name),
-        });
-      });
-    </script> -->
 </body>
 </html>
