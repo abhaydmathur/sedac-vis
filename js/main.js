@@ -11,12 +11,12 @@ let ctx = {
 
 function createViz() {
     loadData() 
-    
+
     const width = window.innerWidth;
     const height = window.innerHeight;
 
     // Globe
-    var gGlobe = d3.select("#main")
+    var divGlobe = d3.select("#main")
         .append("div")
         .attr("width", width / 2)
         .attr("height", height / 2)
@@ -25,55 +25,55 @@ function createViz() {
         .style("top", 0 + "px")
         .style("left", 0 + "px");
 
-    var svgGlobe = gGlobe.append("svg")
+    var svgGlobe = divGlobe.append("svg")
         .attr("width", width / 2)
         .attr("height", height / 2)
         .attr("id", "svgGlobe")
         .style("background-color", "#f00");
 
     // EPI
-    var gEpi = d3.select("#main")
+    var divEpi = d3.select("#main")
         .append("div")
         .attr("width", width / 2)
         .attr("height", height / 2)
-        .attr("id", "gEpi")
+        .attr("id", "divEpi")
         .style("position", "absolute")
         .style("top", 0 + "px")
         .style("left", width / 2 + "px");
 
-    var svgEpi = gEpi.append("svg")
+    var svgEpi = divEpi.append("svg")
         .attr("width", width / 2)
         .attr("height", height / 2)
         .attr("id", "svgEpi")
         .style("background-color", "#0f0");
 
     // Emissions
-    var gEmissions = d3.select("#main")
+    var divEmissions = d3.select("#main")
         .append("div")
         .attr("width", width / 2)
         .attr("height", height / 2)
-        .attr("id", "gEmissions")
+        .attr("id", "divEmissions")
         .style("position", "absolute")
         .style("top", height / 2 + "px")
         .style("left", 0 + "px");
 
-    var svgEmissions = gEmissions.append("svg")
+    var svgEmissions = divEmissions.append("svg")
         .attr("width", width / 2)
         .attr("height", height / 2)
         .attr("id", "svgEmissions")
         .style("background-color", "#00f");
 
     // Food
-    var gFood = d3.select("#main")
+    var divFood = d3.select("#main")
         .append("div")
         .attr("width", width / 2)
         .attr("height", height / 2)
-        .attr("id", "gFood")
+        .attr("id", "divFood")
         .style("position", "absolute")
         .style("top", height / 2 + "px")
         .style("left", width / 2 + "px");
 
-    var svgFood = gFood.append("svg")
+    var svgFood = divFood.append("svg")
         .attr("width", width / 2)
         .attr("height", height / 2)
         .attr("id", "svgFood")
