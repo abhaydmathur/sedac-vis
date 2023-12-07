@@ -1,13 +1,3 @@
-ctx = {
-    data: null,
-    globew: 500,
-    globeh: 500,
-    width: screen.width,
-    height: screen.height,
-    sensitivity: 75,
-    svg: null,
-    dflag:0,
-};
 
 let projection = d3.geoOrthographic()
     .scale(ctx.globew / 2)
@@ -199,7 +189,7 @@ function drawGlobe(svg) {
     // updateDropdown(ctx.data);
 }
 
-function loadData(svg) {
+function loadGlobeData(svg) {
     d3.json("data/world.json").then(
         function(d) {
             ctx.data = d;
@@ -209,13 +199,13 @@ function loadData(svg) {
     )
 }
 
-function createViz() {
+function createGlobeViz() {
     console.log("Using D3 v" + d3.version);
-    let svgEl = d3.select("#main").append("svg");
+    let svgEl = d3.select("#svgGlobe")
     svgEl.attr("width", ctx.width);
     svgEl.attr("height", ctx.height);
     ctx.svg = svgEl;
-    loadData(svgEl);
+    loadGlobeData(svgEl);
 
     document.getElementById("countrySearch").value = "France";
     // Optionally, call rotateToCountry to update the visualization based on the default country
