@@ -78,11 +78,6 @@ function createViz() {
         .attr("height", height / 2)
         .attr("id", "svgFood")
         .style("background-color", "#ff0");
-
-    createGlobeViz()
-    createEpiViz()
-    createEmissionsViz()
-    createFoodViz()
 }
 
 function loadData() {
@@ -90,6 +85,29 @@ function loadData() {
                     d3.json("data/epi.js"),
                     d3.json("data/food.js")];
     Promise.all(promises).then(function(data){
-    pass;
+        createGlobeViz(),
+        createEmissionsViz(data[0]),
+        createEpiViz(data[1]),
+        createFoodViz(data[2]);
     }).catch(function(error){console.log(error)});
+}
+
+function createGlobeViz(){
+    // TO DO
+    pass
+}
+
+function createEmissionsViz(emissionsdata){
+    // TO DO
+    pass
+}
+
+function createEpiViz(epidata){
+    // TO DO
+    pass
+}
+
+function createFoodViz(fooddata){
+    // TO DO
+    pass
 }
