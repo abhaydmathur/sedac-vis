@@ -74,15 +74,23 @@ function createViz() {
         .style("left", width / 2 + "px");
 
     var svgFood = divFood.append("svg")
-        .attr("width", width / 2)
+        .attr("width", width / 2 - width / 8)
         .attr("height", height / 2)
         .attr("id", "svgFood")
         .style("background-color", "#ff0");
+
+    var svgScenarios = divFood.append("svg")
+        .attr("width", width / 8)
+        .attr("height", height / 2)
+        .style("position", "absolute")
+        .attr("id", "svgScenarios")
+        .style("background-color", "#ff0")
+        .style("opacity", 0.8)
 }
 
 function loadData() {
-    let promises = [d3.csv("data/emissions.js"),
-                    d3.csv("data/epi.js"),
+    let promises = [d3.csv("data/emissions.csv"),
+                    d3.csv("data/epi.csv"),
                     d3.csv("data/food.csv")];
     Promise.all(promises).then(function(data){
         createGlobeViz(),
