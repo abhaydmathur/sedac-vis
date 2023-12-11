@@ -81,33 +81,13 @@ function createViz() {
 }
 
 function loadData() {
-    let promises = [d3.json("data/emissions.js"),
-                    d3.json("data/epi.js"),
-                    d3.json("data/food.js")];
+    let promises = [d3.csv("data/emissions.js"),
+                    d3.csv("data/epi.js"),
+                    d3.csv("data/food.csv")];
     Promise.all(promises).then(function(data){
         createGlobeViz(),
         createEmissionsViz(data[0]),
         createEpiViz(data[1]),
         createFoodViz(data[2]);
     }).catch(function(error){console.log(error)});
-}
-
-function createGlobeViz(){
-    // TO DO
-    pass
-}
-
-function createEmissionsViz(emissionsdata){
-    // TO DO
-    pass
-}
-
-function createEpiViz(epidata){
-    // TO DO
-    pass
-}
-
-function createFoodViz(fooddata){
-    // TO DO
-    pass
 }
