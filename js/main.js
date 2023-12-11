@@ -86,5 +86,10 @@ function createViz() {
 }
 
 function loadData() {
-    // TODO
+    let promises = [d3.json("data/emissions.js"),
+                    d3.json("data/epi.js"),
+                    d3.json("data/food.js")];
+    Promise.all(promises).then(function(data){
+    pass;
+    }).catch(function(error){console.log(error)});
 }
