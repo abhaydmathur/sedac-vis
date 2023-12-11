@@ -10,8 +10,6 @@ let ctx = {
 };
 
 function createViz() {
-    loadData() 
-
     const width = window.innerWidth;
     const height = window.innerHeight;
 
@@ -86,6 +84,8 @@ function createViz() {
         .attr("id", "svgScenarios")
         .style("background-color", "#ff0")
         .style("opacity", 0.8)
+
+    loadData() 
 }
 
 function loadData() {
