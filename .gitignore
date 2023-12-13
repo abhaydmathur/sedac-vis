@@ -1,0 +1,6 @@
+# File Types
+*.txt
+*.ipynb
+
+# Folders
+# docs/ # TODO @abhaydmathur : Uncomment before final deployment
