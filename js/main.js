@@ -91,7 +91,7 @@ function createViz() {
 function loadData() {
     let promises = [d3.csv("data/emissions.csv"),
                     d3.csv("data/epi.csv"),
-                    d3.csv("data/food.csv"),
+                    d3.dsv(";", "data/food.csv"),
                     d3.csv("data/gdp_per_capita.csv")];
     Promise.all(promises).then(function(data){
         createGlobeViz(),
