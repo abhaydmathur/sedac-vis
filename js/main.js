@@ -72,18 +72,9 @@ function createViz() {
         .style("left", width / 2 + "px");
 
     var svgFood = divFood.append("svg")
-        .attr("width", width / 2 - width / 8)
+        .attr("width", width / 2 - width / 15)
         .attr("height", height / 2)
         .attr("id", "svgFood")
-        .style("background-color", "#ff0");
-
-    var svgScenarios = divFood.append("svg")
-        .attr("width", width / 8)
-        .attr("height", height / 2)
-        .style("position", "absolute")
-        .attr("id", "svgScenarios")
-        .style("background-color", "#ff0")
-        .style("opacity", 0.8)
 
     loadData() 
 }
@@ -94,6 +85,7 @@ function loadData() {
                     d3.dsv(";", "data/food.csv"),
                     d3.csv("data/gdp_per_capita.csv")];
     Promise.all(promises).then(function(data){
+
         createGlobeViz(),
         createEmissionsViz(data[0]),
         createEpiViz(data[1], data[3]),
