@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World Map with D3.js</title>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://unpkg.com/topojson@3"></script>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    svg {
+      display: block;
+    }
+
+    path {
+      fill: #ccc; /* Light grey color for all countries */
+      stroke: #000; /* Black border for all countries */
+      /* stroke-width: 0.1px; Initial stroke width */
+    }
+
+    .selected {
+      fill: red !important; /* Red color for the selected country */
+      stroke: #000; /* Black border for the selected country */
+      /* stroke-width: 0.1px; Fixed stroke width for the selected country */
+    }
+  </style>
+</head>
+<body>
+
+<script>
+  // Set up the SVG canvas
+  const width = 960;
+  const height = 500;
+
+  const svg = d3.select("body")
+    .append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+  // Define the projection and path
+  const projection = d3.geoMercator()
+    .scale(200)
+    .translate([width / 2, height / 1.5]);
+
+  const path = d3.geoPath().projection(projection);
+
+  // Load the higher resolution world map data
+  d3.json("https://unpkg.com/world-atlas@1.1.0/world/50m.json")
+    .then(data => {
+      const countries = topojson.feature(data, data.objects.countries);
+
+      // Draw the world map
+      svg.selectAll("path")
+        .data(countries.features)
+        .enter().append("path")
+        .attr("d", path)
+        .on("click", function (event, d) {
+          // Click event handler
+          svg.selectAll(".selected").classed("selected", false); // Remove the selected class from all paths
+          d3.select(this).classed("selected", true); // Add the selected class to the clicked path
+          console.log("Selected Country:", d.properties.name);
+        })
+        .attr("stroke-width", function () {
+          return 1 / d3.zoomTransform(svg.node()).k; // Adjust stroke width based on the current scale
+        });
+
+      // Randomly select a country
+      const randomIndex = Math.floor(Math.random() * countries.features.length);
+      const selectedCountry = countries.features[randomIndex];
+
+      // Draw the selected country in red
+      svg.append("path")
+        .datum(selectedCountry)
+        .attr("d", path)
+        .attr("class", "selected")
+        .attr("stroke-width", 1); // Fixed stroke width for the selected country
+
+      // Pan and zoom to the selected country
+      const bounds = path.bounds(selectedCountry);
+      const dx = bounds[1][0] - bounds[0][0];
+      const dy = bounds[1][1] - bounds[0][1];
+      const x = (bounds[0][0] + bounds[1][0]) / 2;
+      const y = (bounds[0][1] + bounds[1][1]) / 2;
+      const scale = 0.9 / Math.max(dx / width, dy / height);
+      const translate = [width / 2 - scale * x, height / 2 - scale * y];
+
+      svg.transition()
+        .duration(750)
+        .call(zoom.transform, d3.zoomIdentity.translate(translate[0], translate[1]).scale(scale));
+    });
+
+  // Zoom functionality
+  const zoom = d3.zoom()
+    .scaleExtent([1, 8])
+    .on("zoom", function () {
+      svg.selectAll("path")
+        .attr("transform", d3.event.transform)
+        .attr("stroke-width", function () {
+          return 1 / d3.event.transform.k; // Adjust stroke width based on the current scale
+        });
+    });
+
+  svg.call(zoom);
+</script>
+
+</body>
+</html>

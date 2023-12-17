@@ -2,22 +2,22 @@ ctx_globe = {
 	data: null,
 	globew: 450,
 	globeh: 450,
-	width: screen.width,
-	height: screen.height,
+	width: screen.width/2,
+	height: screen.height/2,
 	sensitivity: 75,
 	svg: null,
 	dflag: 0,
 };
 
-let projection = d3
+let globe_projection = d3
 	.geoOrthographic()
 	.scale(ctx_globe.globew / 2)
 	.center([0, 0])
 	.rotate([-79, -22])
 	.translate([ctx_globe.globew / 2, ctx_globe.globeh / 2]);
 
-const initialScale = projection.scale();
-let path = d3.geoPath().projection(projection);
+const initialScale = globe_projection.scale();
+let globe_path = d3.geoPath().projection(globe_projection);
 
 let prev_path = null;
 
@@ -72,6 +72,7 @@ function updateSearchList(data) {
 	});
 
     ctx_globe.searchList = searchList;
+	console.log("search list", ctx_globe.searchList);
 }
 
 function filterCountries() {
@@ -100,6 +101,7 @@ function getCountryCentroid(countryName) {
 	const countryFeature = ctx_globe.data.features.find(
 		(feature) => feature.properties.name === countryName
 	);
+	console.log(countryFeature)
 	return d3.geoCentroid(countryFeature);
 }
 
@@ -111,6 +113,7 @@ function rotateToCountry(check_list = true) {
 			".country_" + ctx_globe.selectedCountry.replaceAll(" ", "_")
 		);
 	}
+
 	selectedCountry = ctx_globe.selectedCountry;
 	selectedPath = ctx_globe.selectedPath;
 	svg = ctx_globe.svg;
@@ -127,7 +130,7 @@ function rotateToCountry(check_list = true) {
 			return;
 		}
 
-		var oldRotation = projection.rotate();
+		var oldRotation = globe_projection.rotate();
 		var newRotation = centroid;
 		newRotation = [-newRotation[0], -newRotation[1], 0];
 		var distance = d3.geoDistance(oldRotation, newRotation);
@@ -140,8 +143,8 @@ function rotateToCountry(check_list = true) {
 						oldRotation,
 						newRotation
 					)(t);
-					projection.rotate(currentRotation);
-					svg.selectAll("path").attr("d", path);
+					globe_projection.rotate(currentRotation);
+					svg.selectAll("path").attr("d", globe_path);
 				};
 			})
 			.on("end", function () {
@@ -157,6 +160,13 @@ function handleCountryDoubleClick(event, d) {
 	ctx_globe.selectedPath = d3.selectAll(
 		".country_" + ctx_globe.selectedCountry.replaceAll(" ", "_")
 	);
+	try{
+		moveToCountry();
+	}
+	catch(e){
+		console.log(e);
+	}
+	
 	rotateToCountry(false);
 }
 
@@ -175,20 +185,20 @@ function drawGlobe(svg) {
 
 	svg.call(
 		d3.drag().on("drag", (event) => {
-			const rotate = projection.rotate();
-			const k = ctx_globe.sensitivity / projection.scale();
+			const rotate = globe_projection.rotate();
+			const k = ctx_globe.sensitivity / globe_projection.scale();
 
 			if (!ctx_globe.dflag) {
 				console.log(event.dx, event.dy);
 				console.log(k);
 				ctx_globe.dflag = 1;
 			}
-			projection.rotate([
+			globe_projection.rotate([
 				rotate[0] + event.dx * k,
 				rotate[1] - event.dy * k,
 			]);
-			path = d3.geoPath().projection(projection);
-			svg.selectAll("path").attr("d", path);
+			globe_path = d3.geoPath().projection(globe_projection);
+			svg.selectAll("path").attr("d", globe_path);
 		})
 	);
 
@@ -204,7 +214,7 @@ function drawGlobe(svg) {
 			"class",
 			(d) => "country_" + d.properties.name.replaceAll(" ", "_")
 		)
-		.attr("d", path)
+		.attr("d", globe_path)
 		.attr("fill", "white")
 		.style("stroke", "black")
 		.style("stroke-width", 0.3)
@@ -219,10 +229,14 @@ function drawGlobe(svg) {
 }
 
 function loadGlobeData(svg) {
-	d3.json("data/globe/world.json").then(function (d) {
+	// d3.json("data/globe/world.json").then(function (d) {
+	// 	ctx_globe.data = d;
+	// 	drawGlobe(svg);
+	// });
+
+	d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json").then(function (d) {
 		ctx_globe.data = d;
-		console.log(d);
-		console.log(ctx_globe.data.features);
+		ctx_globe.data = topojson.feature(d, d.objects.countries)
 		drawGlobe(svg);
 	});
 }
@@ -234,8 +248,8 @@ function createGlobeViz() {
 	ctx_globe.svg = svgEl;
 	loadGlobeData(svgEl);
     
-    updateSearchList(ctx_globe.data);
-    console.log("search list", ctx_globe.searchList);
+    // updateSearchList(ctx_globe.data);
+    
 	document.getElementById("countrySearch").value = "France";
 	rotateToCountry();
 }
@@ -244,10 +258,10 @@ function createGlobeViz() {
 
 function continuousRotation() {
 	d3.timer(function (elapsed) {
-		const rotate = projection.rotate();
-		const k = ctx_globe.sensitivity / projection.scale();
-		projection.rotate([rotate[0] - 1 * k, 0]);
-		path = d3.geoPath().projection(projection);
-		svg.selectAll("path").attr("d", path);
+		const rotate = globe_projection.rotate();
+		const k = ctx_globe.sensitivity / globe_projection.scale();
+		globe_projection.rotate([rotate[0] - 1 * k, 0]);
+		globe_path = d3.geoPath().projection(globe_projection);
+		svg.selectAll("path").attr("d", globe_path);
 	}, 200);
 }
