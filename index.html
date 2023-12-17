@@ -24,21 +24,21 @@
 		<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 		<style>
 			/* body {
-      background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
-      background: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);
-    } */
+				background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+				background: linear-gradient(90deg, #fc466b 0%, #3f5efb 100%);
+			} */
 			#main {
 				position: relative;
 			}
 
 			/* #countryDropdown {
-      position: absolute;
-      top: 10px; 
-      left: 50%;
-      transform: translateX(-50%);
-      width: 0px;
-      height: 0px;
-    } */
+				position: absolute;
+				top: 10px;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 0px;
+				height: 0px;
+			} */
 
 			.countries path:hover {
 				fill: lightgrey; /* Change to your desired hover color */
@@ -52,6 +52,11 @@
 				width: 400px;
 				text-align: center;
 				z-index: 9999;
+			}
+
+			.selected {
+				fill: red ; /* Red color for the selected country */
+      			stroke: #000;
 			}
 		</style>
 	</head>

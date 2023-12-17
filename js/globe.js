@@ -2,8 +2,8 @@ ctx_globe = {
 	data: null,
 	globew: 450,
 	globeh: 450,
-	width: screen.width/2,
-	height: screen.height/2,
+	width: screen.width / 2,
+	height: screen.height / 2,
 	sensitivity: 75,
 	svg: null,
 	dflag: 0,
@@ -71,7 +71,7 @@ function updateSearchList(data) {
 		searchList.appendChild(option);
 	});
 
-    ctx_globe.searchList = searchList;
+	ctx_globe.searchList = searchList;
 	console.log("search list", ctx_globe.searchList);
 }
 
@@ -93,15 +93,13 @@ function filterCountries() {
 			searchList.appendChild(option);
 		}
 	});
-
-	// console.log(searchList)
 }
 
 function getCountryCentroid(countryName) {
 	const countryFeature = ctx_globe.data.features.find(
 		(feature) => feature.properties.name === countryName
 	);
-	console.log(countryFeature)
+
 	return d3.geoCentroid(countryFeature);
 }
 
@@ -112,6 +110,7 @@ function rotateToCountry(check_list = true) {
 		ctx_globe.selectedPath = d3.selectAll(
 			".country_" + ctx_globe.selectedCountry.replaceAll(" ", "_")
 		);
+		// moveToCountry();
 	}
 
 	selectedCountry = ctx_globe.selectedCountry;
@@ -123,7 +122,6 @@ function rotateToCountry(check_list = true) {
 
 	if (selectedPath.size() > 0) {
 		centroid = getCountryCentroid(selectedCountry);
-		console.log(centroid);
 
 		if (isNaN(centroid[0])) {
 			console.log("Nan Encountered. Choose another country");
@@ -136,7 +134,7 @@ function rotateToCountry(check_list = true) {
 		var distance = d3.geoDistance(oldRotation, newRotation);
 
 		svg.transition()
-			.duration(1000)
+			.duration(ctx.TRANSITION_DURATION)
 			.tween("rotate", function () {
 				return function (t) {
 					var currentRotation = d3.interpolate(
@@ -160,13 +158,12 @@ function handleCountryDoubleClick(event, d) {
 	ctx_globe.selectedPath = d3.selectAll(
 		".country_" + ctx_globe.selectedCountry.replaceAll(" ", "_")
 	);
-	try{
+	try {
 		moveToCountry();
-	}
-	catch(e){
+	} catch (e) {
 		console.log(e);
 	}
-	
+
 	rotateToCountry(false);
 }
 
@@ -189,8 +186,6 @@ function drawGlobe(svg) {
 			const k = ctx_globe.sensitivity / globe_projection.scale();
 
 			if (!ctx_globe.dflag) {
-				console.log(event.dx, event.dy);
-				console.log(k);
 				ctx_globe.dflag = 1;
 			}
 			globe_projection.rotate([
@@ -234,9 +229,11 @@ function loadGlobeData(svg) {
 	// 	drawGlobe(svg);
 	// });
 
-	d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json").then(function (d) {
+	d3.json(
+		"https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json"
+	).then(function (d) {
 		ctx_globe.data = d;
-		ctx_globe.data = topojson.feature(d, d.objects.countries)
+		ctx_globe.data = topojson.feature(d, d.objects.countries);
 		drawGlobe(svg);
 	});
 }
@@ -247,10 +244,10 @@ function createGlobeViz() {
 	svgEl.attr("height", ctx_globe.height);
 	ctx_globe.svg = svgEl;
 	loadGlobeData(svgEl);
-    
-    // updateSearchList(ctx_globe.data);
-    
-	document.getElementById("countrySearch").value = "France";
+
+	// updateSearchList(ctx_globe.data);
+
+	document.getElementById("countrySearch").value = "India";
 	rotateToCountry();
 }
 

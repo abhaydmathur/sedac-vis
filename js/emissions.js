@@ -2,12 +2,40 @@ ctx_em = {
 	gas: "CH4",
 	sce: "A1AIM",
 	year: "2020",
+	rad_scale : 10,
 };
 
+function updateColourScale() {
+	let minGDP = d3.min(
+		ctx_em.gdp_pc,
+		(d) => d[`${ctx_em.year} [YR${ctx_em.year}]`]
+	);
+	let maxGDP = d3.max(
+		ctx_em.gdp_pc,
+		(d) => d[`${ctx_em.year} [YR${ctx_em.year}]`]
+	);
+
+	minGDP = 300;
+	maxGDP = 117370;
+	console.log("min", minGDP, "max", maxGDP);
+
+	ctx_em.gdpLogScale = d3.scaleLog([minGDP, maxGDP]);
+
+	ctx_em.gdpcolour = d3
+		.scaleSequential(d3.interpolateYlGn)
+		.domain([ctx_em.gdpLogScale(minGDP), ctx_em.gdpLogScale(maxGDP)]);
+}
+
+function gdpToColour(gdp) {
+	return ctx_em.gdpcolour(ctx_em.gdpLogScale(gdp));
+}
+
 function drawEmissions(svgEl) {
+	updateColourScale();
+
 	ctx_em.projection = d3
-		.geoNaturalEarth1()
-		.scale(100)
+		.geoMercator()
+		.scale(120)
 		.translate([ctx_em.width / 2, ctx_em.height / 2]);
 
 	ctx_em.path = d3.geoPath().projection(ctx_em.projection);
@@ -18,16 +46,24 @@ function drawEmissions(svgEl) {
 		.enter()
 		.append("path")
 		.attr("d", ctx_em.path)
-		// .on("click", function(event, d){
-		// 	console.log(event, d)
-		// 	svg.selectAll(".selected").classed("selected", false);
-		// 	d3.select(this).classed("selected", true);
-		// 	console.log("Selected Country: ", d.properties.name)
-		// })
+		.attr("stroke", "black	")
 		.attr("stroke-width", function () {
 			return 1 / d3.zoomTransform(svg.node()).k;
 		})
-		.attr("fill", "lightgrey");
+		.attr("fill", function (d) {
+			country = ctx_em.gdp_pc.find(
+				(x) => x.CountryName === d.properties.name
+			);
+			try {
+				return gdpToColour(
+					country[`${ctx_em.year} [YR${ctx_em.year}]`]
+				);
+			} catch {
+				// console.log("unable", d.properties.name);
+				return "yellow";
+			}
+		})
+		.attr("opacity", 0.8);
 
 	svgEl
 		.selectAll("circle")
@@ -36,12 +72,11 @@ function drawEmissions(svgEl) {
 		.append("circle")
 		.attr("cx", (d) => ctx_em.projection([d.long, d.lat])[0])
 		.attr("cy", (d) => ctx_em.projection([d.long, d.lat])[1])
-		.attr("r", (d) => d.deg * 3)
-		.attr("fill", "red") // Customize the color as needed
+		.attr("r", (d) => ctx_em.rad_scale * d.deg)
+		.attr("fill", "grey") // Customize the color as needed
 		.on("mouseover", handleMouseOver);
 
 	moveToCountry();
-	// panToCountry();
 }
 
 function updateData(year) {}
@@ -50,11 +85,19 @@ function handleMouseOver() {}
 
 function moveToCountry() {
 	const svg = ctx_em.svg;
-	const countries = ctx_em.mapdata;
-	const zoom = d3.zoom().scaleExtent([1, 8]);
-
-	// Remove existing selected country
-	svg.selectAll(".selected").remove();
+	ctx_em.zoom = d3
+		.zoom()
+		.scaleExtent([1, 8])
+		.on("zoom", function (event) {
+			svg.selectAll("path")
+				.attr("transform", event.transform)
+				.attr("stroke-width", function () {
+					return 1 / event.transform.k; // Adjust stroke width based on the current scale
+				});
+			svg.selectAll("circle")
+				.attr("transform", event.transform)
+				.attr("r", (d) => (ctx_em.rad_scale * d.deg / event.transform.k));
+		});
 
 	const selectedCountry = ctx_em.mapdata.features.find(
 		(feature) => feature.properties.name === ctx_globe.selectedCountry
@@ -62,12 +105,14 @@ function moveToCountry() {
 
 	console.log(selectedCountry.properties.name);
 
-	// Draw the selected country in red
-	svg.append("path")
-		.datum(selectedCountry)
-		.attr("d", ctx_em.path)
-		.attr("class", "selected")
-		.attr("stroke-width", 1); // Fixed stroke width for the selected country
+	svg.selectAll("circle")
+		.transition()
+		.duration(ctx.TRANSITION_DURATION)
+		.attr("cx", (d) => ctx_em.projection([d.long, d.lat])[0])
+		.attr("cy", (d) => ctx_em.projection([d.long, d.lat])[1])
+		.attr("fill", function (d) {
+			return "red";
+		});
 
 	// Pan and zoom to the selected country
 	const bounds = ctx_em.path.bounds(selectedCountry);
@@ -83,54 +128,24 @@ function moveToCountry() {
 
 	// Use transition for smooth zoom
 	svg.transition()
-		.duration(750)
+		.duration(ctx.TRANSITION_DURATION)
 		.call(
-			zoom.transform,
+			ctx_em.zoom.transform,
 			d3.zoomIdentity.translate(translate[0], translate[1]).scale(scale)
 		);
 
 	// Add zoom behavior to the SVG
-	svg.call(zoom);
-}
+	svg.call(ctx_em.zoom);
 
-function panToCountry() {
-	console.log(ctx_em);
-
-	let country = ctx_em.mapdata.features.find(
-		(d) => d.properties.name === ctx_globe.selectedCountry
-	);
-
-	// Get the bounding box of the country
-	let bounds = ctx_em.path.bounds(country);
-
-	// Calculate the   and translation to fit the country to the canvas
-	let dx = bounds[1][0] - bounds[0][0];
-	let dy = bounds[1][1] - bounds[0][1];
-	let x = (bounds[0][0] + bounds[1][0]) / 2;
-	let y = (bounds[0][1] + bounds[1][1]) / 2;
-
-	// Calculate the scale to fit the country to the canvas
-	let scale_ = 0.9 / Math.max(dx / ctx_em.width, dy / ctx_em.height);
-	scale = 100 * scale_;
-
-	// Update the projection to center on the country and scale to fit
-	// ctx_em.projection
-	// 	.scale(scale)
-	// 	.translate([ctx_em.width/2-x, ctx_em.height/2-y]);
-
-	// ctx_em.projection
-	//     .scale(scale);
-	ctx_em.projection.translate([x, y]);
-
-	// Update the paths and circles
-	ctx_em.path = d3.geoPath().projection(ctx_em.projection);
-	ctx_em.svg.selectAll("path").attr("d", ctx_em.path);
-
-	ctx_em.svg
-		.selectAll("circle")
-		.attr("cx", (d) => ctx_em.projection([d.long, d.lat])[0])
-		.attr("cy", (d) => ctx_em.projection([d.long, d.lat])[1]);
-	// .attr("r", 100);
+	// svg.selectAll("circle")
+	// 	.attr("transform", d3.zoomTransform(svg.node()))
+	// 	.attr("r", function (d) {
+	// 		// let event = d3.select(this).node().__on("zoom").value;
+	// 		let currentZoomTransform = d3.zoomTransform(svg.node());
+	// 		console.log(currentZoomTransform)
+	// 		// return d.radius / event.transform.k; // Adjust the radius based on the current scale
+	// 		return 3*d.deg / currentZoomTransform.k;
+	// 	});
 }
 
 function updateEmissionsData() {
