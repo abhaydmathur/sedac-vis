@@ -79,7 +79,19 @@ function drawEmissions(svgEl) {
 		.attr("class", "blobs")
 		.on("mouseover", handleMouseOver)
 		.append("title")
-		.text((d) => `${parseFloat(d.deg).toFixed(3)}@[${d.long}, ${d.lat}]`);
+		.text(function (d) {
+			try {
+				loc =
+					ctx_em.coords_to_loc[
+						[parseFloat(d.long), parseFloat(d.lat)]
+					];
+				return `${
+					loc.city
+				}, ${loc.country_code}\ndeg:${parseFloat(d.deg).toFixed(3)}`;
+			} catch {
+				return `${parseFloat(d.deg).toFixed(3)}@[${d.long}, ${d.lat}]`;
+			}
+		});
 
 	let yearScale = d3
 		.scaleLinear()
@@ -111,6 +123,8 @@ function drawEmissions(svgEl) {
 		newX = yearScale(ctx_em.year);
 		handle.attr("cx", newX);
 
+		gdp_year = Math.min(ctx_em.year, 2022);
+
 		// Update the map
 		updateColourScale();
 		updateEmissionsData();
@@ -123,7 +137,22 @@ function drawEmissions(svgEl) {
 			.select(".emissionsTitle")
 			.text(`Gridwise Emissions of ${ctx_em.gas} in ${ctx_em.year}`);
 
-		svgEl.selectAll("path");
+		svgEl.selectAll("path").attr("fill", function (d) {
+			country = ctx_em.gdp_pc.find(
+				(x) => x.CountryName === d.properties.name
+			);
+
+			try {
+				c = parseFloat(country[`${gdp_year}`]);
+				if (!isNaN(c)) return gdpToColour(c);
+				else {
+					return "lightgrey";
+				}
+			} catch {
+				// console.log("unable", d.properties.name);
+				return "lightgrey	";
+			}
+		});
 	});
 
 	svgEl
@@ -182,6 +211,11 @@ function handleMouseOver() {}
 
 function moveToCountry() {
 	const svg = ctx_em.svg;
+
+	const selectedCountry = ctx_em.mapdata.features.find(
+		(feature) => feature.properties.name === ctx_globe.selectedCountry
+	);
+
 	ctx_em.zoom = d3
 		.zoom()
 		.scaleExtent([1, 8])
@@ -200,11 +234,11 @@ function moveToCountry() {
 				);
 		});
 
-	const selectedCountry = ctx_em.mapdata.features.find(
-		(feature) => feature.properties.name === ctx_globe.selectedCountry
-	);
-
 	console.log(selectedCountry.properties.name);
+
+	svg.selectAll("path").attr("opacity", function (d) {
+		return d.properties.name === ctx_globe.selectedCountry ? 1 : 0.3;
+	});
 
 	svg.selectAll(".blobs")
 		.transition()
@@ -212,15 +246,40 @@ function moveToCountry() {
 		.attr("cx", (d) => ctx_em.projection([d.long, d.lat])[0])
 		.attr("cy", (d) => ctx_em.projection([d.long, d.lat])[1])
 		.attr("fill", function (d) {
-			return "red";
-		});
+			try {
+				if (
+					selectedCountry.properties.name ===
+					ctx_em.coords_to_loc[
+						[parseFloat(d.long), parseFloat(d.lat)]
+					].country_name
+				) {
+					return "red";
+				} else return "pink";
+			} catch {
+				return "pink";
+			}
+		});	
 
 	const bounds = ctx_em.path.bounds(selectedCountry);
 	const dx = bounds[1][0] - bounds[0][0];
 	const dy = bounds[1][1] - bounds[0][1];
-	const x = (bounds[0][0] + bounds[1][0]) / 2;
-	const y = (bounds[0][1] + bounds[1][1]) / 2;
-	const scale = 0.9 / Math.max(dx / ctx_em.width, dy / ctx_em.height);
+	x = (bounds[0][0] + bounds[1][0]) / 2;
+	y = (bounds[0][1] + bounds[1][1]) / 2;
+	den = Math.max(dx / ctx_em.width, dy / ctx_em.height);
+
+	console.log(x);
+	if(selectedCountry.properties.name === "United States of America"){
+		[x, y] = [277, 100];
+		den = 0.45;
+	}
+	else if(selectedCountry.properties.name === "Russia"){
+		[x, y] = [700, 50];
+		den = 0.45;
+	}
+
+	// den = Math.min(den, 0.5);
+	const scale = 0.9 / den;
+
 	const translate = [
 		ctx_em.width / 2 - scale * x,
 		ctx_em.height / 2 - scale * y,
@@ -251,12 +310,21 @@ function loadEmissionsData(svgEl) {
 			`data/emissions/csv/${ctx_em.gas}_${ctx_em.sce}_${ctx_em.year}.csv`
 		),
 		d3.csv("data/emissions/gdp_per_capita_1973_2023.csv"),
-	]).then(function ([world, emissions, gdp_pc]) {
+		d3.csv("data/emissions/coordinates_to_location.csv"),
+	]).then(function ([world, emissions, gdp_pc, ctoloc]) {
 		ctx_em.mapdata = topojson.feature(world, world.objects.countries);
-		console.log(ctx_em.mapdata);
+		
 		ctx_em.emissions = emissions;
 		ctx_em.gdp_pc = gdp_pc;
-		console.log(ctx_em.gdp_pc);
+
+		ctx_em.coords_to_loc = {};
+		ctoloc.forEach(function (d) {
+			ctx_em.coords_to_loc[[parseFloat(d.long), parseFloat(d.lat)]] = {
+				city: d.city,
+				country_code: d.country_code,
+				country_name: d.country_name,
+			};
+		});
 		drawEmissions(svgEl);
 		// panToCountry();
 	});

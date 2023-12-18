@@ -248,7 +248,7 @@ function createGlobeViz() {
 
 	// updateSearchList(ctx_globe.data);
 
-	document.getElementById("countrySearch").value = "India";
+	document.getElementById("countrySearch").value = "United States of America";
 	rotateToCountry();
 }
 
