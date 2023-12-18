@@ -7,7 +7,7 @@ let ctx = {
 	sensitivity: 75,
 	svg: null,
 	dflag: 0,
-	TRANSITION_DURATION: 1000,
+	TRANSITION_DURATION: 1500,
 };
 
 function createViz() {

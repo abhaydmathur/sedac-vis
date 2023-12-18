@@ -13,7 +13,7 @@ let globe_projection = d3
 	.geoOrthographic()
 	.scale(ctx_globe.globew / 2)
 	.center([0, 0])
-	.rotate([-79, -22])
+	.rotate([-30, -62])
 	.translate([ctx_globe.globew / 2, ctx_globe.globeh / 2]);
 
 const initialScale = globe_projection.scale();
@@ -110,7 +110,6 @@ function rotateToCountry(check_list = true) {
 		ctx_globe.selectedPath = d3.selectAll(
 			".country_" + ctx_globe.selectedCountry.replaceAll(" ", "_")
 		);
-		// moveToCountry();
 	}
 
 	selectedCountry = ctx_globe.selectedCountry;
@@ -150,6 +149,8 @@ function rotateToCountry(check_list = true) {
 				prev_path = selectedPath;
 			});
 	}
+
+
 }
 
 function handleCountryDoubleClick(event, d) {

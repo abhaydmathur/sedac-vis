@@ -1,23 +1,20 @@
 ctx_em = {
-	gas: "CH4",
+	gas: "CO",
 	sce: "A1AIM",
-	year: "2020",
-	rad_scale : 10,
+	year: "2010",
+	rad_scale: 4,
+	scale_factor: 1,
 };
 
-function updateColourScale() {
-	let minGDP = d3.min(
-		ctx_em.gdp_pc,
-		(d) => d[`${ctx_em.year} [YR${ctx_em.year}]`]
-	);
-	let maxGDP = d3.max(
-		ctx_em.gdp_pc,
-		(d) => d[`${ctx_em.year} [YR${ctx_em.year}]`]
-	);
+let margin = { top: 50, right: 20, bottom: 20, left: 20 };
+ctx_em.width = ctx_em.width - margin.left - margin.right;
+ctx_em.height = ctx_em.height - margin.top - margin.bottom;
 
-	minGDP = 300;
-	maxGDP = 117370;
-	console.log("min", minGDP, "max", maxGDP);
+function updateColourScale() {
+	gdp_year = Math.min(ctx_em.year, 2022);
+
+	let minGDP = d3.min(ctx_em.gdp_pc, (d) => parseFloat(d[`${gdp_year}`]));
+	let maxGDP = d3.max(ctx_em.gdp_pc, (d) => parseFloat(d[`${gdp_year}`]));
 
 	ctx_em.gdpLogScale = d3.scaleLog([minGDP, maxGDP]);
 
@@ -40,6 +37,8 @@ function drawEmissions(svgEl) {
 
 	ctx_em.path = d3.geoPath().projection(ctx_em.projection);
 
+	gdp_year = Math.min(ctx_em.year, 2023);
+
 	svgEl
 		.selectAll("path")
 		.data(ctx_em.mapdata.features)
@@ -54,13 +53,16 @@ function drawEmissions(svgEl) {
 			country = ctx_em.gdp_pc.find(
 				(x) => x.CountryName === d.properties.name
 			);
+
 			try {
-				return gdpToColour(
-					country[`${ctx_em.year} [YR${ctx_em.year}]`]
-				);
+				c = parseFloat(country[`${gdp_year}`]);
+				if (!isNaN(c)) return gdpToColour(c);
+				else {
+					return "lightgrey";
+				}
 			} catch {
 				// console.log("unable", d.properties.name);
-				return "yellow";
+				return "lightgrey	";
 			}
 		})
 		.attr("opacity", 0.8);
@@ -73,8 +75,103 @@ function drawEmissions(svgEl) {
 		.attr("cx", (d) => ctx_em.projection([d.long, d.lat])[0])
 		.attr("cy", (d) => ctx_em.projection([d.long, d.lat])[1])
 		.attr("r", (d) => ctx_em.rad_scale * d.deg)
-		.attr("fill", "grey") // Customize the color as needed
-		.on("mouseover", handleMouseOver);
+		.attr("fill", "red")
+		.attr("class", "blobs")
+		.on("mouseover", handleMouseOver)
+		.append("title")
+		.text((d) => `${parseFloat(d.deg).toFixed(3)}@[${d.long}, ${d.lat}]`);
+
+	let yearScale = d3
+		.scaleLinear()
+		.domain([1990, 2100])
+		.range([margin.left, ctx_em.width])
+		.clamp(true);
+
+	svgEl
+		.append("rect")
+		.attr("class", "track")
+		.attr("x", margin.left)
+		.attr("y", margin.top - 20)
+		.attr("width", ctx_em.width)
+		.attr("height", 10)
+		.attr("opacity", 0.5);
+
+	let handle = svgEl
+		.append("circle")
+		.attr("class", "handle")
+		.attr("cx", yearScale(ctx_em.year))
+		.attr("cy", margin.top - 15)
+		.attr("r", 10);
+
+	let drag = d3.drag().on("drag", function (event) {
+		let newX = Math.max(margin.left, Math.min(ctx_em.width, event.x));
+
+		ctx_em.year = Math.round(yearScale.invert(newX));
+		ctx_em.year -= ctx_em.year % 10;
+		newX = yearScale(ctx_em.year);
+		handle.attr("cx", newX);
+
+		// Update the map
+		updateColourScale();
+		updateEmissionsData();
+		svgEl
+			.selectAll(".blobs")
+			.data(ctx_em.emissions) // Bind the updated data
+			.attr("r", (d) => (ctx_em.rad_scale * d.deg) / ctx_em.scale_factor);
+
+		svgEl
+			.select(".emissionsTitle")
+			.text(`Gridwise Emissions of ${ctx_em.gas} in ${ctx_em.year}`);
+
+		svgEl.selectAll("path");
+	});
+
+	svgEl
+		.append("text")
+		.attr("x", ctx_em.width / 2)
+		.attr("y", margin.top - 30)
+		.attr("class", "emissionsTitle")
+		.attr("text-anchor", "middle")
+		.text(`Gridwise Emissions of ${ctx_em.gas} in ${ctx_em.year}`);
+
+	let colorScale = d3
+		.scaleSequential(d3.interpolateBlues)
+		.domain([0, d3.max(ctx_em.mapdata.features, (d) => d.properties.gdp)]);
+	let colorBar = svgEl
+		.append("g")
+		.attr("class", "color-bar")
+		.attr(
+			"transform",
+			`translate(${ctx_em.width + margin.right / 2}, ${margin.top})`
+		);
+	colorBar
+		.append("rect")
+		.attr("width", 20)
+		.attr("height", ctx_em.height)
+		.attr("fill", "url(#gradient)");
+	let gradient = colorBar
+		.append("defs")
+		.append("linearGradient")
+		.attr("id", "gradient")
+		.attr("x1", "0%")
+		.attr("y1", "100%")
+		.attr("x2", "0%")
+		.attr("y2", "0%");
+	gradient
+		.selectAll("stop")
+		.data(
+			colorScale.ticks().map((t, i, n) => ({
+				offset: `${(100 * i) / n.length}%`,
+				color: colorScale(t),
+			}))
+		)
+		.enter()
+		.append("stop")
+		.attr("offset", (d) => d.offset)
+		.attr("stop-color", (d) => d.color);
+
+	// Apply the drag behavior to the handle
+	handle.call(drag);
 
 	moveToCountry();
 }
@@ -89,14 +186,18 @@ function moveToCountry() {
 		.zoom()
 		.scaleExtent([1, 8])
 		.on("zoom", function (event) {
+			ctx_em.scale_factor = event.transform.k;
 			svg.selectAll("path")
 				.attr("transform", event.transform)
 				.attr("stroke-width", function () {
 					return 1 / event.transform.k; // Adjust stroke width based on the current scale
 				});
-			svg.selectAll("circle")
+			svg.selectAll(".blobs")
 				.attr("transform", event.transform)
-				.attr("r", (d) => (ctx_em.rad_scale * d.deg / event.transform.k));
+				.attr(
+					"r",
+					(d) => (ctx_em.rad_scale * d.deg) / event.transform.k
+				);
 		});
 
 	const selectedCountry = ctx_em.mapdata.features.find(
@@ -105,7 +206,7 @@ function moveToCountry() {
 
 	console.log(selectedCountry.properties.name);
 
-	svg.selectAll("circle")
+	svg.selectAll(".blobs")
 		.transition()
 		.duration(ctx.TRANSITION_DURATION)
 		.attr("cx", (d) => ctx_em.projection([d.long, d.lat])[0])
@@ -114,7 +215,6 @@ function moveToCountry() {
 			return "red";
 		});
 
-	// Pan and zoom to the selected country
 	const bounds = ctx_em.path.bounds(selectedCountry);
 	const dx = bounds[1][0] - bounds[0][0];
 	const dy = bounds[1][1] - bounds[0][1];
@@ -126,7 +226,6 @@ function moveToCountry() {
 		ctx_em.height / 2 - scale * y,
 	];
 
-	// Use transition for smooth zoom
 	svg.transition()
 		.duration(ctx.TRANSITION_DURATION)
 		.call(
@@ -134,18 +233,7 @@ function moveToCountry() {
 			d3.zoomIdentity.translate(translate[0], translate[1]).scale(scale)
 		);
 
-	// Add zoom behavior to the SVG
 	svg.call(ctx_em.zoom);
-
-	// svg.selectAll("circle")
-	// 	.attr("transform", d3.zoomTransform(svg.node()))
-	// 	.attr("r", function (d) {
-	// 		// let event = d3.select(this).node().__on("zoom").value;
-	// 		let currentZoomTransform = d3.zoomTransform(svg.node());
-	// 		console.log(currentZoomTransform)
-	// 		// return d.radius / event.transform.k; // Adjust the radius based on the current scale
-	// 		return 3*d.deg / currentZoomTransform.k;
-	// 	});
 }
 
 function updateEmissionsData() {

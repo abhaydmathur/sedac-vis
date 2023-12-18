@@ -23,10 +23,10 @@
 		/>
 		<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 		<style>
-			/* body {
-				background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+			body {
+				/* background: linear-gradient(90deg, #d53369 0%, #daae51 100%); */
 				background: linear-gradient(90deg, #fc466b 0%, #3f5efb 100%);
-			} */
+			}
 			#main {
 				position: relative;
 			}
@@ -68,7 +68,7 @@
 				placeholder="Search for a country"
 				oninput="filterCountries()"
 				onkeyup="filterCountries()"
-				onchange="rotateToCountry()"
+				onchange="rotateToCountry(); moveToCountry()"
 			/>
 			<datalist id="countryList"></datalist>
 			<!-- <input type="text" id="countrySearch" placeholder="Search for a country"> -->
