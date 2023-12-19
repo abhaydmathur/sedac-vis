@@ -21,21 +21,6 @@ let globe_path = d3.geoPath().projection(globe_projection);
 
 let prev_path = null;
 
-// function updateDropdown(data) {
-//     const select = document.getElementById("countryDropdown");
-
-//     // console.log(select);
-
-//     data.features.forEach((feature) => {
-//       const option = document.createElement("option");
-//       option.value = feature.properties.name.replaceAll(" ", "_");
-//       option.text = feature.properties.name;
-//       select.add(option);
-//     });
-
-//     console.log(select)
-// }
-
 function mean2d(coordinates) {
 	const numRows = coordinates.length;
 	const numCols = coordinates[0].length;
@@ -75,24 +60,85 @@ function updateSearchList(data) {
 	console.log("search list", ctx_globe.searchList);
 }
 
-function filterCountries() {
+function filterCountries(event) {
 	const searchTerm = document
 		.getElementById("countrySearch")
 		.value.toLowerCase();
 	const searchList = document.getElementById("countryList");
+	const resultBox = document.querySelector(".resultBox");
 
 	// Clear existing options
 	searchList.innerHTML = "";
+	resultBox.innerHTML = "";
 
 	// Filter and add new options based on the search term
-	ctx_globe.data.features.forEach((feature) => {
+	const filteredCountries = ctx_globe.data.features.filter((feature) => {
 		const countryName = feature.properties.name.toLowerCase();
-		if (countryName.includes(searchTerm)) {
-			const option = document.createElement("option");
-			option.value = feature.properties.name;
-			searchList.appendChild(option);
-		}
+		return countryName.includes(searchTerm);
 	});
+
+	filteredCountries.forEach((feature) => {
+		const countryName = feature.properties.name;
+		const option = document.createElement("option");
+		const listItem = document.createElement("li");
+
+		option.value = countryName;
+		listItem.textContent = countryName;
+
+		searchList.appendChild(option);
+		resultBox.appendChild(listItem);
+
+		listItem.addEventListener("click", () => {
+			selectCountry(countryName);
+		})
+	});
+
+	// Show/hide autocomplete box
+	if (filteredCountries.length > 20) {
+		console.log("too many to list")
+		resultBox.style.display = "none";
+	}
+	else if (filteredCountries.length > 0) {
+		console.log("block")
+		resultBox.style.display = "block";
+	} else {
+		console.log("none")
+		resultBox.style.display = "none";
+	}
+
+
+
+	// Select the first option on enter
+	if (event && event.key === "Enter" && filteredCountries.length > 0) {
+		ctx_globe.selectedCountry = filteredCountries[0].properties.name;
+		document.getElementById("countrySearch").value =
+			ctx_globe.selectedCountry;
+		ctx_globe.selectedPath = d3.selectAll(
+			".country_" + ctx_globe.selectedCountry.replaceAll(" ", "_").replaceAll(".", "")
+		);
+		try {
+			moveToCountry();
+		} catch (e) {
+			console.log(e);
+		}
+		rotateToCountry(false);
+		resultBox.style.display = "none"; // Hide autocomplete box on enter
+	}
+}
+
+function selectCountry(countryName) {
+	ctx_globe.selectedCountry = countryName;
+	document.getElementById("countrySearch").value = countryName;
+	ctx_globe.selectedPath = d3.selectAll(
+		".country_" + countryName.replaceAll(" ", "_").replaceAll(".", "")
+	);
+	try {
+		moveToCountry();
+	} catch (e) {
+		console.log(e);
+	}
+	rotateToCountry(false);
+	document.querySelector(".resultBox").style.display = "none"; // Hide autocomplete box after selecting a country
 }
 
 function getCountryCentroid(countryName) {
@@ -108,7 +154,7 @@ function rotateToCountry(check_list = true) {
 		ctx_globe.selectedCountry =
 			document.getElementById("countrySearch").value;
 		ctx_globe.selectedPath = d3.selectAll(
-			".country_" + ctx_globe.selectedCountry.replaceAll(" ", "_")
+			".country_" + ctx_globe.selectedCountry.replaceAll(" ", "_").replaceAll(".", "")
 		);
 	}
 
@@ -149,15 +195,13 @@ function rotateToCountry(check_list = true) {
 				prev_path = selectedPath;
 			});
 	}
-
-
 }
 
 function handleCountryDoubleClick(event, d) {
 	ctx_globe.selectedCountry = d.properties.name;
 	document.getElementById("countrySearch").value = ctx_globe.selectedCountry;
 	ctx_globe.selectedPath = d3.selectAll(
-		".country_" + ctx_globe.selectedCountry.replaceAll(" ", "_")
+		".country_" + ctx_globe.selectedCountry.replaceAll(" ", "_").replaceAll(".", "")
 	);
 	try {
 		moveToCountry();
@@ -208,7 +252,7 @@ function drawGlobe(svg) {
 		.append("path")
 		.attr(
 			"class",
-			(d) => "country_" + d.properties.name.replaceAll(" ", "_")
+			(d) => "country_" + d.properties.name.replaceAll(" ", "_").replaceAll(".", "")
 		)
 		.attr("d", globe_path)
 		.attr("fill", "white")
@@ -248,7 +292,7 @@ function createGlobeViz() {
 
 	// updateSearchList(ctx_globe.data);
 
-	document.getElementById("countrySearch").value = "United States of America";
+	document.getElementById("countrySearch").value = "India";
 	rotateToCountry();
 }
 

@@ -1,14 +1,12 @@
 ctx_em = {
 	gas: "CO",
-	sce: "A1AIM",
-	year: "2010",
+	sce: "A2ASF",
+	year: "2020",
 	rad_scale: 4,
 	scale_factor: 1,
 };
 
 let margin = { top: 50, right: 20, bottom: 20, left: 20 };
-ctx_em.width = ctx_em.width - margin.left - margin.right;
-ctx_em.height = ctx_em.height - margin.top - margin.bottom;
 
 function updateColourScale() {
 	gdp_year = Math.min(ctx_em.year, 2022);
@@ -25,6 +23,89 @@ function updateColourScale() {
 
 function gdpToColour(gdp) {
 	return ctx_em.gdpcolour(ctx_em.gdpLogScale(gdp));
+}
+
+function createTimeline(svgEl) {
+	let yearScale = d3
+		.scaleLinear()
+		.domain([1990, 2100])
+		.range([margin.left, ctx_em.width])
+		.clamp(true);
+
+	svgEl
+		.append("rect")
+		.attr("class", "track")
+		.attr("x", margin.left)
+		.attr("y", margin.top - 20)
+		.attr("width", ctx_em.width - margin.right)
+		.attr("height", 10)
+		.attr("fill", "white")
+		.attr("opacity", 0.5);
+
+	let handle = svgEl
+		.append("circle")
+		.attr("class", "handle")
+		.attr("cx", yearScale(ctx_em.year))
+		.attr("cy", margin.top - 15)
+		.attr("fill", "white")
+		.attr("r", 10);
+
+	let xAxis = d3
+		.axisBottom(yearScale)
+		.ticks((2100 - 1990) / 10) // Add a tick for every 10 years
+		.tickFormat(d3.format("d")); // Format the ticks as years
+
+	// Add the x-axis to the SVG
+	svgEl
+		.append("g")
+		.attr("class", "xaxis")
+		.attr("transform", `translate(0,${40})`)
+		.attr("stroke", "white")
+		.call(xAxis);
+	svgEl.selectAll(".xaxis path, .xaxis line").attr("stroke", "white");
+
+	let drag = d3.drag().on("drag", function (event) {
+		let newX = Math.max(margin.left, Math.min(ctx_em.width, event.x));
+
+		ctx_em.year = Math.round(yearScale.invert(newX));
+		ctx_em.year -= ctx_em.year % 10;
+		newX = yearScale(ctx_em.year);
+		handle.attr("cx", newX);
+
+		gdp_year = Math.min(ctx_em.year, 2022);
+
+		// Update the map
+		updateColourScale();
+		updateEmissionsData();
+		svgEl
+			.selectAll(".blobs")
+			.data(ctx_em.emissions) // Bind the updated data
+			.attr("r", (d) => (ctx_em.rad_scale * d.deg) / ctx_em.scale_factor);
+
+		svgEl
+			.select(".emissionsTitle")
+			.text(`Gridwise Emissions of ${ctx_em.gas} in ${ctx_em.year}`);
+
+		svgEl.selectAll("path").attr("fill", function (d) {
+			country = ctx_em.gdp_pc.find(
+				(x) => x.CountryName === d.properties.name
+			);
+
+			try {
+				c = parseFloat(country[`${gdp_year}`]);
+				if (!isNaN(c)) return gdpToColour(c);
+				else {
+					return "lightgrey";
+				}
+			} catch {
+				// console.log("unable", d.properties.name);
+				return "lightgrey	";
+			}
+		});
+	});
+
+	// Apply the drag behavior to the handle
+	handle.call(drag);
 }
 
 function drawEmissions(svgEl) {
@@ -93,76 +174,23 @@ function drawEmissions(svgEl) {
 			}
 		});
 
-	let yearScale = d3
-		.scaleLinear()
-		.domain([1990, 2100])
-		.range([margin.left, ctx_em.width])
-		.clamp(true);
+	createTimeline(ctx_em.svg_headtime);
 
-	svgEl
-		.append("rect")
-		.attr("class", "track")
-		.attr("x", margin.left)
-		.attr("y", margin.top - 20)
-		.attr("width", ctx_em.width)
-		.attr("height", 10)
-		.attr("opacity", 0.5);
-
-	let handle = svgEl
-		.append("circle")
-		.attr("class", "handle")
-		.attr("cx", yearScale(ctx_em.year))
-		.attr("cy", margin.top - 15)
-		.attr("r", 10);
-
-	let drag = d3.drag().on("drag", function (event) {
-		let newX = Math.max(margin.left, Math.min(ctx_em.width, event.x));
-
-		ctx_em.year = Math.round(yearScale.invert(newX));
-		ctx_em.year -= ctx_em.year % 10;
-		newX = yearScale(ctx_em.year);
-		handle.attr("cx", newX);
-
-		gdp_year = Math.min(ctx_em.year, 2022);
-
-		// Update the map
-		updateColourScale();
-		updateEmissionsData();
-		svgEl
-			.selectAll(".blobs")
-			.data(ctx_em.emissions) // Bind the updated data
-			.attr("r", (d) => (ctx_em.rad_scale * d.deg) / ctx_em.scale_factor);
-
-		svgEl
-			.select(".emissionsTitle")
-			.text(`Gridwise Emissions of ${ctx_em.gas} in ${ctx_em.year}`);
-
-		svgEl.selectAll("path").attr("fill", function (d) {
-			country = ctx_em.gdp_pc.find(
-				(x) => x.CountryName === d.properties.name
-			);
-
-			try {
-				c = parseFloat(country[`${gdp_year}`]);
-				if (!isNaN(c)) return gdpToColour(c);
-				else {
-					return "lightgrey";
-				}
-			} catch {
-				// console.log("unable", d.properties.name);
-				return "lightgrey	";
-			}
-		});
-	});
-
-	svgEl
+	ctx_em.svg_headtime
 		.append("text")
 		.attr("x", ctx_em.width / 2)
 		.attr("y", margin.top - 30)
 		.attr("class", "emissionsTitle")
 		.attr("text-anchor", "middle")
+		.attr("fill", "white")
 		.text(`Gridwise Emissions of ${ctx_em.gas} in ${ctx_em.year}`);
 
+	createColorBar(ctx_em.svg_colorbar);
+
+	moveToCountry();
+}
+
+function createColorBar(svgEl) {
 	let colorScale = d3
 		.scaleSequential(d3.interpolateBlues)
 		.domain([0, d3.max(ctx_em.mapdata.features, (d) => d.properties.gdp)]);
@@ -198,14 +226,7 @@ function drawEmissions(svgEl) {
 		.append("stop")
 		.attr("offset", (d) => d.offset)
 		.attr("stop-color", (d) => d.color);
-
-	// Apply the drag behavior to the handle
-	handle.call(drag);
-
-	moveToCountry();
 }
-
-function updateData(year) {}
 
 function handleMouseOver() {}
 
@@ -237,7 +258,13 @@ function moveToCountry() {
 	console.log(selectedCountry.properties.name);
 
 	svg.selectAll("path").attr("opacity", function (d) {
-		return d.properties.name === ctx_globe.selectedCountry ? 1 : 0.3;
+		// console.log(d);
+		try {
+			return d.properties.name === ctx_globe.selectedCountry ? 1 : 0.3;
+		} catch {
+			console.log(d);
+			return 0.3;
+		}
 	});
 
 	svg.selectAll(".blobs")
@@ -258,7 +285,7 @@ function moveToCountry() {
 			} catch {
 				return "pink";
 			}
-		});	
+		});
 
 	const bounds = ctx_em.path.bounds(selectedCountry);
 	const dx = bounds[1][0] - bounds[0][0];
@@ -268,11 +295,10 @@ function moveToCountry() {
 	den = Math.max(dx / ctx_em.width, dy / ctx_em.height);
 
 	console.log(x);
-	if(selectedCountry.properties.name === "United States of America"){
+	if (selectedCountry.properties.name === "United States of America") {
 		[x, y] = [277, 100];
 		den = 0.45;
-	}
-	else if(selectedCountry.properties.name === "Russia"){
+	} else if (selectedCountry.properties.name === "Russia") {
 		[x, y] = [700, 50];
 		den = 0.45;
 	}
@@ -301,11 +327,8 @@ function updateEmissionsData() {
 }
 
 function loadEmissionsData(svgEl) {
-	// Load map from data/emissions/world-50m.json
 	Promise.all([
-		d3.json(
-			"https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json"
-		),
+		d3.json("data/emissions/countries-50m.json"),
 		d3.csv(
 			`data/emissions/csv/${ctx_em.gas}_${ctx_em.sce}_${ctx_em.year}.csv`
 		),
@@ -313,7 +336,7 @@ function loadEmissionsData(svgEl) {
 		d3.csv("data/emissions/coordinates_to_location.csv"),
 	]).then(function ([world, emissions, gdp_pc, ctoloc]) {
 		ctx_em.mapdata = topojson.feature(world, world.objects.countries);
-		
+
 		ctx_em.emissions = emissions;
 		ctx_em.gdp_pc = gdp_pc;
 
@@ -336,7 +359,30 @@ function createEmissionsViz() {
 	ctx_em.width = svgEl.node().getBoundingClientRect().width;
 	ctx_em.height = svgEl.node().getBoundingClientRect().height;
 
-	ctx_em.svg = svgEl;
+	ctx_em.width = ctx_em.width - margin.left - margin.right;
+	ctx_em.height = ctx_em.height - margin.top - margin.bottom;
 
-	loadEmissionsData(svgEl);
+	ctx_em.svg = svgEl
+		.append("g")
+		.attr("id", "map")
+		.attr("transform", `translate(${0}, ${margin.top*2})`)
+		.attr("width", ctx_em.width/2)
+		.attr("height", ctx_em.height-margin.top*2);
+
+	ctx_em.svg_headtime = svgEl
+		.append("g")
+		.attr("id", "header")
+		.attr("transform", `translate(0, ${0})`);
+
+	ctx_em.svg_colorbar = svgEl
+		.append("g")
+		.attr("id", "colorbar")
+		.attr(
+			"transform",
+			`translate(${ctx_em.width + margin.right / 2}, ${margin.top})`
+		);
+
+	ctx_em.svg_options = svgEl.append("g").attr("id", "options").attr("transform", `translate()`)
+
+	loadEmissionsData(ctx_em.svg);
 }
