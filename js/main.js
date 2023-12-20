@@ -39,12 +39,6 @@ function createViz() {
         .style("top", 0 + "px")
         .style("left", width / 2 + "px");
 
-    var svgEpi = divEpi.append("svg")
-        .attr("width", width / 2)
-        .attr("height", height / 2)
-        .attr("id", "svgEpi")
-        .style("background-color", "#0f0");
-
     // Emissions
     var divEmissions = d3.select("#main")
         .append("div")
@@ -81,14 +75,17 @@ function createViz() {
 
 function loadData() {
     let promises = [d3.csv("data/emissions.csv"),
-                    d3.csv("data/epi.csv"),
                     d3.dsv(";", "data/food.csv"),
+                    d3.csv("data/CDA_ind.csv"),
+                    d3.csv("data/PMD_ind.csv"),
+                    d3.csv("data/REC_ind.csv"),
+                    d3.csv("data/TCL_ind.csv"),
                     d3.csv("data/gdp_per_capita.csv")];
     Promise.all(promises).then(function(data){
 
         createGlobeViz(),
         createEmissionsViz(data[0]),
-        createEpiViz(data[1], data[3]),
-        createFoodViz(data[2]);
+        createEpiViz(data[2], data[3] ,data[4], data[5], data[6]),
+        createFoodViz(data[1]);
     }).catch(function(error){console.log(error)});
 }
