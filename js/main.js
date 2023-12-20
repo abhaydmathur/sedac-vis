@@ -93,16 +93,19 @@ function createViz() {
 
 function loadData() {
 	let promises = [
-		// d3.csv("data/emissions.js"),
-		// d3.csv("data/epi.js"),
-		// d3.csv("data/food.csv")
+		d3.dsv(";", "data/food.csv"),
+		d3.csv("data/CDA_ind.csv"),
+		d3.csv("data/PMD_ind.csv"),
+		d3.csv("data/REC_ind.csv"),
+		d3.csv("data/TCL_ind.csv"),
+		d3.csv("data/gdp_per_capita.csv"),
 	];
 	Promise.all(promises)
-		.then(function (data) {
+		.then(function ([food, cda, pmd, rec, tcl, gdp_per_capita]) {
 			createGlobeViz(),
 				createEmissionsViz(),
-				createEpiViz(data[1]),
-				createFoodViz(data[2]);
+				createEpiViz(cda, pmd, rec, tcl, gdp_per_capita),
+				createFoodViz(food);
 		})
 		.catch(function (error) {
 			console.log(error);
