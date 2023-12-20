@@ -9,6 +9,7 @@
 		<script src="https://cdn.jsdelivr.net/npm/d3-array@3"></script>
 		<script src="https://unpkg.com/topojson@3"></script>
 		<script src="js/lib/math_.js"></script>
+		<script src="js/lib/legend.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/d3-geo@3"></script>
 		<script src="https://cdn.jsdelivr.net/npm/d3-geo-projection@4"></script>
 		<script src="https://cdn.jsdelivr.net/npm/versor@0.2"></script>
@@ -41,9 +42,9 @@
 					#000000 74%
 				);
 			}
-			#main {
+			/* #main {
 				position: relative;
-			}
+			} */
 
 			.countries path:hover {
 				fill: lightgrey; /* Change to your desired hover color */
@@ -61,12 +62,15 @@
 				font: 1.5em sans-serif;
 				color: #fff6f6;
 				text-align: center;
-				/* text-decoration: underline; */
 				opacity: 1;
 				flood-opacity: 1;
 				font-weight: bold;
 				background-color: "white";
 				z-index: 9999;
+			}
+
+			.emissionsTitle {
+				font: 1.5em sans-serif;
 			}
 
 			.resultBox {
@@ -96,13 +100,38 @@
 				background-color: #2709093e; /* Highlight on hover */
 			}
 
-			#diceButton {
-				background: transparent;
+			#colorbar {
+				z-index: 9999;
+			}
+			
+			.tick {
+				color: white;
 			}
 
-			/* .color-bar {
-				z-index: 9999;
-			} */
+			.legendTitle {
+				text-align: center	;
+				font: 1.5em sans-serif;
+			}
+
+			#scenario-select {
+				position: absolute;
+				top: 10px; /* Adjust this value to set the distance from the top */
+				left: 400px;
+				background-color: transparent;
+				stroke: white;
+				color: white;
+				z-index : 9999;
+			}
+
+			#gas-select {
+				position: absolute;
+				top: 10px; /* Adjust this value to set the distance from the top */
+				left: 550px;
+				background-color: transparent;
+				stroke: white;
+				color: white;
+				z-index : 9999;
+			}
 		</style>
 	</head>
 	<body onload="createViz()">
@@ -119,6 +148,16 @@
 				<datalist id="countryList"></datalist>
 				<ul class="resultBox"></ul>
 				<!-- <button id="diceButton" onclick="rollDice()">🎲</button> -->
+			</div>
+		</div>
+		<div id="divGlobe">
+			<div class="scenario-selector">
+				<select id = "scenario-select" >
+				</select>
+			</div>
+			<div class="gas-selector">
+				<select id = "gas-select" >
+				</select>
 			</div>
 		</div>
 	</body>

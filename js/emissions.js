@@ -1,4 +1,13 @@
 ctx_em = {
+	all_scenarios: [
+		"A1AIM",
+		"A1GMINICAM",
+		"A1TMESSAGE",
+		"A2ASF",
+		"B1IMAGE",
+		"B2MESSAGE",
+	],
+	all_gases: ["CH4", "CO", "NMVOC", "NOx"],
 	gas: "CO",
 	sce: "A2ASF",
 	year: "2020",
@@ -77,7 +86,7 @@ function createTimeline(svgEl) {
 		// Update the map
 		updateColourScale();
 		updateEmissionsData();
-		svgEl
+		ctx_em.svg
 			.selectAll(".blobs")
 			.data(ctx_em.emissions) // Bind the updated data
 			.attr("r", (d) => (ctx_em.rad_scale * d.deg) / ctx_em.scale_factor);
@@ -86,7 +95,7 @@ function createTimeline(svgEl) {
 			.select(".emissionsTitle")
 			.text(`Gridwise Emissions of ${ctx_em.gas} in ${ctx_em.year}`);
 
-		svgEl.selectAll("path").attr("fill", function (d) {
+		ctx_em.svg.selectAll("path").attr("fill", function (d) {
 			country = ctx_em.gdp_pc.find(
 				(x) => x.CountryName === d.properties.name
 			);
@@ -98,7 +107,6 @@ function createTimeline(svgEl) {
 					return "lightgrey";
 				}
 			} catch {
-				// console.log("unable", d.properties.name);
 				return "lightgrey	";
 			}
 		});
@@ -108,12 +116,67 @@ function createTimeline(svgEl) {
 	handle.call(drag);
 }
 
+function setScenarioOptions() {
+	let select = document.getElementById("scenario-select");
+
+	// Populate the select options with scenarios
+	ctx_em.all_scenarios.forEach((scenario) => {
+		let option = document.createElement("option");
+		option.value = scenario;
+		option.text = scenario;
+		select.appendChild(option);
+	});
+
+	// Add event listener to update ctx_em.sce when a new option is selected
+	select.addEventListener("change", (event) => {
+		ctx_em.sce = event.target.value;
+		updateEmissionsData();
+		ctx_em.svg
+			.selectAll(".blobs")
+			.data(ctx_em.emissions) // Bind the updated data
+			.attr("r", (d) => (ctx_em.rad_scale * d.deg) / ctx_em.scale_factor);
+
+		svgEl
+			.select(".emissionsTitle")
+			.text(`Gridwise Emissions of ${ctx_em.gas} in ${ctx_em.year}`);
+	});
+}
+
+function setGasOptions() {
+	let select = document.getElementById("gas-select");
+
+	// Populate the select options with scenarios
+	ctx_em.all_gases.forEach((gas) => {
+		let option = document.createElement("option");
+		option.value = gas;
+		option.text = gas;
+		select.appendChild(option);
+	});
+
+	// Add event listener to update ctx_em.sce when a new option is selected
+	select.addEventListener("change", (event) => {
+		ctx_em.gas = event.target.value;
+		updateEmissionsData();
+		ctx_em.svg
+			.selectAll(".blobs")
+			.data(ctx_em.emissions) // Bind the updated data
+			.attr("r", (d) => (ctx_em.rad_scale * d.deg) / ctx_em.scale_factor);
+
+		svgEl
+			.select(".emissionsTitle")
+			.text(`Gridwise Emissions of ${ctx_em.gas} in ${ctx_em.year}`);
+	});
+}
+
 function drawEmissions(svgEl) {
+	svgEl = ctx_em.svg;
 	updateColourScale();
+	setScenarioOptions();
+	setGasOptions();
 
 	ctx_em.projection = d3
 		.geoMercator()
-		.scale(120)
+		.scale(100)
 		.translate([ctx_em.width / 2, ctx_em.height / 2]);
 
 	ctx_em.path = d3.geoPath().projection(ctx_em.projection);
@@ -158,7 +221,6 @@ function drawEmissions(svgEl) {
 		.attr("r", (d) => ctx_em.rad_scale * d.deg)
 		.attr("fill", "red")
 		.attr("class", "blobs")
-		.on("mouseover", handleMouseOver)
 		.append("title")
 		.text(function (d) {
 			try {
@@ -191,21 +253,22 @@ function drawEmissions(svgEl) {
 }
 
 function createColorBar(svgEl) {
-	let colorScale = d3
-		.scaleSequential(d3.interpolateBlues)
-		.domain([0, d3.max(ctx_em.mapdata.features, (d) => d.properties.gdp)]);
-	let colorBar = svgEl
-		.append("g")
-		.attr("class", "color-bar")
-		.attr(
-			"transform",
-			`translate(${ctx_em.width + margin.right / 2}, ${margin.top})`
-		);
-	colorBar
-		.append("rect")
-		.attr("width", 20)
-		.attr("height", ctx_em.height)
-		.attr("fill", "url(#gradient)");
+	var lgd = legend({
+		svgEl: svgEl,
+		color: ctx_em.gdpcolour,
+		title: "Per Capita GDP (Current USD)",
+	});
+
+	console.log(lgd);
+
+	// svgEl.call(lgd);
+}
+
+function createColorBar_(svgEl) {
+	let colorScale = ctx_em.gdpcolour;
+
+	let colorBar = svgEl;
+
 	let gradient = colorBar
 		.append("defs")
 		.append("linearGradient")
@@ -214,6 +277,7 @@ function createColorBar(svgEl) {
 		.attr("y1", "100%")
 		.attr("x2", "0%")
 		.attr("y2", "0%");
+
 	gradient
 		.selectAll("stop")
 		.data(
@@ -226,9 +290,42 @@ function createColorBar(svgEl) {
 		.append("stop")
 		.attr("offset", (d) => d.offset)
 		.attr("stop-color", (d) => d.color);
-}
 
-function handleMouseOver() {}
+	console.log(gradient);
+
+	colorBar
+		.append("rect")
+		.attr("width", 20) // Adjust the width as needed
+		.attr("height", ctx_em.height) // Use the height of the map
+		.attr("fill", `url(#gradient)`);
+
+	let ticks = colorBar
+		.append("g")
+		.attr("class", "colorbar-ticks")
+		.attr("transform", `translate(25,0)`); // Adjust the position of ticks
+
+	ticks
+		.selectAll("text")
+		.data(colorScale.ticks())
+		.enter()
+		.append("text")
+		.attr("y", function (d) {
+			console.log(d);
+			return parseFloat(d.offset) / 10000;
+		})
+		.attr("dy", "0.35em")
+		.attr("fill", "white")
+		.text((d) => d3.format(".2s")(d));
+
+	// Optionally, you can add a color bar title
+	colorBar
+		.append("text")
+		.attr("class", "colorbar-title")
+		.attr("x", 0)
+		.attr("y", -10)
+		.attr("fill", "white")
+		.text("GDP\nper\nCapita");
+}
 
 function moveToCountry() {
 	const svg = ctx_em.svg;
@@ -255,10 +352,9 @@ function moveToCountry() {
 				);
 		});
 
-	console.log(selectedCountry.properties.name);
+	// console.log(selectedCountry.properties.name);
 
 	svg.selectAll("path").attr("opacity", function (d) {
-		// console.log(d);
 		try {
 			return d.properties.name === ctx_globe.selectedCountry ? 1 : 0.3;
 		} catch {
@@ -294,7 +390,6 @@ function moveToCountry() {
 	y = (bounds[0][1] + bounds[1][1]) / 2;
 	den = Math.max(dx / ctx_em.width, dy / ctx_em.height);
 
-	console.log(x);
 	if (selectedCountry.properties.name === "United States of America") {
 		[x, y] = [277, 100];
 		den = 0.45;
@@ -362,27 +457,37 @@ function createEmissionsViz() {
 	ctx_em.width = ctx_em.width - margin.left - margin.right;
 	ctx_em.height = ctx_em.height - margin.top - margin.bottom;
 
+	// svgEl
+	// 	.attr("width", ctx_em.width) //+ margin.left + margin.right)
+	// 	.attr("height", ctx_em.height) //+ margin.top + margin.bottom);
+	// 	.attr("transform", `translate(${margin.left}, ${margin.top * 2})`);
+
 	ctx_em.svg = svgEl
 		.append("g")
 		.attr("id", "map")
-		.attr("transform", `translate(${0}, ${margin.top*2})`)
-		.attr("width", ctx_em.width/2)
-		.attr("height", ctx_em.height-margin.top*2);
+		.attr("width", ctx_em.width)
+		.attr("height", ctx_em.height)
+		.attr("transform", `translate(${0}, ${0})`);
 
 	ctx_em.svg_headtime = svgEl
 		.append("g")
 		.attr("id", "header")
-		.attr("transform", `translate(0, ${0})`);
+		.attr("transform", `translate(${0}, ${0})`);
 
 	ctx_em.svg_colorbar = svgEl
 		.append("g")
 		.attr("id", "colorbar")
 		.attr(
 			"transform",
-			`translate(${ctx_em.width + margin.right / 2}, ${margin.top})`
+			`translate(${ctx_em.width / 2 - 175}, ${
+				ctx_em.height - margin.bottom
+			})`
 		);
 
-	ctx_em.svg_options = svgEl.append("g").attr("id", "options").attr("transform", `translate()`)
+	ctx_em.svg_options = svgEl
+		.append("g")
+		.attr("id", "options")
+		.attr("transform", `translate(0,0)`);
 
 	loadEmissionsData(ctx_em.svg);
 }

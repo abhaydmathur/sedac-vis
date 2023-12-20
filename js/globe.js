@@ -57,7 +57,6 @@ function updateSearchList(data) {
 	});
 
 	ctx_globe.searchList = searchList;
-	console.log("search list", ctx_globe.searchList);
 }
 
 function filterCountries(event) {
@@ -95,14 +94,11 @@ function filterCountries(event) {
 
 	// Show/hide autocomplete box
 	if (filteredCountries.length > 20) {
-		console.log("too many to list")
 		resultBox.style.display = "none";
 	}
 	else if (filteredCountries.length > 0) {
-		console.log("block")
 		resultBox.style.display = "block";
 	} else {
-		console.log("none")
 		resultBox.style.display = "none";
 	}
 
@@ -169,7 +165,7 @@ function rotateToCountry(check_list = true) {
 		centroid = getCountryCentroid(selectedCountry);
 
 		if (isNaN(centroid[0])) {
-			console.log("Nan Encountered. Choose another country");
+			console.log("NaN Encountered. Choose another country");
 			return;
 		}
 
