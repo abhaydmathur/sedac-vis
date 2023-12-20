@@ -1,67 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SEDAC</title>
-  <script src="js/lib/d3.v7.min.js"></script>
-  <script src="js/lib/jquery-3.7.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/d3-array@3"></script>
-  <script src="https://unpkg.com/topojson@3"></script>  
-  <script src="https://cdn.jsdelivr.net/npm/d3-geo@3"></script>
-  <script src="https://cdn.jsdelivr.net/npm/d3-geo-projection@4"></script>
-  <script src="https://cdn.jsdelivr.net/npm/versor@0.2"></script>
-  <script type="text/javascript" src="js/main.js"></script>
-  <script type="text/javascript" src="js/globe.js"></script>
-  <script type="text/javascript" src="js/epi.js"></script>
-  <script type="text/javascript" src="js/food.js"></script>
-  <script type="text/javascript" src="js/emissions.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-  <style>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>SEDAC</title>
+		<script src="js/lib/d3.v7.min.js"></script>
+		<script src="js/lib/jquery-3.7.1.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/d3-array@3"></script>
+		<script src="https://unpkg.com/topojson@3"></script>
+		<script src="js/lib/math_.js"></script>
+		<script src="js/lib/legend.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/d3-geo@3"></script>
+		<script src="https://cdn.jsdelivr.net/npm/d3-geo-projection@4"></script>
+		<script src="https://cdn.jsdelivr.net/npm/versor@0.2"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="js/globe.js"></script>
+		<script type="text/javascript" src="js/epi.js"></script>
+		<script type="text/javascript" src="js/food.js"></script>
+		<script type="text/javascript" src="js/emissions.js"></script>
+		<link
+			href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+			rel="stylesheet"
+		/>
+		<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+		<style>
+			body {
+				/* background: linear-gradient(90deg, #d53369 0%, #daae51 100%);  */
+				/* background: linear-gradient(90deg, #fc466b 0%, #3f5efb 100%); */
+				/* NIGHT SHIFT */
+				/* background-color: #2b4162;
+							background-image: linear-gradient(
+								315deg,
+								#2b4162 0%,
+								#12100e 74%
+							); */
+				/* WHALE HOUSE */
+				background-color: #130f40;
+				background-image: linear-gradient(
+					315deg,
+					#130f40 0%,
+					#000000 74%
+				);
+			}
+			/* #main {
+				position: relative;
+			} */
 
-    body {
-      /* background: linear-gradient(90deg, #d53369 0%, #daae51 100%); */
-      background: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);
-    }
-    #main {
-      position: relative;
-    }
+			.countries path:hover {
+				fill: lightgrey; /* Change to your desired hover color */
+			}
 
-    /* #countryDropdown {
-      position: absolute;
-      top: 10px; 
-      left: 50%;
-      transform: translateX(-50%);
-      width: 0px;
-      height: 0px;
-    } */
+			#countrySearch {
+				background: transparent;
+				border: 0cap;
+				position: relative;
+				top: 0px; /* Adjust this value to set the distance from the top */
+				left: 240px;
+				transform: translateX(-50%);
+				width: 400px; /* Set the width of the search bar as needed */
+				height: 20px;
+				font: 1.5em sans-serif;
+				color: #fff6f6;
+				text-align: center;
+				opacity: 1;
+				flood-opacity: 1;
+				font-weight: bold;
+				background-color: "white";
+				z-index: 9999;
+			}
 
-    .countries path:hover {
-      fill: lightgrey; 
-    }
+			.emissionsTitle {
+				font: 1.5em sans-serif;
+			}
 
-    #countrySearch {
-      position: relative;
-      top: 10px; /* Adjust this value to set the distance from the top */
-      left: 50%;
-      transform: translateX(-50%);
-      width: 400px; /* Set the width of the search bar as needed */
-    }
-  </style>
-</head>
-<body onload="createViz()">
-    <div id="main">
-        <input type="text" id="countrySearch" placeholder="Search for a country" oninput="filterCountries()" onkeyup="filterCountries()" onchange="rotateToCountry()"> 
-        <datalist id="countryList"></datalist>
-        <!-- <input type="text" id="countrySearch" placeholder="Search for a country"> -->
-      </div>
-    <!-- <script>
-      $(document).ready(function() {
-        $('#countrySearch').select2({
-          data: ctx.data.features.map(feature => feature.properties.name),
-        });
-      });
-    </script> -->
-</body>
+			.resultBox {
+				background: transparent;
+				display: none;
+				position: absolute;
+				left: 240px;
+				transform: translateX(-50%);
+				text-align: center;
+				z-index: 9999; /* Set a high z-index to ensure it appears over other elements */
+				background-color: #ffffff00; /* Set a background color for better visibility */
+				list-style: none;
+				margin: 0;
+				color: #fff6f6;
+				padding: 0;
+				opacity: 1;
+				font: 1.5em sans-serif;
+				font-weight: bold;
+			}
+
+			.resultBox li {
+				padding: 8px; /* Adjust padding as needed */
+				cursor: pointer;
+			}
+
+			.resultBox li:hover {
+				background-color: #2709093e; /* Highlight on hover */
+			}
+
+			#colorbar {
+				z-index: 9999;
+			}
+			
+			.tick {
+				color: white;
+			}
+
+			.legendTitle {
+				text-align: center	;
+				font: 1.5em sans-serif;
+			}
+
+			#scenario-select {
+				position: absolute;
+				top: 10px; /* Adjust this value to set the distance from the top */
+				left: 400px;
+				background-color: transparent;
+				stroke: white;
+				color: white;
+				z-index : 9999;
+			}
+
+			#gas-select {
+				position: absolute;
+				top: 10px; /* Adjust this value to set the distance from the top */
+				left: 550px;
+				background-color: transparent;
+				stroke: white;
+				color: white;
+				z-index : 9999;
+			}
+		</style>
+	</head>
+	<body onload="createViz()">
+		<div id="main">
+			<div class="searchInput">
+				<input
+					type="text"
+					id="countrySearch"
+					placeholder="Search for a country"
+					oninput="filterCountries()"
+					onkeyup="filterCountries(event)"
+					onchange="rotateToCountry(); moveToCountry()"
+				/>
+				<datalist id="countryList"></datalist>
+				<ul class="resultBox"></ul>
+				<!-- <button id="diceButton" onclick="rollDice()">🎲</button> -->
+			</div>
+		</div>
+		<div id="divGlobe">
+			<div class="scenario-selector">
+				<select id = "scenario-select" >
+				</select>
+			</div>
+			<div class="gas-selector">
+				<select id = "gas-select" >
+				</select>
+			</div>
+		</div>
+	</body>
 </html>
