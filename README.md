@@ -17,10 +17,9 @@ Visit [abhaydmathur.github.io/sedac-vis](https://abhaydmathur.github.io/sedac-vi
 - Finish map @abhaydmathur
 
 ### Globe.js
+1. Get someone who isn't colour blind to decide colour schemes.
 
-1. Fix transitions btw nations
-2. Improve Search bar
-3. Get someone who isn't colour blind to decide colour schemes.
+## Docs
 
 ### Crop production and climate scenarios
 The aim of this visualization is to put into perspective global emissions with an example of socio-economic impact: crop production, directly correlated to life prices and purchasing power in different countries.
@@ -40,3 +39,6 @@ The 7 scenarios presented here are:
 - B1a: Considers the same population evolution as scenario A1 but a rapid economic evolution towards service and information; the development of clean technologies; and an emphasis on social sustainability
 - B2a: A scenario focused on local solutions, an intermediate levels of development, less rapid and more diverse technological development than previous scenarios, as well as a balanced energy mix.
 - B2b: Similar to B2a, but with more emphasis on social and economic sustainability.
+
+
+
