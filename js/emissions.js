@@ -26,7 +26,7 @@ function updateColourScale() {
 	ctx_em.gdpLogScale = d3.scaleLog([minGDP, maxGDP]);
 
 	ctx_em.gdpcolour = d3
-		.scaleSequential(d3.interpolateYlGn)
+		.scaleSequential(d3.interpolateViridis)
 		.domain([ctx_em.gdpLogScale(minGDP), ctx_em.gdpLogScale(maxGDP)]);
 }
 
