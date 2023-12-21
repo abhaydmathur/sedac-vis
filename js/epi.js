@@ -79,10 +79,10 @@ function createEpiViz(cdaData, pmdData, recData, tclData, gdpData) {
 		.domain([100, 0])
 		.range([0, ctx.height / 2 - 60]);
 
-	createEPIPlot(d3.select("#svgCDA"), "CO2 growth rate");
-	createEPIPlot(d3.select("#svgTCL"), "Tree Cover Loss");
-	createEPIPlot(d3.select("#svgPMD"), "Ambient particulate matter pollution");
-	createEPIPlot(d3.select("#svgREC"), "Recycling Rates");
+	createEPIPlot(d3.select("#svgCDA"), "CO2 growth rate", "cda");
+	createEPIPlot(d3.select("#svgTCL"), "Tree Cover Loss", "tcl");
+	createEPIPlot(d3.select("#svgPMD"), "Ambient particulate matter pollution", "pmd");
+	createEPIPlot(d3.select("#svgREC"), "Recycling Rates", "rec");
 
 	updateEPIViz();
 }
