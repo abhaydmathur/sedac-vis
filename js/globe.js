@@ -89,20 +89,17 @@ function filterCountries(event) {
 
 		listItem.addEventListener("click", () => {
 			selectCountry(countryName);
-		})
+		});
 	});
 
 	// Show/hide autocomplete box
 	if (filteredCountries.length > 20) {
 		resultBox.style.display = "none";
-	}
-	else if (filteredCountries.length > 0) {
+	} else if (filteredCountries.length > 0) {
 		resultBox.style.display = "block";
 	} else {
 		resultBox.style.display = "none";
 	}
-
-
 
 	// Select the first option on enter
 	if (event && event.key === "Enter" && filteredCountries.length > 0) {
@@ -110,7 +107,10 @@ function filterCountries(event) {
 		document.getElementById("countrySearch").value =
 			ctx_globe.selectedCountry;
 		ctx_globe.selectedPath = d3.selectAll(
-			".country_" + ctx_globe.selectedCountry.replaceAll(" ", "_").replaceAll(".", "")
+			".country_" +
+				ctx_globe.selectedCountry
+					.replaceAll(" ", "_")
+					.replaceAll(".", "")
 		);
 		try {
 			moveToCountry();
@@ -150,7 +150,10 @@ function rotateToCountry(check_list = true) {
 		ctx_globe.selectedCountry =
 			document.getElementById("countrySearch").value;
 		ctx_globe.selectedPath = d3.selectAll(
-			".country_" + ctx_globe.selectedCountry.replaceAll(" ", "_").replaceAll(".", "")
+			".country_" +
+				ctx_globe.selectedCountry
+					.replaceAll(" ", "_")
+					.replaceAll(".", "")
 		);
 	}
 
@@ -197,7 +200,8 @@ function handleCountryDoubleClick(event, d) {
 	ctx_globe.selectedCountry = d.properties.name;
 	document.getElementById("countrySearch").value = ctx_globe.selectedCountry;
 	ctx_globe.selectedPath = d3.selectAll(
-		".country_" + ctx_globe.selectedCountry.replaceAll(" ", "_").replaceAll(".", "")
+		".country_" +
+			ctx_globe.selectedCountry.replaceAll(" ", "_").replaceAll(".", "")
 	);
 	try {
 		moveToCountry();
@@ -248,7 +252,9 @@ function drawGlobe(svg) {
 		.append("path")
 		.attr(
 			"class",
-			(d) => "country_" + d.properties.name.replaceAll(" ", "_").replaceAll(".", "")
+			(d) =>
+				"country_" +
+				d.properties.name.replaceAll(" ", "_").replaceAll(".", "")
 		)
 		.attr("d", globe_path)
 		.attr("fill", "white")
@@ -280,9 +286,12 @@ function loadGlobeData(svg) {
 }
 
 function createGlobeViz() {
-	let svgEl = d3.select("#svgGlobe");
-	svgEl.attr("width", ctx_globe.width);
-	svgEl.attr("height", ctx_globe.height);
+	let svgEl = d3
+		.select("#svgGlobe")
+		.attr("width", ctx_globe.width)
+		.attr("height", ctx_globe.height)
+		.attr("transform", `translate(30, 10)`);
+
 	ctx_globe.svg = svgEl;
 	loadGlobeData(svgEl);
 

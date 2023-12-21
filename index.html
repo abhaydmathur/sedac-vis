@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>SEDAC</title>
+		<title>Sedac-Vis</title>
 		<script src="js/lib/d3.v7.min.js"></script>
 		<script src="js/lib/jquery-3.7.1.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/d3-array@3"></script>
@@ -58,7 +58,7 @@
 				left: 240px;
 				transform: translateX(-50%);
 				width: 400px; /* Set the width of the search bar as needed */
-				height: 20px;
+				height: 25px;
 				font: 1.5em sans-serif;
 				color: #fff6f6;
 				text-align: center;
@@ -116,7 +116,7 @@
 			#scenario-select {
 				position: absolute;
 				top: 10px; /* Adjust this value to set the distance from the top */
-				left: 400px;
+				left: 550px;
 				background-color: transparent;
 				stroke: white;
 				color: white;
@@ -126,11 +126,24 @@
 			#gas-select {
 				position: absolute;
 				top: 10px; /* Adjust this value to set the distance from the top */
-				left: 550px;
+				left: 750px;
 				background-color: transparent;
 				stroke: white;
 				color: white;
 				z-index : 9999;
+			}
+
+			#gas-select li{
+				background-color: transparent;
+				stroke: white;
+				color: white;
+				z-index : 9999;
+			}
+
+			.sceOptions li:hover{
+				background: transparent;
+				stroke: white;
+				color: white;
 			}
 		</style>
 	</head>
@@ -153,6 +166,7 @@
 		<div id="divGlobe">
 			<div class="scenario-selector">
 				<select id = "scenario-select" >
+					
 				</select>
 			</div>
 			<div class="gas-selector">

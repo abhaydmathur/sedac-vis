@@ -124,6 +124,7 @@ function setScenarioOptions() {
 		let option = document.createElement("option");
 		option.value = scenario;
 		option.text = scenario;
+		option.className = ".sceOptions";
 		select.appendChild(option);
 	});
 
@@ -151,6 +152,7 @@ function setGasOptions() {
 		option.value = gas;
 		option.text = gas;
 		select.appendChild(option);
+		option.className = ".gasOptions";
 	});
 
 	// Add event listener to update ctx_em.sce when a new option is selected
@@ -390,12 +392,18 @@ function moveToCountry() {
 	y = (bounds[0][1] + bounds[1][1]) / 2;
 	den = Math.max(dx / ctx_em.width, dy / ctx_em.height);
 
-	if (selectedCountry.properties.name === "United States of America") {
-		[x, y] = [277, 100];
-		den = 0.45;
-	} else if (selectedCountry.properties.name === "Russia") {
-		[x, y] = [700, 50];
-		den = 0.45;
+
+	try{
+		if (selectedCountry.properties.name === "United States of America") {
+			[x, y] = [277, 100];
+			den = 0.45;
+		} else if (selectedCountry.properties.name === "Russia") {
+			[x, y] = [700, 50];
+			den = 0.45;
+		}
+	}catch{
+		console.log("Unable to read selectedCountry.properties.name")
+		console.log(selectedCountry);
 	}
 
 	// den = Math.min(den, 0.5);
