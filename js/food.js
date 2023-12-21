@@ -2,7 +2,7 @@ ctx.scenarios = ["A1F", "A2a", "A2b", "A2c", "B1a", "B2a", "B2b"];
 ctx.border = 60;
 ctx.bheight = ctx.height / 20;
 ctx.bwidth = ctx.width / 20;
-ctx_food = { button_flag: false };
+ctx_food = {button_flag : false};
 
 function createFoodViz(fooddata) {
 	ctx.fooddata = fooddata;
@@ -114,7 +114,7 @@ function createFoodViz(fooddata) {
 					showScenarios(this.id);
 				});
 		}
-		ctx_food.button_flag = true;
+        ctx_food.button_flag = true;
 	}
 }
 

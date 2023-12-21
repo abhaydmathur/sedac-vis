@@ -277,6 +277,41 @@ function drawEmissions(svgEl) {
 			}
 		});
 
+	const radius = d3.scaleSqrt(
+		[0, d3.max(ctx_em.emissions, (d) => ctx_em.rad_scale * d.deg)],
+		[0, 40]
+	);
+
+	const blob_legend = svgEl
+		.append("g")
+		.attr("fill", "white")
+		.attr(
+			"transform",
+			`translate(${ctx_em.width - 20},${ctx_em.height - 20})`
+		)
+		.attr("text-anchor", "middle")
+		.style("font", "10px sans-serif")
+		.style("text-shadow", "2px 2px")
+		.selectAll()
+		.data(radius.ticks(3).slice(1))
+		.join("g");
+
+	blob_legend
+		.append("circle")
+		.attr("fill", "none")
+		.attr("stroke", "#ccc")
+		.attr("cy", (d) => -radius(d))
+		.attr("r", radius);
+
+	blob_legend
+		.append("text")
+		.attr("y", (d) => -2 * radius(d))
+		.attr("dy", "1.3em")
+		.text(radius.tickFormat(3, "s"))
+		.style("text-shadow", "2px 2px");
+
+	blob_legend.append("text").attr("y", -4).text(`${ctx_em.rad_scale}*TsG`);
+
 	createTimeline(ctx_em.svg_headtime);
 
 	ctx_em.svg_headtime
