@@ -26,13 +26,13 @@ function createViz() {
 		.attr("height", height / 2)
 		.attr("id", "divGlobe")
 		.style("position", "absolute")
-		.style("top", 0 + "px")
-		.style("left", 0 + "px");
+		.style("top", 25 + "px")
+		.style("left", width/4 + "px");
 
 	var svgGlobe = divGlobe
 		.append("svg")
-		.attr("width", width / 2)
-		.attr("height", height / 2)
+		.attr("width", width / 4)
+		.attr("height", -40 + height / 2)
 		.attr("id", "svgGlobe");
 	// .style("background-color", "#f00");
 

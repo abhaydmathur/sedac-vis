@@ -3,8 +3,8 @@
 function createEpiViz(cdaData, pmdData, recData, tclData, gdpdata) {
 
     // TODO: - REMOVE
-    ctx.selectedCountry = 'France'
-    ctx.selectedYear = 2020
+    // ctx_globe.selectedCountry = 'France'
+    ctx.selectedYear = ctx_em.year
 
     let divEpi = d3.select("#divEpi")
 
@@ -91,9 +91,9 @@ function createCDAViz(cdaData, gdpData) {
     svg.append('text')
         .style('font-size', '12px')
         .text('CO2 growth rate')
+        .attr('transform', 'rotate(-90)')
         .attr('x', - ctx.width / 4 + ctx.width / 40)
         .attr('y', 10)
-        .attr('transform', 'rotate(-90)')
         .attr("fill", "white")
 
     xscale = d3.scaleLinear().domain([0, 120]).range([0, ctx.width / 2 - 60])
@@ -123,7 +123,7 @@ function createCDAViz(cdaData, gdpData) {
                     .attr("cx", function (d, i) { return xscale(parseFloat(d.gdp) / 1000) + 40; })
                     .attr("cy", function (d, i) { return yscale(d['CDA.ind.' + ctx.selectedYear]) + 27 })
                     .attr("r", 3)
-                    .attr("stroke", function (d, i) { return d.country == ctx.selectedCountry ? "red" : "#dbb867" })
+                    .attr("stroke", function (d, i) { return d.country == ctx_globe.selectedCountry ? "red" : "#dbb867" })
                     .attr("fill", "none")
                     .attr("stroke-width", 1)))
                     .append("title")
@@ -131,7 +131,7 @@ function createCDAViz(cdaData, gdpData) {
         update => (
             update.call(update => update.transition()
                 .duration((true) ? 10 : 0)))
-            .attr("stroke", function (d, i) { return d.country == ctx.selectedCountry ? "red" : "#dbb867" })
+            .attr("stroke", function (d, i) { return d.country == ctx_globe.selectedCountry ? "red" : "#dbb867" })
             .attr("cx", function (d, i) { return xscale(parseFloat(d.gdp) / 1000) + 40; })
             .attr("cy", function (d, i) { return yscale(d['CDA.ind.' + ctx.selectedYear]) + 27 }),
         exit => (exit.remove())
@@ -190,7 +190,7 @@ function createTCLViz(tclData, gdpData) {
                     .attr("cx", function (d, i) { return xscale(parseFloat(d.gdp) / 1000) + 40; })
                     .attr("cy", function (d, i) { return yscale(d['TCL.ind.' + ctx.selectedYear]) + 27 })
                     .attr("r", 3)
-                    .attr("stroke", function (d, i) { return d.country == ctx.selectedCountry ? "red" : "green" })
+                    .attr("stroke", function (d, i) { return d.country == ctx_globe.selectedCountry ? "red" : "green" })
                     .attr("fill", "none")
                     .attr("stroke-width", 1)))
                     .append("title")
@@ -198,7 +198,7 @@ function createTCLViz(tclData, gdpData) {
         update => (
             update.call(update => update.transition()
                 .duration((true) ? 10 : 0)))
-            .attr("stroke", function (d, i) { return d.country == ctx.selectedCountry ? "red" : "green" })
+            .attr("stroke", function (d, i) { return d.country == ctx_globe.selectedCountry ? "red" : "green" })
             .attr("cx", function (d, i) { return xscale(parseFloat(d.gdp) / 1000) + 40; })
             .attr("cy", function (d, i) { return yscale(d['TCL.ind.' + ctx.selectedYear]) + 27 }),
         exit => (exit.remove())
@@ -257,7 +257,7 @@ function createPMDViz(pmdData, gdpData) {
                     .attr("cx", function (d, i) { return xscale(parseFloat(d.gdp) / 1000) + 40; })
                     .attr("cy", function (d, i) { return yscale(d['PMD.ind.' + ctx.selectedYear]) + 27 })
                     .attr("r", 3)
-                    .attr("stroke", function (d, i) { return d.country == ctx.selectedCountry ? "red" : "#593434" })
+                    .attr("stroke", function (d, i) { return d.country == ctx_globe.selectedCountry ? "red" : "#593434" })
                     .attr("fill", "none")
                     .attr("stroke-width", 1)))
                     .append("title")
@@ -265,7 +265,7 @@ function createPMDViz(pmdData, gdpData) {
         update => (
             update.call(update => update.transition()
                 .duration((true) ? 10 : 0)))
-            .attr("stroke", function (d, i) { return d.country == ctx.selectedCountry ? "red" : "#593434" })
+            .attr("stroke", function (d, i) { return d.country == ctx_globe.selectedCountry ? "red" : "#593434" })
             .attr("cx", function (d, i) { return xscale(parseFloat(d.gdp) / 1000) + 40; })
             .attr("cy", function (d, i) { return yscale(d['PMD.ind.' + ctx.selectedYear]) + 27 }),
         exit => (exit.remove())
@@ -324,7 +324,7 @@ function createRECViz(recData, gdpData) {
                     .attr("cx", function (d, i) { return xscale(parseFloat(d.gdp) / 1000) + 40; })
                     .attr("cy", function (d, i) { return yscale(d['REC.ind.' + ctx.selectedYear]) + 27 })
                     .attr("r", 3)
-                    .attr("stroke", function (d, i) { return d.country == ctx.selectedCountry ? "red" : "gray" })
+                    .attr("stroke", function (d, i) { return d.country == ctx_globe.selectedCountry ? "red" : "gray" })
                     .attr("fill", "none")
                     .attr("stroke-width", 1)))
                     .append("title")
@@ -332,8 +332,9 @@ function createRECViz(recData, gdpData) {
         update => (
             update.call(update => update.transition()
                 .duration((true) ? 10 : 0)))
-            .attr("stroke", function (d, i) { return d.country == ctx.selectedCountry ? "red" : "gray" })
+            .attr("stroke", function (d, i) { return d.country == ctx_globe.selectedCountry ? "red" : "gray" })
             .attr("cx", function (d, i) { return xscale(parseFloat(d.gdp) / 1000) + 40; })
             .attr("cy", function (d, i) { return yscale(d['REC.ind.' + ctx.selectedYear]) + 27 }),
         exit => (exit.remove())
 }
+
