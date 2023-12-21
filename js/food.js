@@ -3,7 +3,7 @@ ctx.scenarios = ["A1F", "A2a", "A2b", "A2c", "B1a", "B2a", "B2b"]
 ctx.border = 60
 ctx.bheight = ctx.height / 20
 ctx.bwidth = ctx.width / 20
-ctx.country = 'France'
+ctx_globe.selectedCountry = 'France'
 
 function createFoodViz(fooddata) {
     let divScenarios = d3.select("#divFood")
@@ -44,7 +44,7 @@ function createFoodViz(fooddata) {
     // Add Title
     divFood.append('text')
     .attr("class", "Title")
-    .text(`Crop production prediction in ${ctx.country}`)
+    .text(`Crop production prediction in ${ctx_globe.selectedCountry}`)
     .attr('x', ctx.width/2 - ctx.width/20)
     .attr('y',ctx.border/2)
     .style('text-anchor', 'middle')
@@ -60,7 +60,7 @@ function createFoodViz(fooddata) {
     .style('font-size', 20)
 
 
-    loadCountryData(ctx.country, fooddata, wheat, rice, maize, false)
+    loadCountryData(ctx_globe.selectedCountry, fooddata, wheat, rice, maize, false)
 
     // Creates the buttons
     for (var i = 0; i < ctx.scenarios.length; i++) {

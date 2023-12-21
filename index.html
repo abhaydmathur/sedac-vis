@@ -7,7 +7,7 @@
 		<script src="js/lib/d3.v7.min.js"></script>
 		<script src="js/lib/jquery-3.7.1.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/d3-array@3"></script>
-		<script src="https://unpkg.com/topojson@3"></script>
+		<script src="js/lib/topojson.js"></script>
 		<script src="js/lib/math_.js"></script>
 		<script src="js/lib/legend.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/d3-geo@3"></script>
@@ -55,7 +55,7 @@
 				border: 0cap;
 				position: relative;
 				top: 0px; /* Adjust this value to set the distance from the top */
-				left: 240px;
+				left: 37.5vw;
 				transform: translateX(-50%);
 				width: 400px; /* Set the width of the search bar as needed */
 				height: 25px;
@@ -71,13 +71,14 @@
 
 			.emissionsTitle {
 				font: 1.5em sans-serif;
+				text-shadow: 2px 2px;
 			}
 
 			.resultBox {
 				background: transparent;
 				display: none;
 				position: absolute;
-				left: 240px;
+				left: 37.5vw;
 				transform: translateX(-50%);
 				text-align: center;
 				z-index: 9999; /* Set a high z-index to ensure it appears over other elements */
@@ -115,8 +116,8 @@
 
 			#scenario-select {
 				position: absolute;
-				top: 10px; /* Adjust this value to set the distance from the top */
-				left: 550px;
+				top: 45vh; /* Adjust this value to set the distance from the top */
+				left: 5vw;
 				background-color: transparent;
 				stroke: white;
 				color: white;
@@ -125,8 +126,8 @@
 
 			#gas-select {
 				position: absolute;
-				top: 10px; /* Adjust this value to set the distance from the top */
-				left: 750px;
+				top: 45vh; /* Adjust this value to set the distance from the top */
+				left: 15vw;
 				background-color: transparent;
 				stroke: white;
 				color: white;

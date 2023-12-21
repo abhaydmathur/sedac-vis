@@ -391,7 +391,7 @@ function moveToCountry() {
 	x = (bounds[0][0] + bounds[1][0]) / 2;
 	y = (bounds[0][1] + bounds[1][1]) / 2;
 	den = Math.max(dx / ctx_em.width, dy / ctx_em.height);
-
+	console.log("x, y, den : ", x, y, den);
 
 	try{
 		if (selectedCountry.properties.name === "United States of America") {
@@ -400,6 +400,9 @@ function moveToCountry() {
 		} else if (selectedCountry.properties.name === "Russia") {
 			[x, y] = [700, 50];
 			den = 0.45;
+		} else if (selectedCountry.properties.name === "France") {
+			[x, y] = [465.5, 113.81];
+			den = 0.084;
 		}
 	}catch{
 		console.log("Unable to read selectedCountry.properties.name")
@@ -475,7 +478,7 @@ function createEmissionsViz() {
 		.attr("id", "map")
 		.attr("width", ctx_em.width)
 		.attr("height", ctx_em.height)
-		.attr("transform", `translate(${0}, ${0})`);
+		// .attr("transform", `translate(${0}, ${0})`);
 
 	ctx_em.svg_headtime = svgEl
 		.append("g")

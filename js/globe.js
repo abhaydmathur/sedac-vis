@@ -7,17 +7,8 @@ ctx_globe = {
 	sensitivity: 75,
 	svg: null,
 	dflag: 0,
+	selectedCountry: "France"
 };
-
-let globe_projection = d3
-	.geoOrthographic()
-	.scale(ctx_globe.globew / 2)
-	.center([0, 0])
-	.rotate([-30, -62])
-	.translate([ctx_globe.globew / 2, ctx_globe.globeh / 2]);
-
-const initialScale = globe_projection.scale();
-let globe_path = d3.geoPath().projection(globe_projection);
 
 let prev_path = null;
 
@@ -213,6 +204,16 @@ function handleCountryDoubleClick(event, d) {
 }
 
 function drawGlobe(svg) {
+	globe_projection = d3
+		.geoOrthographic()
+		.scale(ctx_globe.globew / 2.5)
+		.center([0, 0])
+		.rotate([-30, -62])
+		.translate([ctx_globe.globew / 2, ctx_globe.globeh / 2]);
+
+	const initialScale = globe_projection.scale();
+	globe_path = d3.geoPath().projection(globe_projection);
+
 	data = ctx_globe.data;
 
 	let globe = svg
@@ -288,16 +289,19 @@ function loadGlobeData(svg) {
 function createGlobeViz() {
 	let svgEl = d3
 		.select("#svgGlobe")
-		.attr("width", ctx_globe.width)
-		.attr("height", ctx_globe.height)
-		.attr("transform", `translate(30, 10)`);
+		// .attr("width", ctx_globe.width)
+		// .attr("height", ctx_globe.height)
+		// .attr("transform", `translate(30, 10)`);
 
+	
 	ctx_globe.svg = svgEl;
+	ctx_globe.globew = svgEl.node().getBoundingClientRect().width;
+	ctx_globe.globeh = svgEl.node().getBoundingClientRect().height;
 	loadGlobeData(svgEl);
 
 	// updateSearchList(ctx_globe.data);
 
-	document.getElementById("countrySearch").value = "India";
+	document.getElementById("countrySearch").value = ctx_globe.selectedCountry;
 	rotateToCountry();
 }
 
