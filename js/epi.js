@@ -69,20 +69,28 @@ function createEpiViz(cdaData, pmdData, recData, tclData, gdpData) {
     ctx_epi.xscale = d3.scaleLinear().domain([0, 120]).range([0, ctx.width / 2 - 60])
     ctx_epi.yscale = d3.scaleLinear().domain([100, 0]).range([0, ctx.height / 2 - 60])
 
-    createEPIPlot(d3.select("#svgCDA"), "CO2 growth rate")
-    createEPIPlot(d3.select("#svgTCL"), "Tree Cover Loss")
-    createEPIPlot(d3.select("#svgPMD"), "Ambient particulate matter pollution")
-    createEPIPlot(d3.select("#svgREC"), "Recycling Rates")
+    createEPIPlot(d3.select("#svgCDA"), "CO2 growth rate", "cda")
+    createEPIPlot(d3.select("#svgTCL"), "Tree Cover Loss", "tcl")
+    createEPIPlot(d3.select("#svgPMD"), "Ambient particulate matter pollution", "pmd")
+    createEPIPlot(d3.select("#svgREC"), "Recycling Rates", "rec")
 
     updateEPIViz()
 }
 
-function createEPIPlot(svg, title) {
+function createEPIPlot(svg, title, id) {
     svg.append('text')
         .style('font-size', '12px')
         .text('GDP per capita (USD thousand)')
         .attr('x', ctx.width / 4 - ctx.width / 10)
         .attr('y', ctx.height / 2 - 5)
+        .attr("fill", "white")
+
+    svg.append('text')
+        .style('font-size', '12px')
+        .text('No data')
+        .attr('x', ctx.width / 4)
+        .attr("id", "nodata" + id)
+        .attr('y', ctx.height / 4)
         .attr("fill", "white")
 
     svg.append('text')
@@ -105,6 +113,18 @@ function createEPIPlot(svg, title) {
 }
 
 function updateEPIViz() {
+    if (ctx_em.year_gdp < 1995 || ctx_em.year_gdp > 2020) {
+        d3.select("#nodatacda").attr("visibility", "visible")
+        d3.select("#nodatatcl").attr("visibility", "visible")
+        d3.select("#nodatapmd").attr("visibility", "visible")
+        d3.select("#nodatarec").attr("visibility", "visible")
+    }
+    else {
+        d3.select("#nodatacda").attr("visibility", "hidden")
+        d3.select("#nodatatcl").attr("visibility", "hidden")
+        d3.select("#nodatapmd").attr("visibility", "hidden")
+        d3.select("#nodatarec").attr("visibility", "hidden")
+    }
     gdpData = ctx_epi.gdpData
 
     cdaData = ctx_epi.cdaData
