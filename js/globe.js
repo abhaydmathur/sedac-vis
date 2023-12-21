@@ -7,17 +7,8 @@ ctx_globe = {
 	sensitivity: 75,
 	svg: null,
 	dflag: 0,
+	selectedCountry: "France"
 };
-
-let globe_projection = d3
-	.geoOrthographic()
-	.scale(ctx_globe.globew / 2)
-	.center([0, 0])
-	.rotate([-30, -62])
-	.translate([ctx_globe.globew / 2, ctx_globe.globeh / 2]);
-
-const initialScale = globe_projection.scale();
-let globe_path = d3.geoPath().projection(globe_projection);
 
 let prev_path = null;
 
@@ -89,20 +80,17 @@ function filterCountries(event) {
 
 		listItem.addEventListener("click", () => {
 			selectCountry(countryName);
-		})
+		});
 	});
 
 	// Show/hide autocomplete box
 	if (filteredCountries.length > 20) {
 		resultBox.style.display = "none";
-	}
-	else if (filteredCountries.length > 0) {
+	} else if (filteredCountries.length > 0) {
 		resultBox.style.display = "block";
 	} else {
 		resultBox.style.display = "none";
 	}
-
-
 
 	// Select the first option on enter
 	if (event && event.key === "Enter" && filteredCountries.length > 0) {
@@ -110,7 +98,10 @@ function filterCountries(event) {
 		document.getElementById("countrySearch").value =
 			ctx_globe.selectedCountry;
 		ctx_globe.selectedPath = d3.selectAll(
-			".country_" + ctx_globe.selectedCountry.replaceAll(" ", "_").replaceAll(".", "")
+			".country_" +
+				ctx_globe.selectedCountry
+					.replaceAll(" ", "_")
+					.replaceAll(".", "")
 		);
 		try {
 			moveToCountry(),
@@ -152,7 +143,10 @@ function rotateToCountry(check_list = true) {
 		ctx_globe.selectedCountry =
 			document.getElementById("countrySearch").value;
 		ctx_globe.selectedPath = d3.selectAll(
-			".country_" + ctx_globe.selectedCountry.replaceAll(" ", "_").replaceAll(".", "")
+			".country_" +
+				ctx_globe.selectedCountry
+					.replaceAll(" ", "_")
+					.replaceAll(".", "")
 		);
 	}
 
@@ -199,7 +193,8 @@ function handleCountryDoubleClick(event, d) {
 	ctx_globe.selectedCountry = d.properties.name;
 	document.getElementById("countrySearch").value = ctx_globe.selectedCountry;
 	ctx_globe.selectedPath = d3.selectAll(
-		".country_" + ctx_globe.selectedCountry.replaceAll(" ", "_").replaceAll(".", "")
+		".country_" +
+			ctx_globe.selectedCountry.replaceAll(" ", "_").replaceAll(".", "")
 	);
 	try {
 		moveToCountry(),
@@ -212,6 +207,16 @@ function handleCountryDoubleClick(event, d) {
 }
 
 function drawGlobe(svg) {
+	globe_projection = d3
+		.geoOrthographic()
+		.scale(ctx_globe.globew / 2.5)
+		.center([0, 0])
+		.rotate([-30, -62])
+		.translate([ctx_globe.globew / 2, ctx_globe.globeh / 2]);
+
+	const initialScale = globe_projection.scale();
+	globe_path = d3.geoPath().projection(globe_projection);
+
 	data = ctx_globe.data;
 
 	let globe = svg
@@ -251,7 +256,9 @@ function drawGlobe(svg) {
 		.append("path")
 		.attr(
 			"class",
-			(d) => "country_" + d.properties.name.replaceAll(" ", "_").replaceAll(".", "")
+			(d) =>
+				"country_" +
+				d.properties.name.replaceAll(" ", "_").replaceAll(".", "")
 		)
 		.attr("d", globe_path)
 		.attr("fill", "white")
@@ -283,15 +290,21 @@ function loadGlobeData(svg) {
 }
 
 function createGlobeViz() {
-	let svgEl = d3.select("#svgGlobe");
-	svgEl.attr("width", ctx_globe.width);
-	svgEl.attr("height", ctx_globe.height);
+	let svgEl = d3
+		.select("#svgGlobe")
+		// .attr("width", ctx_globe.width)
+		// .attr("height", ctx_globe.height)
+		// .attr("transform", `translate(30, 10)`);
+
+	
 	ctx_globe.svg = svgEl;
+	ctx_globe.globew = svgEl.node().getBoundingClientRect().width;
+	ctx_globe.globeh = svgEl.node().getBoundingClientRect().height;
 	loadGlobeData(svgEl);
 
 	// updateSearchList(ctx_globe.data);
 
-	document.getElementById("countrySearch").value = "India";
+	document.getElementById("countrySearch").value = ctx_globe.selectedCountry;
 	rotateToCountry();
 }
 
