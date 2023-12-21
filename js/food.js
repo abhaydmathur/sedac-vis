@@ -3,61 +3,69 @@ ctx.scenarios = ["A1F", "A2a", "A2b", "A2c", "B1a", "B2a", "B2b"]
 ctx.border = 60
 ctx.bheight = ctx.height / 20
 ctx.bwidth = ctx.width / 20
-// ctx_globe.selectedCountry = 'France'
 
 function createFoodViz(fooddata) {
+    ctx.fooddata = fooddata
+    ctx.country = ctx_globe.selectedCountry
     let divScenarios = d3.select("#divFood")
     let divFood = d3.select("#svgFood")
     
-    // create the groups
-    let wheat = divFood.append('g').attr('id', 'wheat')
-    let rice = divFood.append('g').attr('id', 'rice')
-    let maize = divFood.append('g').attr('id', 'maize')
+    // Creates or clears the div
+    let wheat = createOrClear(divFood, 'wheat', 'g');
+    let rice = createOrClear(divFood, 'rice', 'g');
+    let maize = createOrClear(divFood, 'maize', 'g');
 
     // add x and y default scales
     xscale = d3.scaleLinear().domain([1990., 2090.]).range([ 0, ctx.width*0.70])
     yscale = d3.scaleLinear().domain([d3.max(fooddata, function(d){return d.Production;}), 0])
     .range([0, (ctx.height*0.9 - ctx.border)])
 
-    divFood.append('g')
+    createOrClear(divFood, 'x-axis', 'g')
     .attr("class", "x-axis")
     .attr("transform", "translate(" +ctx.border*1.5 + "," + ctx.height*0.9 + ")")
+    .attr("stroke", "white")
     .call(d3.axisBottom(xscale));
-    divFood.append('g')
+    createOrClear(divFood, 'y-axis', 'g')
     .attr("class", "y-axis")
     .attr("transform", "translate(" +ctx.border*1.5 + ", " + ctx.border + ")")
+    .attr("stroke", "white")
     .call(d3.axisLeft(yscale))
 
     // Add x and y legends
-    divFood.append('text')
+    createOrClear(divFood, 'x-axis-label', 'text')
     .attr("class", "x-axis-label")
     .text('Year')
     .attr('x', ctx.width/2 - ctx.width/20)
     .attr('y', ctx.height - ctx.border/3)
-    divFood.append('text')
+    .attr("fill", "white")
+    createOrClear(divFood, 'y-axis-label', 'text')
     .attr('class', 'y-axis-label')
     .text('Crop production ( t )')
-    .attr('x', - ctx.width/2 + ctx.width/20)
+    .attr('x', - ctx.width/4)
     .attr('y',ctx.border/3)
+    .style('text-anchor', 'middle')
     .attr('transform','rotate(-90)')
+    .attr("fill", "white")
 
     // Add Title
-    divFood.append('text')
+    createOrClear(divFood, 'Title', 'text')
     .attr("class", "Title")
     .text(`Crop production prediction in ${ctx_globe.selectedCountry}`)
     .attr('x', ctx.width/2 - ctx.width/20)
     .attr('y',ctx.border/2)
     .style('text-anchor', 'middle')
     .style('font-size', 20)
+    .attr("fill", "white")
 
-    divScenarios.append('text')
+    createOrClear(divFood, 'Title buttons', 'text')
     .attr("class", "Title")
-    .text(`IPCC Scenarios`)
+    .text(`SRES Scenarios`)
     .style("position", "absolute")
     .attr('x', ctx.width - ctx.width/10)
     .attr('y',ctx.border)
     .style('text-anchor', 'middle')
     .style('font-size', 20)
+    .attr("fill", "white")
 
 
     loadCountryData(ctx_globe.selectedCountry, fooddata, wheat, rice, maize, false)
@@ -168,4 +176,15 @@ function showScenarios(scenario){
             rice.selectAll('image[scenario="' + ctx.scenarios[i] + '"]')
             .style('opacity', 1).attr("width", 20).attr("height", 20)}
     }
+}
+
+function createOrClear(div, id, type) {
+    let group = d3.select(`#${id}`);
+    if (group.empty()) {group = div.append(`${type}`).attr('id', id);}
+    else {group.selectAll('*').remove();}
+    return group;
+  }
+
+function moveFoodData(){
+    createFoodViz(ctx.fooddata)
 }
