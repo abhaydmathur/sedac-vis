@@ -4,6 +4,10 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Sedac-Vis</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
 		<script src="js/lib/d3.v7.min.js"></script>
 		<script src="js/lib/jquery-3.7.1.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/d3-array@3"></script>
@@ -53,8 +57,8 @@
 			#countrySearch {
 				background: transparent;
 				border: 0cap;
-				position: relative;
-				top: 0px; /* Adjust this value to set the distance from the top */
+				position: absolute;
+				top: 20px; /* Adjust this value to set the distance from the top */
 				left: 37.5vw;
 				transform: translateX(-50%);
 				width: 400px; /* Set the width of the search bar as needed */
@@ -104,13 +108,13 @@
 			#colorbar {
 				z-index: 9999;
 			}
-			
+
 			.tick {
 				color: white;
 			}
 
 			.legendTitle {
-				text-align: center	;
+				text-align: center;
 				font: 1.5em sans-serif;
 			}
 
@@ -121,7 +125,7 @@
 				background-color: transparent;
 				stroke: white;
 				color: white;
-				z-index : 9999;
+				z-index: 9999;
 			}
 
 			#gas-select {
@@ -131,24 +135,93 @@
 				background-color: transparent;
 				stroke: white;
 				color: white;
-				z-index : 9999;
+				z-index: 9999;
 			}
 
-			#gas-select li{
+			/* CSS */
+			.foodScenarioButton {
+				align-items: center;
 				background-color: transparent;
-				stroke: white;
+				border: 0.5px solid rgba(255, 255, 255, 0.769);
+				border-radius: 0.25rem;
+				box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+				box-sizing: border-box;
+				color: rgba(255, 255, 255, 0.769);
+				cursor: pointer;
+				display: inline-flex;
+				font: sans-serif;
+				justify-content: center;
+			}
+
+			.foodScenarioButton:hover,
+			.foodScenarioButton:focus {
+				border: 3px solid rgba(255, 255, 255, 1);
+				border-color: 20px solid white;
+				box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
 				color: white;
+				font-style: bold;
+			}
+
+			.foodScenarioButton:hover {
+				transform: translateY(-1px);
+			}
+
+			.foodScenarioButton:active {
+				background-color: #f0f0f1;
+				border-color: rgba(0, 0, 0, 0.15);
+				box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+				color: rgba(0, 0, 0, 0.65);
+				transform: translateY(0);
+			}
+			/* 
+			.foodScenarioButton {
+				background-color: transparent;
+				color: white;
+				stroke: white;
+				font: sans-serif;
+			} */
+
+			.gasOptions {
+				background-color: #130f40;
+				color: white;
+				font: sans-serif;
+			}
+
+			.sceOptions {
+				background-color: #130f40;
+				color: white;
+				font: sans-serif;
+			}
+
+			.handle_gdp_year {
+				z-index: 9999;
+			}
+
+			.mainHeader {
+				color: white;
+				font-family: sans-serif;
+			}
+
+			#timeline {
 				z-index : 9999;
 			}
 
-			.sceOptions li:hover{
-				background: transparent;
-				stroke: white;
-				color: white;
+			#svgEPI {
+				font-family: sans-serif;
 			}
 		</style>
 	</head>
 	<body onload="createViz()">
+		<div style="display: flex; align-items: center; left: 30px" id="Header">
+			<h1 class="mainHeader">Sedac-Vis</h1>
+			<a
+				href="home.html"
+				style="color: white; margin-left: 10px; font-size: 24px"
+				title="Click here for information on the project and details on how to use this visualisations."
+			>
+				<i class="fa fa-info-circle" aria-hidden="false"></i>
+			</a>
+		</div>
 		<div id="main">
 			<div class="searchInput">
 				<input
@@ -166,13 +239,10 @@
 		</div>
 		<div id="divGlobe">
 			<div class="scenario-selector">
-				<select id = "scenario-select" >
-					
-				</select>
+				<select id="scenario-select"></select>
 			</div>
 			<div class="gas-selector">
-				<select id = "gas-select" >
-				</select>
+				<select id="gas-select"></select>
 			</div>
 		</div>
 	</body>

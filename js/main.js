@@ -18,11 +18,13 @@ function createViz() {
 	const width = window.innerWidth;
 	const height = window.innerHeight;
 
+
+
 	// Globe
 	var divGlobe = d3
 		.select("#main")
 		.append("div")
-		.attr("width", width / 2)
+		.attr("width", width / 4)
 		.attr("height", height / 2)
 		.attr("id", "divGlobe")
 		.style("position", "absolute")
@@ -41,7 +43,7 @@ function createViz() {
 		.select("#main")
 		.append("div")
 		.attr("width", width / 2)
-		.attr("height", height / 2)
+		.attr("height", height / 2 - 100)
 		.attr("id", "divEpi")
 		.style("position", "absolute")
 		.style("top", 0 + "px")
@@ -50,7 +52,7 @@ function createViz() {
 	var svgEpi = divEpi
 		.append("svg")
 		.attr("width", width / 2)
-		.attr("height", height / 2)
+		.attr("height", height / 2 - 100)
 		.attr("id", "svgEpi");
 	// .style("background-color", "#0f0");
 

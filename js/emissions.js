@@ -13,21 +13,21 @@ ctx_em = {
 	year: "2020",
 	rad_scale: 4,
 	scale_factor: 1,
+	year_gdp: "2020",
 };
 
 let margin = { top: 50, right: 20, bottom: 20, left: 20 };
 
 function updateColourScale() {
-	gdp_year = Math.min(ctx_em.year, 2022);
+	gdp_year = Math.min(ctx_em.year_gdp, 2022);
 
 	let minGDP = d3.min(ctx_em.gdp_pc, (d) => parseFloat(d[`${gdp_year}`]));
 	let maxGDP = d3.max(ctx_em.gdp_pc, (d) => parseFloat(d[`${gdp_year}`]));
 
 	ctx_em.gdpLogScale = d3.scaleLog([minGDP, maxGDP]);
-	console.log(minGDP, maxGDP)
-	console.log([ctx_em.gdpLogScale(minGDP), ctx_em.gdpLogScale(maxGDP)])
+
 	ctx_em.gdpcolour = d3
-		.scaleSequential(d3.interpolateYlGn)
+		.scaleSequential(d3.interpolateViridis)
 		.domain([ctx_em.gdpLogScale(minGDP), ctx_em.gdpLogScale(maxGDP)]);
 }
 
@@ -52,11 +52,19 @@ function createTimeline(svgEl) {
 		.attr("fill", "white")
 		.attr("opacity", 0.5);
 
-	let handle = svgEl
+	let handle_year_em = svgEl
 		.append("circle")
-		.attr("class", "handle")
+		.attr("class", "handle_year_em")
 		.attr("cx", yearScale(ctx_em.year))
-		.attr("cy", margin.top - 15)
+		.attr("cy", margin.top - 25)
+		.attr("fill", "white")
+		.attr("r", 10);
+
+	let handle_year_gdp = svgEl
+		.append("circle")
+		.attr("class", "handle_year_em")
+		.attr("cx", yearScale(ctx_em.year))
+		.attr("cy", margin.top + 10)
 		.attr("fill", "white")
 		.attr("r", 10);
 
@@ -70,17 +78,17 @@ function createTimeline(svgEl) {
 		.append("g")
 		.attr("class", "xaxis")
 		.attr("transform", `translate(0,${40})`)
-		.attr("stroke", "white")
+		.attr("fill", "white")
 		.call(xAxis);
 	svgEl.selectAll(".xaxis path, .xaxis line").attr("stroke", "white");
 
-	let drag = d3.drag().on("drag", function (event) {
+	let drag_year_em = d3.drag().on("drag", function (event) {
 		let newX = Math.max(margin.left, Math.min(ctx_em.width, event.x));
 
 		ctx_em.year = Math.round(yearScale.invert(newX));
 		ctx_em.year -= ctx_em.year % 10;
 		newX = yearScale(ctx_em.year);
-		handle.attr("cx", newX);
+		handle_year_em.attr("cx", newX);
 
 		gdp_year = Math.min(ctx_em.year, 2022);
 
@@ -113,8 +121,47 @@ function createTimeline(svgEl) {
 		});
 	});
 
+	let drag_year_gdp = d3.drag().on("drag", function (event) {
+		let newX = Math.max(margin.left, Math.min(ctx_em.width, event.x));
+
+		ctx_em.year_gdp = Math.max(
+			Math.min(2020, Math.round(yearScale.invert(newX))),
+			1995
+		);
+		// ctx_em.year -= ctx_em.year % 10;
+		newX = yearScale(ctx_em.year_gdp);
+		handle_year_gdp.attr("cx", newX);
+
+		gdp_year = ctx_em.year_gdp;
+
+		// Update the map
+		updateColourScale();
+
+		// Update EPI
+		updateEPIViz();
+
+		updateColorBar(ctx_em.svg_colorbar);
+
+		ctx_em.svg.selectAll("path").attr("fill", function (d) {
+			country = ctx_em.gdp_pc.find(
+				(x) => x.CountryName === d.properties.name
+			);
+
+			try {
+				c = parseFloat(country[`${gdp_year}`]);
+				if (!isNaN(c)) return gdpToColour(c);
+				else {
+					return "lightgrey";
+				}
+			} catch {
+				return "lightgrey";
+			}
+		});
+	});
+
 	// Apply the drag behavior to the handle
-	handle.call(drag);
+	handle_year_em.call(drag_year_em);
+	handle_year_gdp.call(drag_year_gdp);
 }
 
 function setScenarioOptions() {
@@ -125,7 +172,7 @@ function setScenarioOptions() {
 		let option = document.createElement("option");
 		option.value = scenario;
 		option.text = scenario;
-		option.className = ".sceOptions";
+		option.className = "sceOptions";
 		select.appendChild(option);
 	});
 
@@ -153,7 +200,7 @@ function setGasOptions() {
 		option.value = gas;
 		option.text = gas;
 		select.appendChild(option);
-		option.className = ".gasOptions";
+		option.className = "gasOptions";
 	});
 
 	// Add event listener to update ctx_em.sce when a new option is selected
@@ -208,7 +255,6 @@ function drawEmissions(svgEl) {
 					return "lightgrey";
 				}
 			} catch {
-				// console.log("unable", d.properties.name);
 				return "lightgrey	";
 			}
 		})
@@ -259,75 +305,20 @@ function createColorBar(svgEl) {
 	var lgd = legend({
 		svgEl: svgEl,
 		color: ctx_em.gdpcolour,
-		title: "Per Capita GDP (Current USD)",
+		title: `Per Capita GDP (USD) : ${ctx_em.year_gdp}`,
 	});
 
-	console.log(lgd);
-
-	// svgEl.call(lgd);
+	d3.select("#colorbar")
+		.selectAll(".tick")
+		.select("text")
+		.text(function (d, i) {
+			return Math.round(ctx_em.gdpLogScale.invert(d));
+		});
 }
 
-function createColorBar_(svgEl) {
-	let colorScale = ctx_em.gdpcolour;
-
-	let colorBar = svgEl;
-
-	let gradient = colorBar
-		.append("defs")
-		.append("linearGradient")
-		.attr("id", "gradient")
-		.attr("x1", "0%")
-		.attr("y1", "100%")
-		.attr("x2", "0%")
-		.attr("y2", "0%");
-
-	gradient
-		.selectAll("stop")
-		.data(
-			colorScale.ticks().map((t, i, n) => ({
-				offset: `${(100 * i) / n.length}%`,
-				color: colorScale(t),
-			}))
-		)
-		.enter()
-		.append("stop")
-		.attr("offset", (d) => d.offset)
-		.attr("stop-color", (d) => d.color);
-
-	console.log(gradient);
-
-	colorBar
-		.append("rect")
-		.attr("width", 20) // Adjust the width as needed
-		.attr("height", ctx_em.height) // Use the height of the map
-		.attr("fill", `url(#gradient)`);
-
-	let ticks = colorBar
-		.append("g")
-		.attr("class", "colorbar-ticks")
-		.attr("transform", `translate(25,0)`); // Adjust the position of ticks
-
-	ticks
-		.selectAll("text")
-		.data(colorScale.ticks())
-		.enter()
-		.append("text")
-		.attr("y", function (d) {
-			console.log(d);
-			return parseFloat(d.offset) / 10000;
-		})
-		.attr("dy", "0.35em")
-		.attr("fill", "white")
-		.text((d) => d3.format(".2s")(d));
-
-	// Optionally, you can add a color bar title
-	colorBar
-		.append("text")
-		.attr("class", "colorbar-title")
-		.attr("x", 0)
-		.attr("y", -10)
-		.attr("fill", "white")
-		.text("GDP\nper\nCapita");
+function updateColorBar(svgEl) {
+	d3.select("#colorbar").selectAll("text").remove();
+	createColorBar(svgEl);
 }
 
 function moveToCountry() {
@@ -337,6 +328,9 @@ function moveToCountry() {
 		(feature) => feature.properties.name === ctx_globe.selectedCountry
 	);
 
+	//Update EPI Viz
+	updateEPIViz();
+
 	ctx_em.zoom = d3
 		.zoom()
 		.scaleExtent([1, 8])
@@ -345,7 +339,7 @@ function moveToCountry() {
 			svg.selectAll("path")
 				.attr("transform", event.transform)
 				.attr("stroke-width", function () {
-					return 1 / event.transform.k; // Adjust stroke width based on the current scale
+					return 1 / event.transform.k;
 				});
 			svg.selectAll(".blobs")
 				.attr("transform", event.transform)
@@ -354,8 +348,6 @@ function moveToCountry() {
 					(d) => (ctx_em.rad_scale * d.deg) / event.transform.k
 				);
 		});
-
-	// console.log(selectedCountry.properties.name);
 
 	svg.selectAll("path").attr("opacity", function (d) {
 		try {
@@ -392,9 +384,8 @@ function moveToCountry() {
 	x = (bounds[0][0] + bounds[1][0]) / 2;
 	y = (bounds[0][1] + bounds[1][1]) / 2;
 	den = Math.max(dx / ctx_em.width, dy / ctx_em.height);
-	console.log("x, y, den : ", x, y, den);
 
-	try{
+	try {
 		if (selectedCountry.properties.name === "United States of America") {
 			[x, y] = [277, 100];
 			den = 0.45;
@@ -405,8 +396,8 @@ function moveToCountry() {
 			[x, y] = [465.5, 113.81];
 			den = 0.084;
 		}
-	}catch{
-		console.log("Unable to read selectedCountry.properties.name")
+	} catch {
+		console.log("Unable to read selectedCountry.properties.name");
 		console.log(selectedCountry);
 	}
 
@@ -478,12 +469,12 @@ function createEmissionsViz() {
 		.append("g")
 		.attr("id", "map")
 		.attr("width", ctx_em.width)
-		.attr("height", ctx_em.height)
-		// .attr("transform", `translate(${0}, ${0})`);
+		.attr("height", ctx_em.height - 100)
+		.attr("transform", `translate(${0}, ${20})`);
 
 	ctx_em.svg_headtime = svgEl
 		.append("g")
-		.attr("id", "header")
+		.attr("id", "timeline")
 		.attr("transform", `translate(${0}, ${0})`);
 
 	ctx_em.svg_colorbar = svgEl

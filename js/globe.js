@@ -139,6 +139,7 @@ function getCountryCentroid(countryName) {
 }
 
 function rotateToCountry(check_list = true) {
+	console.log(check_list)
 	if (check_list) {
 		ctx_globe.selectedCountry =
 			document.getElementById("countrySearch").value;
@@ -149,6 +150,7 @@ function rotateToCountry(check_list = true) {
 					.replaceAll(".", "")
 		);
 	}
+
 
 	selectedCountry = ctx_globe.selectedCountry;
 	selectedPath = ctx_globe.selectedPath;
