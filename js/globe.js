@@ -113,7 +113,8 @@ function filterCountries(event) {
 			".country_" + ctx_globe.selectedCountry.replaceAll(" ", "_").replaceAll(".", "")
 		);
 		try {
-			moveToCountry();
+			moveToCountry(),
+            moveFoodData();
 		} catch (e) {
 			console.log(e);
 		}
@@ -129,7 +130,8 @@ function selectCountry(countryName) {
 		".country_" + countryName.replaceAll(" ", "_").replaceAll(".", "")
 	);
 	try {
-		moveToCountry();
+		moveToCountry(),
+        moveFoodData();
 	} catch (e) {
 		console.log(e);
 	}
@@ -200,7 +202,8 @@ function handleCountryDoubleClick(event, d) {
 		".country_" + ctx_globe.selectedCountry.replaceAll(" ", "_").replaceAll(".", "")
 	);
 	try {
-		moveToCountry();
+		moveToCountry(),
+        moveFoodData();
 	} catch (e) {
 		console.log(e);
 	}
