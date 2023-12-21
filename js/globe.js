@@ -7,7 +7,7 @@ ctx_globe = {
 	sensitivity: 75,
 	svg: null,
 	dflag: 0,
-	selectedCountry: "France"
+	selectedCountry: "India"
 };
 
 let prev_path = null;

@@ -3,7 +3,7 @@ ctx.scenarios = ["A1F", "A2a", "A2b", "A2c", "B1a", "B2a", "B2b"]
 ctx.border = 60
 ctx.bheight = ctx.height / 20
 ctx.bwidth = ctx.width / 20
-ctx_globe.selectedCountry = 'France'
+// ctx_globe.selectedCountry = 'France'
 
 function createFoodViz(fooddata) {
     let divScenarios = d3.select("#divFood")

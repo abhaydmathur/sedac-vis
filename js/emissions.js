@@ -24,7 +24,8 @@ function updateColourScale() {
 	let maxGDP = d3.max(ctx_em.gdp_pc, (d) => parseFloat(d[`${gdp_year}`]));
 
 	ctx_em.gdpLogScale = d3.scaleLog([minGDP, maxGDP]);
-
+	console.log(minGDP, maxGDP)
+	console.log([ctx_em.gdpLogScale(minGDP), ctx_em.gdpLogScale(maxGDP)])
 	ctx_em.gdpcolour = d3
 		.scaleSequential(d3.interpolateYlGn)
 		.domain([ctx_em.gdpLogScale(minGDP), ctx_em.gdpLogScale(maxGDP)]);

@@ -29,6 +29,7 @@ function legend({
 
 	// Continuous
 	if (color.interpolate) {
+		console.log("notickvalues")
 		const n = Math.min(color.domain().length, color.range().length);
 
 		x = color
@@ -53,6 +54,7 @@ function legend({
 
 	// Sequential
 	else if (color.interpolator) {
+		console.log("interpolator")
 		x = Object.assign(
 			color
 				.copy()
@@ -66,6 +68,8 @@ function legend({
 			}
 		);
 
+		console.log(x.ticks)
+
 		svg.append("image")
 			.attr("x", marginLeft)
 			.attr("y", marginTop)
@@ -77,6 +81,7 @@ function legend({
 		// scaleSequentialQuantile doesn’t implement ticks or tickFormat.
 		if (!x.ticks) {
 			if (tickValues === undefined) {
+				console.log("Calc tickvalues");
 				const n = Math.round(ticks + 1);
 				tickValues = d3
 					.range(n)
@@ -85,6 +90,20 @@ function legend({
 			if (typeof tickFormat !== "function") {
 				tickFormat = d3.format(
 					tickFormat === undefined ? ",f" : tickFormat
+				);
+			}
+		}else{
+			if (tickValues === undefined) {
+				console.log("Calc tickvalues");
+				const n = Math.round(ticks + 1);
+				console.log(ctx_em, "ctx_em")
+				tickValues = d3
+					.range(n)
+					.map((i) => d3.quantile(color.domain(), i / (n - 1)));
+			}
+			if (typeof tickFormat !== "function") {
+				tickFormat = d3.format(
+					tickFormat === undefined ? ".0f" : tickFormat
 				);
 			}
 		}
@@ -119,7 +138,7 @@ function legend({
 			.attr("width", (d, i) => x(i) - x(i - 1))
 			.attr("height", height - marginTop - marginBottom)
 			.attr("fill", (d) => d);
-
+		console.log("calctick")
 		tickValues = d3.range(thresholds.length);
 		tickFormat = (i) => thresholdFormat(thresholds[i], i);
 	}
