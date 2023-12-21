@@ -2,6 +2,7 @@ ctx.scenarios = ["A1F", "A2a", "A2b", "A2c", "B1a", "B2a", "B2b"];
 ctx.border = 60;
 ctx.bheight = ctx.height / 20;
 ctx.bwidth = ctx.width / 20;
+ctx_food = { button_flag: false };
 
 function createFoodViz(fooddata) {
 	ctx.fooddata = fooddata;
@@ -46,10 +47,10 @@ function createFoodViz(fooddata) {
 		.attr("fill", "white")
 		.call(d3.axisLeft(yscale));
 
-    divFood.selectAll(".x-axis path, .x-axis line").attr("stroke", "white");
-    divFood.selectAll(".y-axis path, .y-axis line").attr("stroke", "white");
-    
-        // Add x and y legends
+	divFood.selectAll(".x-axis path, .x-axis line").attr("stroke", "white");
+	divFood.selectAll(".y-axis path, .y-axis line").attr("stroke", "white");
+
+	// Add x and y legends
 	createOrClear(divFood, "x-axis-label", "text")
 		.attr("class", "x-axis-label")
 		.text("Year")
@@ -95,21 +96,25 @@ function createFoodViz(fooddata) {
 	);
 
 	// Creates the buttons
-	for (var i = 0; i < ctx.scenarios.length; i++) {
-		divScenarios
-			.append("button")
-			.attr("id", ctx.scenarios[i])
-			.attr("width", ctx.bwidth)
-			.attr("height", ctx.bheight)
-			.attr("class", "foodScenarioButton")
-			.text(ctx.scenarios[i])
-			.style("position", "absolute")
-			.style("left", ctx.width - ctx.width / 10 + "px") // Set the left position
-			.style("top", ctx.bwidth * (i + 2) + "px") // Set the top position
-			.raise()
-			.on("click", function () {
-				showScenarios(this.id);
-			});
+	if (ctx_food.button_flag == false) {
+		for (var i = 0; i < ctx.scenarios.length; i++) {
+			console.log("creating a button");
+			divScenarios
+				.append("button")
+				.attr("id", ctx.scenarios[i])
+				.attr("width", ctx.bwidth)
+				.attr("height", ctx.bheight)
+				.attr("class", "foodScenarioButton")
+				.text(ctx.scenarios[i])
+				.style("position", "absolute")
+				.style("left", ctx.width - ctx.width / 10 + "px") // Set the left position
+				.style("top", ctx.bwidth * (i + 2) + "px") // Set the top position
+				.raise()
+				.on("click", function () {
+					showScenarios(this.id);
+				});
+		}
+		ctx_food.button_flag = true;
 	}
 }
 

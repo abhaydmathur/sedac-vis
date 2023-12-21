@@ -95,14 +95,6 @@ function createTimeline(svgEl) {
 		// Update the map
 		updateColourScale();
 		updateEmissionsData();
-		ctx_em.svg
-			.selectAll(".blobs")
-			.data(ctx_em.emissions) // Bind the updated data
-			.attr("r", (d) => (ctx_em.rad_scale * d.deg) / ctx_em.scale_factor);
-
-		svgEl
-			.select(".emissionsTitle")
-			.text(`Gridwise Emissions of ${ctx_em.gas} in ${ctx_em.year}`);
 
 		ctx_em.svg.selectAll("path").attr("fill", function (d) {
 			country = ctx_em.gdp_pc.find(
@@ -180,14 +172,14 @@ function setScenarioOptions() {
 	select.addEventListener("change", (event) => {
 		ctx_em.sce = event.target.value;
 		updateEmissionsData();
-		ctx_em.svg
-			.selectAll(".blobs")
-			.data(ctx_em.emissions) // Bind the updated data
-			.attr("r", (d) => (ctx_em.rad_scale * d.deg) / ctx_em.scale_factor);
+		// ctx_em.svg
+		// 	.selectAll(".blobs")
+		// 	.data(ctx_em.emissions) // Bind the updated data
+		// 	.attr("r", (d) => (ctx_em.rad_scale * d.deg) / ctx_em.scale_factor);
 
-		svgEl
-			.select(".emissionsTitle")
-			.text(`Gridwise Emissions of ${ctx_em.gas} in ${ctx_em.year}`);
+		// svgEl
+		// 	.select(".emissionsTitle")
+		// 	.text(`Gridwise Emissions of ${ctx_em.gas} in ${ctx_em.year}`);
 	});
 }
 
@@ -207,14 +199,14 @@ function setGasOptions() {
 	select.addEventListener("change", (event) => {
 		ctx_em.gas = event.target.value;
 		updateEmissionsData();
-		ctx_em.svg
-			.selectAll(".blobs")
-			.data(ctx_em.emissions) // Bind the updated data
-			.attr("r", (d) => (ctx_em.rad_scale * d.deg) / ctx_em.scale_factor);
+		// ctx_em.svg
+		// 	.selectAll(".blobs")
+		// 	.data(ctx_em.emissions) // Bind the updated data
+		// 	.attr("r", (d) => (ctx_em.rad_scale * d.deg) / ctx_em.scale_factor);
 
-		svgEl
-			.select(".emissionsTitle")
-			.text(`Gridwise Emissions of ${ctx_em.gas} in ${ctx_em.year}`);
+		// svgEl
+		// 	.select(".emissionsTitle")
+		// 	.text(`Gridwise Emissions of ${ctx_em.gas} in ${ctx_em.year}`);
 	});
 }
 
@@ -420,8 +412,67 @@ function moveToCountry() {
 }
 
 function updateEmissionsData() {
+	console.log(`Loading ${ctx_em.gas}_${ctx_em.sce}_${ctx_em.year}.csv`);
+	// delete ctx_em.emissions;
 	filename = `data/emissions/csv/${ctx_em.gas}_${ctx_em.sce}_${ctx_em.year}.csv`;
-	d3.csv(filename).then((d) => (ctx_em.emissions = d));
+	d3.csv(filename).then(function (d) {
+		ctx_em.emissions = d;
+
+		ctx_em.svg
+			.selectAll(".blobs")
+			.data(d)
+			.join(
+				(enter) =>
+					enter
+						.append("circle")
+						.attr(
+							"cx",
+							(d) => ctx_em.projection([d.long, d.lat])[0]
+						)
+						.attr(
+							"cy",
+							(d) => ctx_em.projection([d.long, d.lat])[1]
+						)
+						.attr("r", (d) => ctx_em.rad_scale * d.deg)
+						.attr("fill", "red")
+						.attr("class", "blobs")
+						.append("title")
+						.text(function (d) {
+							try {
+								loc =
+									ctx_em.coords_to_loc[
+										[parseFloat(d.long), parseFloat(d.lat)]
+									];
+								return `${
+									loc.city
+								}, ${loc.country_code}\ndeg:${parseFloat(d.deg).toFixed(3)}`;
+							} catch {
+								return `${parseFloat(d.deg).toFixed(
+									3
+								)}@[${d.long}, ${d.lat}]`;
+							}
+						}),
+
+				(update) =>
+					update.call((update) =>
+						update
+							.attr(
+								"cx",
+								(d) => ctx_em.projection([d.long, d.lat])[0]
+							)
+							.attr(
+								"cy",
+								(d) => ctx_em.projection([d.long, d.lat])[1]
+							)
+							.attr("r", (d) => ctx_em.rad_scale * d.deg)
+					),
+				(exit) => exit.remove()
+			);
+
+		svgEl
+			.select(".emissionsTitle")
+			.text(`Gridwise Emissions of ${ctx_em.gas} in ${ctx_em.year}`);
+	});
 }
 
 function loadEmissionsData(svgEl) {
