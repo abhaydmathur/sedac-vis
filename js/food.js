@@ -36,15 +36,14 @@ function createFoodViz(fooddata) {
 			"transform",
 			"translate(" + ctx.border * 1.5 + "," + ctx.height * 0.9 + ")"
 		)
-		.attr("fill", "white")
 		.call(d3.axisBottom(xscale));
+
 	createOrClear(divFood, "y-axis", "g")
 		.attr("class", "y-axis")
 		.attr(
 			"transform",
 			"translate(" + ctx.border * 1.5 + ", " + ctx.border + ")"
 		)
-		.attr("fill", "white")
 		.call(d3.axisLeft(yscale));
 
 	divFood.selectAll(".x-axis path, .x-axis line").attr("stroke", "white");
@@ -148,7 +147,7 @@ function loadCountryData(country, fooddata, wheat, rice, maize, animate) {
 					.attr("id", (d) => `wheat-${d.Country}-${d.Year}`)
 					.attr("width", 20)
 					.attr("height", 20)
-					.attr("xlink:href", "wheat_icon.png")
+					.attr("xlink:href", "icons/wheat_icon.png")
 					.attr("scenario", (d) => d.Scenario),
 			(update) =>
 				update.call((update) =>
@@ -182,7 +181,7 @@ function loadCountryData(country, fooddata, wheat, rice, maize, animate) {
 				.attr("id", (d) => `rice-${d.Country}-${d.Year}`)
 				.attr("width", 20)
 				.attr("height", 20)
-				.attr("xlink:href", "rice_icon.png")
+				.attr("xlink:href", "icons/rice_icon.png")
 				.attr("scenario", (d) => d.Scenario)
 		),
 		(update) =>
@@ -217,7 +216,7 @@ function loadCountryData(country, fooddata, wheat, rice, maize, animate) {
 					.attr("id", (d) => `maize-${d.Country}-${d.Year}`)
 					.attr("width", 20)
 					.attr("height", 20)
-					.attr("xlink:href", "corn_icon.png")
+					.attr("xlink:href", "icons/corn_icon.png")
 					.attr("scenario", (d) => d.Scenario),
 			(update) =>
 				update.call((update) =>

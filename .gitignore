@@ -4,4 +4,4 @@
 *.zip
 
 # Folders
-# docs/ # TODO @abhaydmathur : Uncomment before final deployment
+docs/dump/
