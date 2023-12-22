@@ -94,6 +94,8 @@ function createFoodViz(fooddata) {
 		maize,
 		false
 	);
+	// Create legend
+	addLegend()
 
 	// Creates the buttons
 	if (ctx_food.button_flag == false) {
@@ -107,8 +109,8 @@ function createFoodViz(fooddata) {
 				.attr("class", "foodScenarioButton")
 				.text(ctx.scenarios[i])
 				.style("position", "absolute")
-				.style("left", ctx.width - ctx.width / 10 + "px") // Set the left position
-				.style("top", ctx.bwidth * (i + 2) + "px") // Set the top position
+				.style("left", ctx.width - ctx.width / 9 + "px") // Set the left position
+				.style("top", ctx.bwidth * (i + 1.5) + "px") // Set the top position
 				.raise()
 				.on("click", function () {
 					showScenarios(this.id);
@@ -290,4 +292,53 @@ function createOrClear(div, id, type) {
 
 function moveFoodData() {
 	createFoodViz(ctx.fooddata);
+}
+
+function addLegend() {
+	let divScenarios = d3.select("#divFood");
+	let divFood = d3.select("#svgFood")
+
+		let legend = divFood.select('Legend')
+		console.log(legend)
+		if (legend.empty()) {
+			legend = divFood.append('g').attr("class", "legend")
+			print('legeend')
+		
+		
+		  //.attr("transform", "translate(" + (ctx.width - 100) + "," + 20 + ")")
+	
+		legend.append("image")
+		  .attr("xlink:href", "wheat_icon.png") // Replace with the actual path to your rice icon image
+		  .attr("width", 20) // Set the width of the legend item
+		  .attr("height", 20) // Set the height of the legend item
+		  .attr("x", ctx.width - ctx.width / 9) // Adjust the horizontal positioning
+		  .attr("y", 8*ctx.bwidth);
+		legend.append("image")
+		  .attr("xlink:href", "rice_icon.png") // Replace with the actual path to your rice icon image
+		  .attr("width", 20) // Set the width of the legend item
+		  .attr("height", 20) // Set the height of the legend item
+		  .attr("x", ctx.width - ctx.width / 9) // Adjust the horizontal positioning
+		  .attr("y", 8.5*ctx.bwidth);
+		legend.append("image")
+		  .attr("xlink:href", "corn_icon.png") // Replace with the actual path to your rice icon image
+		  .attr("width", 20) // Set the width of the legend item
+		  .attr("height", 20) // Set the height of the legend item
+		  .attr("x", ctx.width - ctx.width / 9) // Adjust the horizontal positioning
+		  .attr("y", 9*ctx.bwidth);
+		legend.append("text")
+			.attr("x", ctx.width - ctx.width / 12) // Adjust the horizontal positioning of the text label
+			.attr("y", 8.3*ctx.bwidth) // Adjust the vertical positioning of the text label
+			.text(": Wheat")
+			.attr("fill", 'white');
+		legend.append("text")
+			.attr("x", ctx.width - ctx.width / 12) // Adjust the horizontal positioning of the text label
+			.attr("y", 8.8*ctx.bwidth) // Adjust the vertical positioning of the text label
+			.text(": Rice")
+			.attr("fill", 'white');
+		legend.append("text")
+			.attr("x", ctx.width - ctx.width / 12) // Adjust the horizontal positioning of the text label
+			.attr("y", 9.3*ctx.bwidth) // Adjust the vertical positioning of the text label
+			.text(": Maize")
+			.attr("fill", 'white');
+		}
 }
