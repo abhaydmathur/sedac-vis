@@ -18,7 +18,7 @@ ctx_em = {
 };
 
 scenario_descriptions = {
-	A1BAIM: "Rapid economic growth, urbanization, industrialization, balanced use of fossil fuels, biomass affecting economy, climate, land use.",
+	A1AIM: "Rapid economic growth, urbanization, industrialization, balanced use of fossil fuels, biomass affecting economy, climate, land use.",
 	A2ASF: "Rapid economic growth, urbanization, industrialization, strong emphasis on fossil fuels affecting economy, energy, environment.",
 	B1IMAGE:
 		"Moderate economic growth, urbanization industrialization, shift to clean energy sources and greater emphasis on sustainable development affecting atmosphere, ocean, land, human activities.",
