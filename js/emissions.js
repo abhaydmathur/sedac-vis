@@ -42,21 +42,27 @@ function createTimeline(svgEl) {
 		.range([margin.left, ctx_em.width])
 		.clamp(true);
 
-	svgEl
-		.append("rect")
-		.attr("class", "track")
-		.attr("x", margin.left)
-		.attr("y", margin.top - 20)
-		.attr("width", ctx_em.width - margin.right)
-		.attr("height", 10)
-		.attr("fill", "white")
-		.attr("opacity", 0.5);
+	let yearScale_small = d3
+		.scaleLinear()
+		.domain([1995, 2020])
+		.range([yearScale(1995), yearScale(2020)])
+		.clamp(true);
+
+	// svgEl
+	// 	.append("rect")
+	// 	.attr("class", "track")
+	// 	.attr("x", margin.left)
+	// 	.attr("y", margin.top - 20)
+	// 	.attr("width", ctx_em.width - margin.right)
+	// 	.attr("height", 10)
+	// 	.attr("fill", "white")
+	// 	.attr("opacity", 0.5);
 
 	let handle_year_em = svgEl
 		.append("circle")
 		.attr("class", "handle_year_em")
 		.attr("cx", yearScale(ctx_em.year))
-		.attr("cy", margin.top - 25)
+		.attr("cy", 67.5)
 		.attr("fill", "white")
 		.attr("r", 10);
 
@@ -64,23 +70,54 @@ function createTimeline(svgEl) {
 		.append("circle")
 		.attr("class", "handle_year_em")
 		.attr("cx", yearScale(ctx_em.year))
-		.attr("cy", margin.top + 10)
-		.attr("fill", "white")
+		.attr("cy", margin.top - 25)
+		.attr("fill", "yellow")
 		.attr("r", 10);
 
 	let xAxis = d3
 		.axisBottom(yearScale)
-		.ticks((2100 - 1990) / 10) // Add a tick for every 10 years
-		.tickFormat(d3.format("d")); // Format the ticks as years
+		.ticks((2100 - 1990) / 10)
+		.tickFormat(d3.format("d"))
+		.tickSizeInner(-6) // Make inner ticks point upwards
+		.tickSizeOuter(-6);
 
-	// Add the x-axis to the SVG
 	svgEl
 		.append("g")
-		.attr("class", "xaxis")
+		.attr("class", "xaxis2")
 		.attr("transform", `translate(0,${40})`)
 		.attr("fill", "white")
 		.call(xAxis);
+
+	let xAxis_small = d3
+		.axisBottom(yearScale_small)
+		.ticks((2020 - 1995) / 1)
+		.tickFormat("")
+		.tickSizeInner(-6) // Make inner ticks point upwards
+		.tickSizeOuter(-6);
+
+	svgEl
+		.append("g")
+		.attr("class", "xaxis2")
+		.attr("transform", `translate(0,${40})`)
+		.attr("fill", "white")
+		.call(xAxis_small);
+
+	let xAxis2 = d3
+		.axisBottom(yearScale)
+		.ticks((2100 - 1990) / 10)
+		.tickFormat("")
+		.tickSizeInner(6)
+		.tickSizeOuter(6);
+
+	svgEl
+		.append("g")
+		.attr("class", "xaxis")
+		.attr("transform", `translate(0,${52})`)
+		.attr("fill", "white")
+		.call(xAxis2);
+
 	svgEl.selectAll(".xaxis path, .xaxis line").attr("stroke", "white");
+	svgEl.selectAll(".xaxis2 path, .xaxis2 line").attr("stroke", "white");
 
 	let drag_year_em = d3.drag().on("drag", function (event) {
 		let newX = Math.max(margin.left, Math.min(ctx_em.width, event.x));
@@ -168,18 +205,12 @@ function setScenarioOptions() {
 		select.appendChild(option);
 	});
 
+	select.value = ctx_em.sce;
+
 	// Add event listener to update ctx_em.sce when a new option is selected
 	select.addEventListener("change", (event) => {
 		ctx_em.sce = event.target.value;
 		updateEmissionsData();
-		// ctx_em.svg
-		// 	.selectAll(".blobs")
-		// 	.data(ctx_em.emissions) // Bind the updated data
-		// 	.attr("r", (d) => (ctx_em.rad_scale * d.deg) / ctx_em.scale_factor);
-
-		// svgEl
-		// 	.select(".emissionsTitle")
-		// 	.text(`Gridwise Emissions of ${ctx_em.gas} in ${ctx_em.year}`);
 	});
 }
 
@@ -195,18 +226,12 @@ function setGasOptions() {
 		option.className = "gasOptions";
 	});
 
+	select.value = ctx_em.gas;
+
 	// Add event listener to update ctx_em.sce when a new option is selected
 	select.addEventListener("change", (event) => {
 		ctx_em.gas = event.target.value;
 		updateEmissionsData();
-		// ctx_em.svg
-		// 	.selectAll(".blobs")
-		// 	.data(ctx_em.emissions) // Bind the updated data
-		// 	.attr("r", (d) => (ctx_em.rad_scale * d.deg) / ctx_em.scale_factor);
-
-		// svgEl
-		// 	.select(".emissionsTitle")
-		// 	.text(`Gridwise Emissions of ${ctx_em.gas} in ${ctx_em.year}`);
 	});
 }
 
@@ -314,7 +339,7 @@ function drawEmissions(svgEl) {
 
 	createTimeline(ctx_em.svg_headtime);
 
-	ctx_em.svg_headtime
+	ctx_em.svg
 		.append("text")
 		.attr("x", ctx_em.width / 2)
 		.attr("y", margin.top - 30)
@@ -468,7 +493,11 @@ function updateEmissionsData() {
 							"cy",
 							(d) => ctx_em.projection([d.long, d.lat])[1]
 						)
-						.attr("r", (d) => ctx_em.rad_scale * d.deg)
+						.attr(
+							"r",
+							(d) =>
+								(ctx_em.rad_scale * d.deg) / ctx_em.scale_factor
+						)
 						.attr("fill", "red")
 						.attr("class", "blobs")
 						.append("title")
@@ -499,12 +528,17 @@ function updateEmissionsData() {
 								"cy",
 								(d) => ctx_em.projection([d.long, d.lat])[1]
 							)
-							.attr("r", (d) => ctx_em.rad_scale * d.deg)
+							.attr(
+								"r",
+								(d) =>
+									(ctx_em.rad_scale * d.deg) /
+									ctx_em.scale_factor
+							)
 					),
 				(exit) => exit.remove()
 			);
 
-		svgEl
+		ctx_em.svg
 			.select(".emissionsTitle")
 			.text(`Gridwise Emissions of ${ctx_em.gas} in ${ctx_em.year}`);
 	});
@@ -558,7 +592,8 @@ function createEmissionsViz() {
 		.attr("height", ctx_em.height - 100)
 		.attr("transform", `translate(${0}, ${20})`);
 
-	ctx_em.svg_headtime = svgEl
+	ctx_em.svg_headtime = d3
+		.select("#svgTimeLine")
 		.append("g")
 		.attr("id", "timeline")
 		.attr("transform", `translate(${0}, ${0})`);

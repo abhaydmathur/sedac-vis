@@ -61,18 +61,34 @@ function createViz() {
 		.select("#main")
 		.append("div")
 		.attr("width", width / 2)
-		.attr("height", height / 2)
+		.attr("height", -50+height / 2)
 		.attr("id", "divEmissions")
 		.style("position", "absolute")
-		.style("top", height / 2 + "px")
+		.style("top", 50+height / 2 + "px")
 		.style("left", 0 + "px");
 
 	var svgEmissions = divEmissions
 		.append("svg")
 		.attr("width", width / 2)
-		.attr("height", height / 2)
+		.attr("height", -50+height / 2)
 		.attr("id", "svgEmissions");
 	// .style("background-color", "#00f");
+
+	var divTimeLine = d3
+		.select("#main")
+		.append("div")
+		.attr("width", width / 2)
+		.attr("height", 100)
+		.attr("id", "divTimeLine")
+		.style("position", "absolute")
+		.style("top", -50+height / 2 + "px")
+		.style("left", 0 + "px");
+
+	var svgTimeLine = divTimeLine
+		.append("svg")
+		.attr("width", width / 2)
+		.attr("height", 100)
+		.attr("id", "svgTimeLine");
 
 	// Food
 	var divFood = d3
