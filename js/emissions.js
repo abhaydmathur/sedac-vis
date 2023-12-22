@@ -16,6 +16,8 @@ ctx_em = {
 	year_gdp: "2020",
 };
 
+triangle = d3.symbol().type(d3.symbolTriangle).size(80);
+
 let margin = { top: 50, right: 20, bottom: 20, left: 20 };
 
 function updateColourScale() {
@@ -48,31 +50,44 @@ function createTimeline(svgEl) {
 		.range([yearScale(1995), yearScale(2020)])
 		.clamp(true);
 
-	// svgEl
-	// 	.append("rect")
-	// 	.attr("class", "track")
-	// 	.attr("x", margin.left)
-	// 	.attr("y", margin.top - 20)
-	// 	.attr("width", ctx_em.width - margin.right)
-	// 	.attr("height", 10)
-	// 	.attr("fill", "white")
-	// 	.attr("opacity", 0.5);
+	svgEl
+		.append("text")
+		.attr("x", margin.left)
+		.attr("y", margin.top - 30)
+		.attr("class", "timeline_label")
+		.attr("text-anchor", "left")
+		.attr("fill", "white")
+		.text(`Year : GDP per capita`);
+
+	svgEl
+		.append("text")
+		.attr("x", ctx_em.width * 0.9)
+		.attr("y", margin.top + 30)
+		.attr("class", "timeline_label")
+		.attr("text-anchor", "right")
+		.attr("fill", "white")
+		.text(`Year : Emissions`);
 
 	let handle_year_em = svgEl
-		.append("circle")
+		.append("path")
+		.attr("d", triangle)
 		.attr("class", "handle_year_em")
-		.attr("cx", yearScale(ctx_em.year))
-		.attr("cy", 67.5)
+		.attr("transform", `translate(${yearScale(ctx_em.year)}, 67.5)`)
 		.attr("fill", "white")
-		.attr("r", 10);
+		.attr("opacity", 0.8);
 
 	let handle_year_gdp = svgEl
-		.append("circle")
+		.append("path")
+		.attr("d", triangle)
 		.attr("class", "handle_year_em")
-		.attr("cx", yearScale(ctx_em.year))
-		.attr("cy", margin.top - 25)
-		.attr("fill", "yellow")
-		.attr("r", 10);
+		.attr(
+			"transform",
+			`translate(${yearScale(ctx_em.year)}, ${
+				margin.top - 25
+			}) rotate(180)`
+		)
+		.attr("fill", "white")
+		.attr("opacity", 0.8);
 
 	let xAxis = d3
 		.axisBottom(yearScale)
@@ -125,7 +140,7 @@ function createTimeline(svgEl) {
 		ctx_em.year = Math.round(yearScale.invert(newX));
 		ctx_em.year -= ctx_em.year % 10;
 		newX = yearScale(ctx_em.year);
-		handle_year_em.attr("cx", newX);
+		handle_year_em.attr("transform", `translate(${newX}, 67.5)`);
 
 		gdp_year = Math.min(ctx_em.year, 2022);
 
@@ -159,7 +174,10 @@ function createTimeline(svgEl) {
 		);
 		// ctx_em.year -= ctx_em.year % 10;
 		newX = yearScale(ctx_em.year_gdp);
-		handle_year_gdp.attr("cx", newX);
+		handle_year_gdp.attr(
+			"transform",
+			`translate(${newX}, ${margin.top - 25}) rotate(180)`
+		);
 
 		gdp_year = ctx_em.year_gdp;
 
