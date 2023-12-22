@@ -107,7 +107,7 @@ function createTimeline(svgEl) {
 		.axisBottom(yearScale)
 		.ticks((2100 - 1990) / 10)
 		.tickFormat(d3.format("d"))
-		.tickSizeInner(-6) // Make inner ticks point upwards
+		.tickSizeInner(-6) // point up
 		.tickSizeOuter(-6);
 
 	svgEl
@@ -121,7 +121,7 @@ function createTimeline(svgEl) {
 		.axisBottom(yearScale_small)
 		.ticks((2020 - 1995) / 1)
 		.tickFormat("")
-		.tickSizeInner(-6) // Make inner ticks point upwards
+		.tickSizeInner(-6) 
 		.tickSizeOuter(-6);
 
 	svgEl
@@ -186,7 +186,7 @@ function createTimeline(svgEl) {
 			Math.min(2020, Math.round(yearScale.invert(newX))),
 			1995
 		);
-		// ctx_em.year -= ctx_em.year % 10;
+		
 		newX = yearScale(ctx_em.year_gdp);
 		handle_year_gdp.attr(
 			"transform",
@@ -194,8 +194,7 @@ function createTimeline(svgEl) {
 		);
 
 		gdp_year = ctx_em.year_gdp;
-
-		// Update the map
+		
 		updateColourScale();
 
 		// Update EPI
@@ -220,7 +219,6 @@ function createTimeline(svgEl) {
 		});
 	});
 
-	// Apply the drag behavior to the handle
 	handle_year_em.call(drag_year_em);
 	handle_year_gdp.call(drag_year_gdp);
 }
@@ -238,14 +236,13 @@ function setScenarioOptions() {
 	});
 
 	select.value = ctx_em.sce;
-
-	// Add event listener to update ctx_em.sce when a new option is selected
+	
 	select.addEventListener("change", (event) => {
 		ctx_em.sce = event.target.value;
 		updateEmissionsData();
 		updateScenarioDescription();
 	});
-	// console.log(ctx.svgConfig, "config")
+	
 	ctx_em.svgConfig
 		.append("text")
 		.attr("id", "scenario-title")
@@ -307,8 +304,7 @@ function wrapText(text, width) {
 
 function setGasOptions() {
 	let select = document.getElementById("gas-select");
-
-	// Populate the select options with scenarios
+	
 	ctx_em.all_gases.forEach((gas) => {
 		let option = document.createElement("option");
 		option.value = gas;
@@ -318,8 +314,7 @@ function setGasOptions() {
 	});
 
 	select.value = ctx_em.gas;
-
-	// Add event listener to update ctx_em.sce when a new option is selected
+	
 	select.addEventListener("change", (event) => {
 		ctx_em.gas = event.target.value;
 		updateEmissionsData();
@@ -479,7 +474,6 @@ function moveToCountry() {
 		(feature) => feature.properties.name === ctx_globe.selectedCountry
 	);
 
-	//Upda<span class="dnerf">Sedac-Vis</span>te EPI Viz
 	updateEPIViz();
 
 	ctx_em.zoom = d3
@@ -563,7 +557,6 @@ function moveToCountry() {
 		console.log(selectedCountry);
 	}
 
-	// den = Math.min(den, 0.5);
 	const scale = 0.9 / den;
 
 	const translate = [
@@ -602,7 +595,7 @@ function checkHighlightCountry(svgEl) {
 
 function updateEmissionsData() {
 	console.log(`Loading ${ctx_em.gas}_${ctx_em.sce}_${ctx_em.year}.csv`);
-	// delete ctx_em.emissions;
+	
 	filename = `data/emissions/csv/${ctx_em.gas}_${ctx_em.sce}_${ctx_em.year}.csv`;
 	d3.csv(filename).then(function (d) {
 		ctx_em.emissions = d;
@@ -696,7 +689,6 @@ function loadEmissionsData(svgEl) {
 			};
 		});
 		drawEmissions(svgEl);
-		// panToCountry();
 	});
 }
 
@@ -709,11 +701,6 @@ function createEmissionsViz() {
 
 	ctx_em.width = ctx_em.width - margin.left - margin.right;
 	ctx_em.height = ctx_em.height - margin.top - margin.bottom;
-
-	// svgEl
-	// 	.attr("width", ctx_em.width) //+ margin.left + margin.right)
-	// 	.attr("height", ctx_em.height) //+ margin.top + margin.bottom);
-	// 	.attr("transform", `translate(${margin.left}, ${margin.top * 2})`);
 
 	ctx_em.svg = svgEl
 		.append("g")

@@ -12,31 +12,6 @@ ctx_globe = {
 
 let prev_path = null;
 
-function mean2d(coordinates) {
-	const numRows = coordinates.length;
-	const numCols = coordinates[0].length;
-
-	// Initialize sums for each column
-	const columnSums = Array.from(
-		{
-			length: numCols,
-		},
-		() => 0
-	);
-
-	// Calculate sums
-	for (let i = 0; i < numRows; i++) {
-		for (let j = 0; j < numCols; j++) {
-			columnSums[j] += coordinates[i][j];
-		}
-	}
-
-	// Calculate means
-	const columnMeans = columnSums.map((sum) => sum / numRows);
-
-	return columnMeans;
-}
-
 function updateSearchList(data) {
 	const searchList = document.getElementById("countryList");
 	searchList.innerHTML = "";
@@ -273,15 +248,9 @@ function drawGlobe(svg) {
 
 	updateSearchList(ctx_globe.data);
 	rotateToCountry();
-	// updateDropdown(ctx_globe.data);
 }
 
 function loadGlobeData(svg) {
-	// d3.json("data/globe/world.json").then(function (d) {
-	// 	ctx_globe.data = d;
-	// 	drawGlobe(svg);
-	// });
-
 	d3.json(
 		"https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json"
 	).then(function (d) {
@@ -294,9 +263,6 @@ function loadGlobeData(svg) {
 function createGlobeViz() {
 	let svgEl = d3
 		.select("#svgGlobe")
-		// .attr("width", ctx_globe.width)
-		// .attr("height", ctx_globe.height)
-		// .attr("transform", `translate(30, 10)`);
 
 	
 	ctx_globe.svg = svgEl;
@@ -304,13 +270,9 @@ function createGlobeViz() {
 	ctx_globe.globeh = svgEl.node().getBoundingClientRect().height;
 	loadGlobeData(svgEl);
 
-	// updateSearchList(ctx_globe.data);
-
 	document.getElementById("countrySearch").value = ctx_globe.selectedCountry;
 	rotateToCountry();
 }
-
-//Optional rotate
 
 function continuousRotation() {
 	d3.timer(function (elapsed) {
