@@ -18,8 +18,6 @@ function createViz() {
 	const width = window.innerWidth;
 	const height = window.innerHeight;
 
-
-
 	// Globe
 	var divGlobe = d3
 		.select("#main")
@@ -29,7 +27,7 @@ function createViz() {
 		.attr("id", "divGlobe")
 		.style("position", "absolute")
 		.style("top", 25 + "px")
-		.style("left", width/4 + "px");
+		.style("left", width / 4 + "px");
 
 	var svgGlobe = divGlobe
 		.append("svg")
@@ -37,6 +35,23 @@ function createViz() {
 		.attr("height", -40 + height / 2)
 		.attr("id", "svgGlobe");
 	// .style("background-color", "#f00");
+
+	// Description, Config
+	var divConfig = d3
+		.select("#main")
+		.append("div")
+		.attr("width", width / 4)
+		.attr("height", -50 + height / 2)
+		.attr("id", "divConfig")
+		.style("position", "absolute")
+		.style("top", 50+ "px")
+		.style("left", 0 + "px");
+
+	var svgConfig = divConfig
+		.append("svg")
+		.attr("width", width / 4)
+		.attr("height", -50 + height / 2)
+		.attr("id", "svgConfig");
 
 	// EPI
 	var divEpi = d3
@@ -61,16 +76,16 @@ function createViz() {
 		.select("#main")
 		.append("div")
 		.attr("width", width / 2)
-		.attr("height", -50+height / 2)
+		.attr("height", -50 + height / 2)
 		.attr("id", "divEmissions")
 		.style("position", "absolute")
-		.style("top", 50+height / 2 + "px")
+		.style("top", 50 + height / 2 + "px")
 		.style("left", 0 + "px");
 
 	var svgEmissions = divEmissions
 		.append("svg")
 		.attr("width", width / 2)
-		.attr("height", -50+height / 2)
+		.attr("height", -50 + height / 2)
 		.attr("id", "svgEmissions");
 	// .style("background-color", "#00f");
 
@@ -81,7 +96,7 @@ function createViz() {
 		.attr("height", 100)
 		.attr("id", "divTimeLine")
 		.style("position", "absolute")
-		.style("top", -50+height / 2 + "px")
+		.style("top", -50 + height / 2 + "px")
 		.style("left", 0 + "px");
 
 	var svgTimeLine = divTimeLine

@@ -82,6 +82,7 @@
 				background: transparent;
 				display: none;
 				position: absolute;
+				top: 50px;
 				left: 37.5vw;
 				transform: translateX(-50%);
 				text-align: center;
@@ -120,8 +121,8 @@
 
 			#scenario-select {
 				position: absolute;
-				top: 25vh; /* Adjust this value to set the distance from the top */
-				left: 5vw;
+				top: 20vh; /* Adjust this value to set the distance from the top */
+				left: 12.5vw;
 				background-color: transparent;
 				stroke: white;
 				color: white;
@@ -130,12 +131,20 @@
 
 			#gas-select {
 				position: absolute;
-				top: 25vh; /* Adjust this value to set the distance from the top */
-				left: 15vw;
+				top: 32vh; /* Adjust this value to set the distance from the top */
+				left: 12.5vw;
 				background-color: transparent;
 				stroke: white;
 				color: white;
 				z-index: 9999;
+			}
+
+			.y-axis-label,
+			.x-axis-label,
+			.epiYlabel,
+			.epiXlabel,
+			.Title {
+				font-family: sans-serif;
 			}
 
 			/* CSS */
@@ -173,7 +182,6 @@
 				color: white;
 				font-style: bold;
 			}
-			
 
 			.gasOptions {
 				background-color: #130f40;
@@ -194,33 +202,88 @@
 			.mainHeader {
 				color: white;
 				font-family: sans-serif;
+				z-index: 9999;
 			}
 
 			#timeline {
-				z-index : 9999;
+				z-index: 9999;
 			}
 
 			#svgEPI {
 				font-family: sans-serif;
 			}
 
+			#svgConfig{
+				z-index: 0;
+			}
+
 			.timeline_label {
 				font-family: sans-serif;
+			}
+
+			.subtitle {
+				color: white;
+				font-family: sans-serif;
+				margin-top: 0;
+			}
+
+			#scenario-title {
+				position: absolute;
+				font-family: sans-serif;
+				color: white;
+				font-weight: bold;
+			}
+
+			#gas-title {
+				position: absolute;
+				font-family: sans-serif;
+				color: white;
+				font-weight: bold;
+			}
+
+
+			#scenario-description {
+				position: absolute;
+				font-family: sans-serif;
+				color: white;
 			}
 		</style>
 	</head>
 	<body onload="createViz()">
-		<div style="display: flex; align-items: center; left: 30px" id="Header">
-			<h1 class="mainHeader">Sedac-Vis</h1>
-			<a
-				href="home.html"
-				style="color: white; margin-left: 10px; font-size: 24px"
-				title="Click here for information on the project and details on how to use this visualisations."
-			>
-				<i class="fa fa-info-circle" aria-hidden="false"></i>
-			</a>
-		</div>
 		<div id="main">
+			<div
+				style="
+					display: flex;
+					flex-direction: column;
+					align-items: start;
+					left: 30px;
+					flex-shrink: 0;
+				"
+				id="Header"
+			>
+				<div style="display: flex; align-items: center; flex-shrink: 0">
+					<h1 class="mainHeader">Sedac-Vis</h1>
+					<a
+						href="home.html"
+						style="
+							color: white;
+							margin-left: 10px;
+							font-size: 24px;
+							flex-shrink: 0;
+						"
+						title="Click here for information on the project and details on how to use this visualisations."
+					>
+						<i class="fa fa-info-circle" aria-hidden="false"></i>
+					</a>
+				</div>
+				<h3 class="subtitle">
+					A Visualisation Tool for NASA's <br />
+					Socio-Economic Datasets
+				</h3>
+			</div>
+			
+		</div>
+		<div id="divGlobe">
 			<div class="searchInput">
 				<input
 					type="text"
@@ -232,10 +295,9 @@
 				/>
 				<datalist id="countryList"></datalist>
 				<ul class="resultBox"></ul>
-				<!-- <button id="diceButton" onclick="rollDice()">🎲</button> -->
 			</div>
 		</div>
-		<div id="divGlobe">
+		<div id="divConfig">
 			<div class="scenario-selector">
 				<select id="scenario-select"></select>
 			</div>

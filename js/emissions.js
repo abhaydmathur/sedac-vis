@@ -16,6 +16,19 @@ ctx_em = {
 	year_gdp: "2020",
 };
 
+scenario_descriptions = {
+	A1BAIM: "Rapid economic growth, urbanization, industrialization, balanced use of fossil fuels, biomass affecting economy, climate, land use.",
+	A2ASF: "Rapid economic growth, urbanization, industrialization, strong emphasis on fossil fuels affecting economy, energy, environment.",
+	B1IMAGE:
+		"Moderate economic growth, urbanization industrialization, shift to clean energy sources and greater emphasis on sustainable development affecting atmosphere, ocean, land, human activities.",
+	B2MESSAGE:
+		"Moderate economic growth, urbanization, industrialization, focus on sustainable development affecting energy, climate, economy.",
+	A1GMINICAM:
+		"Low rate of population growth, heavy reliance on fossil fuels affecting atmosphere, ocean, land, ice.",
+	A1TMESSAGE:
+		"Rapid economic and technological advancement, strong focus on sustainable development affecting energy, climate, economy.",
+};
+
 triangle = d3.symbol().type(d3.symbolTriangle).size(80);
 
 let margin = { top: 50, right: 20, bottom: 20, left: 20 };
@@ -57,7 +70,7 @@ function createTimeline(svgEl) {
 		.attr("class", "timeline_label")
 		.attr("text-anchor", "left")
 		.attr("fill", "white")
-		.text(`Year : GDP per capita`);
+		.text(`Year : Per Capita GDP`);
 
 	svgEl
 		.append("text")
@@ -229,6 +242,65 @@ function setScenarioOptions() {
 	select.addEventListener("change", (event) => {
 		ctx_em.sce = event.target.value;
 		updateEmissionsData();
+		updateScenarioDescription();
+	});
+	// console.log(ctx.svgConfig, "config")
+	ctx_em.svgConfig
+		.append("text")
+		.attr("id", "scenario-title")
+		.attr("x", margin.left)
+		.attr("y", 0.43*ctx_em.height)
+		.text("Emissions Scenario")
+		.attr("fill", "white");
+
+	ctx_em.svgConfig
+		.append("text")
+		.attr("id", "scenario-description")
+		.attr("x", margin.left)
+		.attr("y", 0.5*ctx_em.height)
+		.text(scenario_descriptions[ctx_em.sce])
+		.attr("fill", "white")
+		.call(wrapText, (3 * ctx.width) / 6);
+}
+
+function updateScenarioDescription() {
+	console.log("Chaning desc");
+	d3.select("#scenario-description")
+		.text(scenario_descriptions[ctx_em.sce])
+		.call(wrapText, (3 * ctx.width) / 6);
+}
+
+function wrapText(text, width) {
+	text.each(function () {
+		var text = d3.select(this),
+			words = text.text().split(/\s+/).reverse(),
+			word,
+			line = [],
+			lineNumber = 0,
+			lineHeight = 1.1, // ems
+			y = text.attr("y"),
+			dy = 0, //parseFloat(text.attr("dy")),
+			tspan = text
+				.text(null)
+				.append("tspan")
+				.attr("x", margin.left)
+				.attr("y", y)
+				.attr("dy", dy + "em");
+		while ((word = words.pop())) {
+			line.push(word);
+			tspan.text(line.join(" "));
+			if (tspan.node().getComputedTextLength() > width) {
+				line.pop();
+				tspan.text(line.join(" "));
+				line = [word];
+				tspan = text
+					.append("tspan")
+					.attr("x", margin.left)
+					.attr("y", y)
+					.attr("dy", ++lineNumber * lineHeight + dy + "em")
+					.text(word);
+			}
+		}
 	});
 }
 
@@ -251,6 +323,14 @@ function setGasOptions() {
 		ctx_em.gas = event.target.value;
 		updateEmissionsData();
 	});
+
+	ctx_em.svgConfig
+		.append("text")
+		.attr("id", "gas-title")
+		.attr("x", margin.left)
+		.attr("y", 0.755 * ctx_em.height)
+		.text("Selected Reactive Gas")
+		.attr("fill", "white");
 }
 
 function drawEmissions(svgEl) {
@@ -455,16 +535,24 @@ function moveToCountry() {
 	y = (bounds[0][1] + bounds[1][1]) / 2;
 	den = Math.max(dx / ctx_em.width, dy / ctx_em.height);
 
+	console.log(x, y, den)
+
 	try {
 		if (selectedCountry.properties.name === "United States of America") {
-			[x, y] = [277, 100];
-			den = 0.45;
+			[x, y] = [250, 75];
+			flag = 1;
+			den = 0.3;
 		} else if (selectedCountry.properties.name === "Russia") {
-			[x, y] = [700, 50];
-			den = 0.45;
+			[x, y] = [600, 30];
+			flag = 1;
+			den = 0.3;
 		} else if (selectedCountry.properties.name === "France") {
-			[x, y] = [465.5, 113.81];
-			den = 0.084;
+			[x, y] = [465.5, 87.5];
+			flag = 1;
+			den = 0.074;
+		}
+		if (flag){
+
 		}
 	} catch {
 		console.log("Unable to read selectedCountry.properties.name");
@@ -591,6 +679,7 @@ function loadEmissionsData(svgEl) {
 
 function createEmissionsViz() {
 	svgEl = d3.select("#svgEmissions");
+	ctx_em.svgConfig = d3.select("#svgConfig");
 
 	ctx_em.width = svgEl.node().getBoundingClientRect().width;
 	ctx_em.height = svgEl.node().getBoundingClientRect().height;

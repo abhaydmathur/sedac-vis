@@ -26,7 +26,7 @@ Burundi;8089;2000;Current;Wheat;8089
 Cambodia;;2000;Current;Wheat;0
 Cameroon;400;2000;Current;Wheat;400
 Canada;23140657;2000;Current;Wheat;23140657
-Central African Republic;;2000;Current;Wheat;0
+Central African Rep.;;2000;Current;Wheat;0
 Chad;2549;2000;Current;Wheat;2549
 Chile;1723945;2000;Current;Wheat;1723945
 China;94879370;2000;Current;Wheat;94879370
@@ -36,10 +36,10 @@ Costa Rica;;2000;Current;Wheat;0
 Croatia;834431;2000;Current;Wheat;834431
 Cuba;;2000;Current;Wheat;0
 Cyprus;10589;2000;Current;Wheat;10589
-Czech Republic;3965480;2000;Current;Wheat;3965480
+Czechia;3965480;2000;Current;Wheat;3965480
 Denmark;4651755;2000;Current;Wheat;4651755
 Djibouti;;2000;Current;Wheat;0
-Dominican Republic;;2000;Current;Wheat;0
+Dominican Rep.;;2000;Current;Wheat;0
 Ecuador;11071;2000;Current;Wheat;11071
 Egypt;7125859;2000;Current;Wheat;7125859
 El Salvador;;2000;Current;Wheat;0
@@ -80,8 +80,8 @@ Japan;806286;2000;Current;Wheat;806286
 Jordan;28783;2000;Current;Wheat;28783
 Kazakhstan;11521858;2000;Current;Wheat;11521858
 Kenya;321925;2000;Current;Wheat;321925
-Korea Dem.People's Rep.;171124;2000;Current;Wheat;171124
-Korea, Republic Of;6734;2000;Current;Wheat;6734
+North Korea;171124;2000;Current;Wheat;171124
+South Korea;6734;2000;Current;Wheat;6734
 Kuwait;504;2000;Current;Wheat;504
 Kyrgyzstan;1027803;2000;Current;Wheat;1027803
 Laos;;2000;Current;Wheat;0
@@ -191,7 +191,7 @@ Burundi;62470;2000;Current;Rice;62470
 Cambodia;4725597;2000;Current;Rice;4725597
 Cameroon;52838;2000;Current;Rice;52838
 Canada;;2000;Current;Rice;0
-Central African Republic;30229;2000;Current;Rice;30229
+Central African Rep.;30229;2000;Current;Rice;30229
 Chad;116007;2000;Current;Rice;116007
 Chile;136787;2000;Current;Rice;136787
 China;179210744;2000;Current;Rice;179210744
@@ -201,10 +201,10 @@ Costa Rica;198284;2000;Current;Rice;198284
 Croatia;;2000;Current;Rice;0
 Cuba;550329;2000;Current;Rice;550329
 Cyprus;;2000;Current;Rice;0
-Czech Republic;;2000;Current;Rice;0
+Czechia;;2000;Current;Rice;0
 Denmark;;2000;Current;Rice;0
 Djibouti;;2000;Current;Rice;0
-Dominican Republic;644386;2000;Current;Rice;644386
+Dominican Rep.;644386;2000;Current;Rice;644386
 Ecuador;1417506;2000;Current;Rice;1417506
 Egypt;6105941;2000;Current;Rice;6105941
 El Salvador;31358;2000;Current;Rice;31358
@@ -245,8 +245,8 @@ Japan;10997571;2000;Current;Rice;10997571
 Jordan;;2000;Current;Rice;0
 Kazakhstan;255897;2000;Current;Rice;255897
 Kenya;51380;2000;Current;Rice;51380
-Korea Dem.People's Rep.;2214314;2000;Current;Rice;2214314
-Korea, Republic Of;6685893;2000;Current;Rice;6685893
+North Korea;2214314;2000;Current;Rice;2214314
+South Korea;6685893;2000;Current;Rice;6685893
 Kuwait;;2000;Current;Rice;0
 Kyrgyzstan;18402;2000;Current;Rice;18402
 Laos;2441243;2000;Current;Rice;2441243
@@ -356,7 +356,7 @@ Burundi;123805;2000;Current;Maize;123805
 Cambodia;241059;2000;Current;Maize;241059
 Cameroon;870432;2000;Current;Maize;870432
 Canada;8726829;2000;Current;Maize;8726829
-Central African Republic;112243;2000;Current;Maize;112243
+Central African Rep.;112243;2000;Current;Maize;112243
 Chad;123473;2000;Current;Maize;123473
 Chile;1107818;2000;Current;Maize;1107818
 China;124781477;2000;Current;Maize;124781477
@@ -366,10 +366,10 @@ Costa Rica;15057;2000;Current;Maize;15057
 Croatia;2021408;2000;Current;Maize;2021408
 Cuba;329671;2000;Current;Maize;329671
 Cyprus;;2000;Current;Maize;0
-Czech Republic;523735;2000;Current;Maize;523735
+Czechia;523735;2000;Current;Maize;523735
 Denmark;;2000;Current;Maize;0
 Djibouti;10;2000;Current;Maize;10
-Dominican Republic;34654;2000;Current;Maize;34654
+Dominican Rep.;34654;2000;Current;Maize;34654
 Ecuador;692249;2000;Current;Maize;692249
 Egypt;6624651;2000;Current;Maize;6624651
 El Salvador;649122;2000;Current;Maize;649122
@@ -410,8 +410,8 @@ Japan;160;2000;Current;Maize;160
 Jordan;16262;2000;Current;Maize;16262
 Kazakhstan;412679;2000;Current;Maize;412679
 Kenya;2689906;2000;Current;Maize;2689906
-Korea Dem.People's Rep.;1646429;2000;Current;Maize;1646429
-Korea, Republic Of;68626;2000;Current;Maize;68626
+North Korea;1646429;2000;Current;Maize;1646429
+South Korea;68626;2000;Current;Maize;68626
 Kuwait;718;2000;Current;Maize;718
 Kyrgyzstan;411633;2000;Current;Maize;411633
 Laos;217453;2000;Current;Maize;217453
@@ -521,7 +521,7 @@ Burundi;11;2020;A1F;Wheat;8101
 Cambodia;0;2020;A1F;Wheat;0
 Cameroon;-4;2020;A1F;Wheat;396
 Canada;1511756;2020;A1F;Wheat;24652413
-Central African Republic;0;2020;A1F;Wheat;0
+Central African Rep.;0;2020;A1F;Wheat;0
 Chad;4;2020;A1F;Wheat;2553
 Chile;-44822;2020;A1F;Wheat;1679124
 China;-212812;2020;A1F;Wheat;94666559
@@ -531,10 +531,10 @@ Costa Rica;0;2020;A1F;Wheat;0
 Croatia;-40930;2020;A1F;Wheat;793501
 Cuba;0;2020;A1F;Wheat;0
 Cyprus;-129;2020;A1F;Wheat;10460
-Czech Republic;-194513;2020;A1F;Wheat;3770967
+Czechia;-194513;2020;A1F;Wheat;3770967
 Denmark;195105;2020;A1F;Wheat;4846860
 Djibouti;0;2020;A1F;Wheat;0
-Dominican Republic;0;2020;A1F;Wheat;0
+Dominican Rep.;0;2020;A1F;Wheat;0
 Ecuador;-699;2020;A1F;Wheat;10372
 Egypt;96081;2020;A1F;Wheat;7221939
 El Salvador;0;2020;A1F;Wheat;0
@@ -575,8 +575,8 @@ Japan;15753;2020;A1F;Wheat;822039
 Jordan;-350;2020;A1F;Wheat;28433
 Kazakhstan;-69604;2020;A1F;Wheat;11452254
 Kenya;4511;2020;A1F;Wheat;326436
-Korea Dem.People's Rep.;3343;2020;A1F;Wheat;174467
-Korea, Republic Of;132;2020;A1F;Wheat;6865
+North Korea;3343;2020;A1F;Wheat;174467
+South Korea;132;2020;A1F;Wheat;6865
 Kuwait;-6;2020;A1F;Wheat;497
 Kyrgyzstan;27601;2020;A1F;Wheat;1055404
 Laos;0;2020;A1F;Wheat;0
@@ -686,7 +686,7 @@ Burundi;-1161;2020;A1F;Rice;61309
 Cambodia;-32844;2020;A1F;Rice;4692753
 Cameroon;-1620;2020;A1F;Rice;51218
 Canada;0;2020;A1F;Rice;0
-Central African Republic;-562;2020;A1F;Rice;29667
+Central African Rep.;-562;2020;A1F;Rice;29667
 Chad;-2156;2020;A1F;Rice;113851
 Chile;-6292;2020;A1F;Rice;130495
 China;-1652176;2020;A1F;Rice;177558569
@@ -696,10 +696,10 @@ Costa Rica;-10766;2020;A1F;Rice;187518
 Croatia;0;2020;A1F;Rice;0
 Cuba;-29880;2020;A1F;Rice;520448
 Cyprus;0;2020;A1F;Rice;0
-Czech Republic;0;2020;A1F;Rice;0
+Czechia;0;2020;A1F;Rice;0
 Denmark;0;2020;A1F;Rice;0
 Djibouti;0;2020;A1F;Rice;0
-Dominican Republic;-34987;2020;A1F;Rice;609399
+Dominican Rep.;-34987;2020;A1F;Rice;609399
 Ecuador;-117894;2020;A1F;Rice;1299612
 Egypt;-39790;2020;A1F;Rice;6066151
 El Salvador;-1442;2020;A1F;Rice;29916
@@ -740,8 +740,8 @@ Japan;92244;2020;A1F;Rice;11089815
 Jordan;0;2020;A1F;Rice;0
 Kazakhstan;-6664;2020;A1F;Rice;249233
 Kenya;-308;2020;A1F;Rice;51073
-Korea Dem.People's Rep.;18573;2020;A1F;Rice;2232887
-Korea, Republic Of;56079;2020;A1F;Rice;6741972
+North Korea;18573;2020;A1F;Rice;2232887
+South Korea;56079;2020;A1F;Rice;6741972
 Kuwait;0;2020;A1F;Rice;0
 Kyrgyzstan;126;2020;A1F;Rice;18528
 Laos;-16967;2020;A1F;Rice;2424275
@@ -851,7 +851,7 @@ Burundi;-5177;2020;A1F;Maize;118627
 Cambodia;-2432;2020;A1F;Maize;238627
 Cameroon;-35390;2020;A1F;Maize;835041
 Canada;-2909;2020;A1F;Maize;8723920
-Central African Republic;-4694;2020;A1F;Maize;107549
+Central African Rep.;-4694;2020;A1F;Maize;107549
 Chad;-5163;2020;A1F;Maize;118309
 Chile;-7974;2020;A1F;Maize;1099843
 China;-4113464;2020;A1F;Maize;120668013
@@ -861,10 +861,10 @@ Costa Rica;35;2020;A1F;Maize;15092
 Croatia;-159796;2020;A1F;Maize;1861612
 Cuba;757;2020;A1F;Maize;330428
 Cyprus;0;2020;A1F;Maize;0
-Czech Republic;-41402;2020;A1F;Maize;482332
+Czechia;-41402;2020;A1F;Maize;482332
 Denmark;0;2020;A1F;Maize;0
 Djibouti;0;2020;A1F;Maize;10
-Dominican Republic;80;2020;A1F;Maize;34734
+Dominican Rep.;80;2020;A1F;Maize;34734
 Ecuador;6197;2020;A1F;Maize;698446
 Egypt;-284720;2020;A1F;Maize;6339931
 El Salvador;-4673;2020;A1F;Maize;644449
@@ -905,8 +905,8 @@ Japan;9;2020;A1F;Maize;169
 Jordan;-901;2020;A1F;Maize;15361
 Kazakhstan;-14873;2020;A1F;Maize;397806
 Kenya;-43005;2020;A1F;Maize;2646901
-Korea Dem.People's Rep.;94330;2020;A1F;Maize;1740758
-Korea, Republic Of;3932;2020;A1F;Maize;72557
+North Korea;94330;2020;A1F;Maize;1740758
+South Korea;3932;2020;A1F;Maize;72557
 Kuwait;-40;2020;A1F;Maize;678
 Kyrgyzstan;-12623;2020;A1F;Maize;399010
 Laos;-2194;2020;A1F;Maize;215260
@@ -1016,7 +1016,7 @@ Burundi;-160;2050;A1F;Wheat;7929
 Cambodia;0;2050;A1F;Wheat;0
 Cameroon;-10;2050;A1F;Wheat;390
 Canada;737542;2050;A1F;Wheat;23878199
-Central African Republic;0;2050;A1F;Wheat;0
+Central African Rep.;0;2050;A1F;Wheat;0
 Chad;-51;2050;A1F;Wheat;2499
 Chile;-3771;2050;A1F;Wheat;1720174
 China;5784061;2050;A1F;Wheat;100663431
@@ -1026,10 +1026,10 @@ Costa Rica;0;2050;A1F;Wheat;0
 Croatia;-59913;2050;A1F;Wheat;774518
 Cuba;0;2050;A1F;Wheat;0
 Cyprus;-504;2050;A1F;Wheat;10085
-Czech Republic;-284727;2050;A1F;Wheat;3680753
+Czechia;-284727;2050;A1F;Wheat;3680753
 Denmark;431763;2050;A1F;Wheat;5083518
 Djibouti;0;2050;A1F;Wheat;0
-Dominican Republic;0;2050;A1F;Wheat;0
+Dominican Rep.;0;2050;A1F;Wheat;0
 Ecuador;-1211;2050;A1F;Wheat;9860
 Egypt;-112983;2050;A1F;Wheat;7012876
 El Salvador;0;2050;A1F;Wheat;0
@@ -1070,8 +1070,8 @@ Japan;14236;2050;A1F;Wheat;820522
 Jordan;-1369;2050;A1F;Wheat;27414
 Kazakhstan;107246;2050;A1F;Wheat;11629104
 Kenya;-13110;2050;A1F;Wheat;308815
-Korea Dem.People's Rep.;3021;2050;A1F;Wheat;174145
-Korea, Republic Of;119;2050;A1F;Wheat;6853
+North Korea;3021;2050;A1F;Wheat;174145
+South Korea;119;2050;A1F;Wheat;6853
 Kuwait;-24;2050;A1F;Wheat;480
 Kyrgyzstan;75691;2050;A1F;Wheat;1103493
 Laos;0;2050;A1F;Wheat;0
@@ -1181,7 +1181,7 @@ Burundi;-1864;2050;A1F;Rice;60606
 Cambodia;92341;2050;A1F;Rice;4817938
 Cameroon;-1787;2050;A1F;Rice;51051
 Canada;0;2050;A1F;Rice;0
-Central African Republic;-902;2050;A1F;Rice;29327
+Central African Rep.;-902;2050;A1F;Rice;29327
 Chad;-3461;2050;A1F;Rice;112546
 Chile;-1667;2050;A1F;Rice;135120
 China;6573247;2050;A1F;Rice;185783992
@@ -1191,10 +1191,10 @@ Costa Rica;-3593;2050;A1F;Rice;194691
 Croatia;0;2050;A1F;Rice;0
 Cuba;-9972;2050;A1F;Rice;540356
 Cyprus;0;2050;A1F;Rice;0
-Czech Republic;0;2050;A1F;Rice;0
+Czechia;0;2050;A1F;Rice;0
 Denmark;0;2050;A1F;Rice;0
 Djibouti;0;2050;A1F;Rice;0
-Dominican Republic;-11676;2050;A1F;Rice;632710
+Dominican Rep.;-11676;2050;A1F;Rice;632710
 Ecuador;-169213;2050;A1F;Rice;1248293
 Egypt;-157871;2050;A1F;Rice;5948070
 El Salvador;-382;2050;A1F;Rice;30976
@@ -1235,8 +1235,8 @@ Japan;133244;2050;A1F;Rice;11130815
 Jordan;0;2050;A1F;Rice;0
 Kazakhstan;-177;2050;A1F;Rice;255720
 Kenya;-2606;2050;A1F;Rice;48774
-Korea Dem.People's Rep.;26828;2050;A1F;Rice;2241142
-Korea, Republic Of;81005;2050;A1F;Rice;6766897
+North Korea;26828;2050;A1F;Rice;2241142
+South Korea;81005;2050;A1F;Rice;6766897
 Kuwait;0;2050;A1F;Rice;0
 Kyrgyzstan;1171;2050;A1F;Rice;19573
 Laos;47703;2050;A1F;Rice;2488946
@@ -1346,7 +1346,7 @@ Burundi;-12467;2050;A1F;Maize;111337
 Cambodia;-9124;2050;A1F;Maize;231935
 Cameroon;-81661;2050;A1F;Maize;788771
 Canada;234843;2050;A1F;Maize;8961671
-Central African Republic;-11303;2050;A1F;Maize;100940
+Central African Rep.;-11303;2050;A1F;Maize;100940
 Chad;-12434;2050;A1F;Maize;111039
 Chile;-32831;2050;A1F;Maize;1074987
 China;-7453574;2050;A1F;Maize;117327903
@@ -1356,10 +1356,10 @@ Costa Rica;215;2050;A1F;Maize;15272
 Croatia;-286639;2050;A1F;Maize;1734769
 Cuba;4706;2050;A1F;Maize;334377
 Cyprus;0;2050;A1F;Maize;0
-Czech Republic;-74266;2050;A1F;Maize;449468
+Czechia;-74266;2050;A1F;Maize;449468
 Denmark;0;2050;A1F;Maize;0
 Djibouti;0;2050;A1F;Maize;10
-Dominican Republic;495;2050;A1F;Maize;35149
+Dominican Rep.;495;2050;A1F;Maize;35149
 Ecuador;-15816;2050;A1F;Maize;676433
 Egypt;-712721;2050;A1F;Maize;5911930
 El Salvador;-19237;2050;A1F;Maize;629884
@@ -1400,8 +1400,8 @@ Japan;5;2050;A1F;Maize;165
 Jordan;-2088;2050;A1F;Maize;14173
 Kazakhstan;-25046;2050;A1F;Maize;387633
 Kenya;-297840;2050;A1F;Maize;2392066
-Korea Dem.People's Rep.;55022;2050;A1F;Maize;1701451
-Korea, Republic Of;2293;2050;A1F;Maize;70919
+North Korea;55022;2050;A1F;Maize;1701451
+South Korea;2293;2050;A1F;Maize;70919
 Kuwait;-92;2050;A1F;Maize;626
 Kyrgyzstan;-15216;2050;A1F;Maize;396418
 Laos;-8230;2050;A1F;Maize;209223
@@ -1511,7 +1511,7 @@ Burundi;-1175;2080;A1F;Wheat;6915
 Cambodia;0;2080;A1F;Wheat;0
 Cameroon;-36;2080;A1F;Wheat;364
 Canada;334752;2080;A1F;Wheat;23475409
-Central African Republic;0;2080;A1F;Wheat;0
+Central African Rep.;0;2080;A1F;Wheat;0
 Chad;-370;2080;A1F;Wheat;2179
 Chile;-26121;2080;A1F;Wheat;1697824
 China;-822249;2080;A1F;Wheat;94057121
@@ -1521,10 +1521,10 @@ Costa Rica;0;2080;A1F;Wheat;0
 Croatia;-31995;2080;A1F;Wheat;802437
 Cuba;0;2080;A1F;Wheat;0
 Cyprus;-1438;2080;A1F;Wheat;9151
-Czech Republic;-152050;2080;A1F;Wheat;3813431
+Czechia;-152050;2080;A1F;Wheat;3813431
 Denmark;348150;2080;A1F;Wheat;4999904
 Djibouti;0;2080;A1F;Wheat;0
-Dominican Republic;0;2080;A1F;Wheat;0
+Dominican Rep.;0;2080;A1F;Wheat;0
 Ecuador;-625;2080;A1F;Wheat;10446
 Egypt;-1432396;2080;A1F;Wheat;5693463
 El Salvador;0;2080;A1F;Wheat;0
@@ -1565,8 +1565,8 @@ Japan;-33546;2080;A1F;Wheat;772740
 Jordan;-3908;2080;A1F;Wheat;24875
 Kazakhstan;1576581;2080;A1F;Wheat;13098439
 Kenya;-56044;2080;A1F;Wheat;265881
-Korea Dem.People's Rep.;-7120;2080;A1F;Wheat;164004
-Korea, Republic Of;-280;2080;A1F;Wheat;6454
+North Korea;-7120;2080;A1F;Wheat;164004
+South Korea;-280;2080;A1F;Wheat;6454
 Kuwait;-68;2080;A1F;Wheat;435
 Kyrgyzstan;59486;2080;A1F;Wheat;1087288
 Laos;0;2080;A1F;Wheat;0
@@ -1676,7 +1676,7 @@ Burundi;-9696;2080;A1F;Rice;52775
 Cambodia;42604;2080;A1F;Rice;4768201
 Cameroon;-5252;2080;A1F;Rice;47587
 Canada;0;2080;A1F;Rice;0
-Central African Republic;-4692;2080;A1F;Rice;25537
+Central African Rep.;-4692;2080;A1F;Rice;25537
 Chad;-18005;2080;A1F;Rice;98003
 Chile;-3440;2080;A1F;Rice;133347
 China;12763433;2080;A1F;Rice;191974177
@@ -1686,10 +1686,10 @@ Costa Rica;19955;2080;A1F;Rice;218239
 Croatia;0;2080;A1F;Rice;0
 Cuba;55383;2080;A1F;Rice;605712
 Cyprus;0;2080;A1F;Rice;0
-Czech Republic;0;2080;A1F;Rice;0
+Czechia;0;2080;A1F;Rice;0
 Denmark;0;2080;A1F;Rice;0
 Djibouti;0;2080;A1F;Rice;0
-Dominican Republic;64849;2080;A1F;Rice;709235
+Dominican Rep.;64849;2080;A1F;Rice;709235
 Ecuador;-94199;2080;A1F;Rice;1323306
 Egypt;-1288438;2080;A1F;Rice;4817503
 El Salvador;-789;2080;A1F;Rice;30569
@@ -1730,8 +1730,8 @@ Japan;-544658;2080;A1F;Rice;10452913
 Jordan;0;2080;A1F;Rice;0
 Kazakhstan;32456;2080;A1F;Rice;288353
 Kenya;-9459;2080;A1F;Rice;41922
-Korea Dem.People's Rep.;-109665;2080;A1F;Rice;2104650
-Korea, Republic Of;-331121;2080;A1F;Rice;6354772
+North Korea;-109665;2080;A1F;Rice;2104650
+South Korea;-331121;2080;A1F;Rice;6354772
 Kuwait;0;2080;A1F;Rice;0
 Kyrgyzstan;881;2080;A1F;Rice;19283
 Laos;22009;2080;A1F;Rice;2463252
@@ -1841,7 +1841,7 @@ Burundi;-25691;2080;A1F;Maize;98114
 Cambodia;-13261;2080;A1F;Maize;227798
 Cameroon;-164854;2080;A1F;Maize;705578
 Canada;363269;2080;A1F;Maize;9090098
-Central African Republic;-23292;2080;A1F;Maize;88951
+Central African Rep.;-23292;2080;A1F;Maize;88951
 Chad;-25622;2080;A1F;Maize;97850
 Chile;-77148;2080;A1F;Maize;1030670
 China;-197368;2080;A1F;Maize;124584109
@@ -1851,10 +1851,10 @@ Costa Rica;1029;2080;A1F;Maize;16086
 Croatia;-279648;2080;A1F;Maize;1741760
 Cuba;22529;2080;A1F;Maize;352201
 Cyprus;0;2080;A1F;Maize;0
-Czech Republic;-72455;2080;A1F;Maize;451279
+Czechia;-72455;2080;A1F;Maize;451279
 Denmark;0;2080;A1F;Maize;0
 Djibouti;-1;2080;A1F;Maize;10
-Dominican Republic;2368;2080;A1F;Maize;37023
+Dominican Rep.;2368;2080;A1F;Maize;37023
 Ecuador;-38895;2080;A1F;Maize;653355
 Egypt;-1494741;2080;A1F;Maize;5129910
 El Salvador;-45204;2080;A1F;Maize;603917
@@ -1895,8 +1895,8 @@ Japan;-10;2080;A1F;Maize;150
 Jordan;-3221;2080;A1F;Maize;13041
 Kazakhstan;15201;2080;A1F;Maize;427880
 Kenya;-737277;2080;A1F;Maize;1952629
-Korea Dem.People's Rep.;-99095;2080;A1F;Maize;1547334
-Korea, Republic Of;-4130;2080;A1F;Maize;64495
+North Korea;-99095;2080;A1F;Maize;1547334
+South Korea;-4130;2080;A1F;Maize;64495
 Kuwait;-142;2080;A1F;Maize;576
 Kyrgyzstan;-3096;2080;A1F;Maize;408538
 Laos;-11962;2080;A1F;Maize;205491
@@ -2006,7 +2006,7 @@ Burundi;16;2020;A2a;Wheat;8105
 Cambodia;0;2020;A2a;Wheat;0
 Cameroon;-2;2020;A2a;Wheat;398
 Canada;582133;2020;A2a;Wheat;23722790
-Central African Republic;0;2020;A2a;Wheat;0
+Central African Rep.;0;2020;A2a;Wheat;0
 Chad;5;2020;A2a;Wheat;2555
 Chile;-21358;2020;A2a;Wheat;1702588
 China;-1112038;2020;A2a;Wheat;93767332
@@ -2016,10 +2016,10 @@ Costa Rica;0;2020;A2a;Wheat;0
 Croatia;-47772;2020;A2a;Wheat;786659
 Cuba;0;2020;A2a;Wheat;0
 Cyprus;-79;2020;A2a;Wheat;10510
-Czech Republic;-227028;2020;A2a;Wheat;3738452
+Czechia;-227028;2020;A2a;Wheat;3738452
 Denmark;263534;2020;A2a;Wheat;4915289
 Djibouti;0;2020;A2a;Wheat;0
-Dominican Republic;0;2020;A2a;Wheat;0
+Dominican Rep.;0;2020;A2a;Wheat;0
 Ecuador;-656;2020;A2a;Wheat;10415
 Egypt;64597;2020;A2a;Wheat;7190456
 El Salvador;0;2020;A2a;Wheat;0
@@ -2060,8 +2060,8 @@ Japan;14108;2020;A2a;Wheat;820393
 Jordan;-214;2020;A2a;Wheat;28569
 Kazakhstan;-297699;2020;A2a;Wheat;11224159
 Kenya;7222;2020;A2a;Wheat;329147
-Korea Dem.People's Rep.;2994;2020;A2a;Wheat;174118
-Korea, Republic Of;118;2020;A2a;Wheat;6852
+North Korea;2994;2020;A2a;Wheat;174118
+South Korea;118;2020;A2a;Wheat;6852
 Kuwait;-4;2020;A2a;Wheat;500
 Kyrgyzstan;37443;2020;A2a;Wheat;1065246
 Laos;0;2020;A2a;Wheat;0
@@ -2171,7 +2171,7 @@ Burundi;-1124;2020;A2a;Rice;61346
 Cambodia;4184;2020;A2a;Rice;4729781
 Cameroon;-1323;2020;A2a;Rice;51515
 Canada;0;2020;A2a;Rice;0
-Central African Republic;-544;2020;A2a;Rice;29685
+Central African Rep.;-544;2020;A2a;Rice;29685
 Chad;-2087;2020;A2a;Rice;113920
 Chile;-4430;2020;A2a;Rice;132357
 China;-2108985;2020;A2a;Rice;177101759
@@ -2181,10 +2181,10 @@ Costa Rica;-10196;2020;A2a;Rice;188088
 Croatia;0;2020;A2a;Rice;0
 Cuba;-28299;2020;A2a;Rice;522029
 Cyprus;0;2020;A2a;Rice;0
-Czech Republic;0;2020;A2a;Rice;0
+Czechia;0;2020;A2a;Rice;0
 Denmark;0;2020;A2a;Rice;0
 Djibouti;0;2020;A2a;Rice;0
-Dominican Republic;-33136;2020;A2a;Rice;611250
+Dominican Rep.;-33136;2020;A2a;Rice;611250
 Ecuador;-112332;2020;A2a;Rice;1305173
 Egypt;-66768;2020;A2a;Rice;6039173
 El Salvador;-1016;2020;A2a;Rice;30342
@@ -2225,8 +2225,8 @@ Japan;201855;2020;A2a;Rice;11199426
 Jordan;0;2020;A2a;Rice;0
 Kazakhstan;-11730;2020;A2a;Rice;244167
 Kenya;125;2020;A2a;Rice;51505
-Korea Dem.People's Rep.;40643;2020;A2a;Rice;2254957
-Korea, Republic Of;122716;2020;A2a;Rice;6808609
+North Korea;40643;2020;A2a;Rice;2254957
+South Korea;122716;2020;A2a;Rice;6808609
 Kuwait;0;2020;A2a;Rice;0
 Kyrgyzstan;302;2020;A2a;Rice;18704
 Laos;2161;2020;A2a;Rice;2443404
@@ -2336,7 +2336,7 @@ Burundi;-5565;2020;A2a;Maize;118239
 Cambodia;-4193;2020;A2a;Maize;236866
 Cameroon;-30504;2020;A2a;Maize;839928
 Canada;8883;2020;A2a;Maize;8735711
-Central African Republic;-5046;2020;A2a;Maize;107197
+Central African Rep.;-5046;2020;A2a;Maize;107197
 Chad;-5550;2020;A2a;Maize;117922
 Chile;-5680;2020;A2a;Maize;1102138
 China;-6303518;2020;A2a;Maize;118477959
@@ -2346,10 +2346,10 @@ Costa Rica;-27;2020;A2a;Maize;15030
 Croatia;-176370;2020;A2a;Maize;1845038
 Cuba;-601;2020;A2a;Maize;329071
 Cyprus;0;2020;A2a;Maize;0
-Czech Republic;-45696;2020;A2a;Maize;478038
+Czechia;-45696;2020;A2a;Maize;478038
 Denmark;0;2020;A2a;Maize;0
 Djibouti;0;2020;A2a;Maize;10
-Dominican Republic;-63;2020;A2a;Maize;34591
+Dominican Rep.;-63;2020;A2a;Maize;34591
 Ecuador;4768;2020;A2a;Maize;697017
 Egypt;-363429;2020;A2a;Maize;6261222
 El Salvador;-3328;2020;A2a;Maize;645794
@@ -2390,8 +2390,8 @@ Japan;6;2020;A2a;Maize;166
 Jordan;-885;2020;A2a;Maize;15377
 Kazakhstan;-23043;2020;A2a;Maize;389636
 Kenya;-20354;2020;A2a;Maize;2669552
-Korea Dem.People's Rep.;61148;2020;A2a;Maize;1707577
-Korea, Republic Of;2549;2020;A2a;Maize;71174
+North Korea;61148;2020;A2a;Maize;1707577
+South Korea;2549;2020;A2a;Maize;71174
 Kuwait;-39;2020;A2a;Maize;679
 Kyrgyzstan;-11511;2020;A2a;Maize;400123
 Laos;-3783;2020;A2a;Maize;213671
@@ -2501,7 +2501,7 @@ Burundi;-21;2050;A2a;Wheat;8068
 Cambodia;0;2050;A2a;Wheat;0
 Cameroon;-5;2050;A2a;Wheat;395
 Canada;1955514;2050;A2a;Wheat;25096171
-Central African Republic;0;2050;A2a;Wheat;0
+Central African Rep.;0;2050;A2a;Wheat;0
 Chad;-7;2050;A2a;Wheat;2543
 Chile;-29679;2050;A2a;Wheat;1694267
 China;6890964;2050;A2a;Wheat;101770334
@@ -2511,10 +2511,10 @@ Costa Rica;0;2050;A2a;Wheat;0
 Croatia;-52585;2050;A2a;Wheat;781847
 Cuba;0;2050;A2a;Wheat;0
 Cyprus;-132;2050;A2a;Wheat;10457
-Czech Republic;-249898;2050;A2a;Wheat;3715582
+Czechia;-249898;2050;A2a;Wheat;3715582
 Denmark;428119;2050;A2a;Wheat;5079874
 Djibouti;0;2050;A2a;Wheat;0
-Dominican Republic;0;2050;A2a;Wheat;0
+Dominican Rep.;0;2050;A2a;Wheat;0
 Ecuador;-1280;2050;A2a;Wheat;9791
 Egypt;50689;2050;A2a;Wheat;7176547
 El Salvador;0;2050;A2a;Wheat;0
@@ -2555,8 +2555,8 @@ Japan;28305;2050;A2a;Wheat;834591
 Jordan;-358;2050;A2a;Wheat;28425
 Kazakhstan;2307;2050;A2a;Wheat;11524165
 Kenya;-5934;2050;A2a;Wheat;315991
-Korea Dem.People's Rep.;6007;2050;A2a;Wheat;177131
-Korea, Republic Of;236;2050;A2a;Wheat;6970
+North Korea;6007;2050;A2a;Wheat;177131
+South Korea;236;2050;A2a;Wheat;6970
 Kuwait;-6;2050;A2a;Wheat;497
 Kyrgyzstan;71294;2050;A2a;Wheat;1099096
 Laos;0;2050;A2a;Wheat;0
@@ -2666,7 +2666,7 @@ Burundi;-1411;2050;A2a;Rice;61059
 Cambodia;102074;2050;A2a;Rice;4827672
 Cameroon;-1706;2050;A2a;Rice;51132
 Canada;0;2050;A2a;Rice;0
-Central African Republic;-683;2050;A2a;Rice;29546
+Central African Rep.;-683;2050;A2a;Rice;29546
 Chad;-2620;2050;A2a;Rice;113387
 Chile;-5091;2050;A2a;Rice;131696
 China;6536042;2050;A2a;Rice;185746786
@@ -2676,10 +2676,10 @@ Costa Rica;-11865;2050;A2a;Rice;186419
 Croatia;0;2050;A2a;Rice;0
 Cuba;-32931;2050;A2a;Rice;517397
 Cyprus;0;2050;A2a;Rice;0
-Czech Republic;0;2050;A2a;Rice;0
+Czechia;0;2050;A2a;Rice;0
 Denmark;0;2050;A2a;Rice;0
 Djibouti;0;2050;A2a;Rice;0
-Dominican Republic;-38560;2050;A2a;Rice;605827
+Dominican Rep.;-38560;2050;A2a;Rice;605827
 Ecuador;-192263;2050;A2a;Rice;1225243
 Egypt;-78685;2050;A2a;Rice;6027255
 El Salvador;-1167;2050;A2a;Rice;30191
@@ -2720,8 +2720,8 @@ Japan;491389;2050;A2a;Rice;11488960
 Jordan;0;2050;A2a;Rice;0
 Kazakhstan;-5067;2050;A2a;Rice;250830
 Kenya;-1975;2050;A2a;Rice;49406
-Korea Dem.People's Rep.;98939;2050;A2a;Rice;2313253
-Korea, Republic Of;298736;2050;A2a;Rice;6984629
+North Korea;98939;2050;A2a;Rice;2313253
+South Korea;298736;2050;A2a;Rice;6984629
 Kuwait;0;2050;A2a;Rice;0
 Kyrgyzstan;908;2050;A2a;Rice;19310
 Laos;52732;2050;A2a;Rice;2493974
@@ -2831,7 +2831,7 @@ Burundi;-10963;2050;A2a;Maize;112842
 Cambodia;-12518;2050;A2a;Maize;228541
 Cameroon;-71626;2050;A2a;Maize;798806
 Canada;190170;2050;A2a;Maize;8916999
-Central African Republic;-9939;2050;A2a;Maize;102304
+Central African Rep.;-9939;2050;A2a;Maize;102304
 Chad;-10934;2050;A2a;Maize;112539
 Chile;-36113;2050;A2a;Maize;1071705
 China;-8681255;2050;A2a;Maize;116100222
@@ -2841,10 +2841,10 @@ Costa Rica;-20;2050;A2a;Maize;15037
 Croatia;-268885;2050;A2a;Maize;1752523
 Cuba;-447;2050;A2a;Maize;329225
 Cyprus;0;2050;A2a;Maize;0
-Czech Republic;-69666;2050;A2a;Maize;454068
+Czechia;-69666;2050;A2a;Maize;454068
 Denmark;0;2050;A2a;Maize;0
 Djibouti;0;2050;A2a;Maize;10
-Dominican Republic;-47;2050;A2a;Maize;34607
+Dominican Rep.;-47;2050;A2a;Maize;34607
 Ecuador;-5300;2050;A2a;Maize;686949
 Egypt;-628105;2050;A2a;Maize;5996546
 El Salvador;-21160;2050;A2a;Maize;627961
@@ -2885,8 +2885,8 @@ Japan;4;2050;A2a;Maize;164
 Jordan;-1600;2050;A2a;Maize;14662
 Kazakhstan;-28805;2050;A2a;Maize;383874
 Kenya;-237874;2050;A2a;Maize;2452032
-Korea Dem.People's Rep.;40622;2050;A2a;Maize;1687051
-Korea, Republic Of;1693;2050;A2a;Maize;70319
+North Korea;40622;2050;A2a;Maize;1687051
+South Korea;1693;2050;A2a;Maize;70319
 Kuwait;-71;2050;A2a;Maize;647
 Kyrgyzstan;-14279;2050;A2a;Maize;397355
 Laos;-11292;2050;A2a;Maize;206161
@@ -2996,7 +2996,7 @@ Burundi;-466;2080;A2a;Wheat;7623
 Cambodia;0;2080;A2a;Wheat;0
 Cameroon;-10;2080;A2a;Wheat;390
 Canada;1763208;2080;A2a;Wheat;24903865
-Central African Republic;0;2080;A2a;Wheat;0
+Central African Rep.;0;2080;A2a;Wheat;0
 Chad;-147;2080;A2a;Wheat;2402
 Chile;34751;2080;A2a;Wheat;1758697
 China;7888432;2080;A2a;Wheat;102767803
@@ -3006,10 +3006,10 @@ Costa Rica;0;2080;A2a;Wheat;0
 Croatia;-15285;2080;A2a;Wheat;819147
 Cuba;0;2080;A2a;Wheat;0
 Cyprus;-597;2080;A2a;Wheat;9992
-Czech Republic;-72638;2080;A2a;Wheat;3892842
+Czechia;-72638;2080;A2a;Wheat;3892842
 Denmark;611160;2080;A2a;Wheat;5262915
 Djibouti;0;2080;A2a;Wheat;0
-Dominican Republic;0;2080;A2a;Wheat;0
+Dominican Rep.;0;2080;A2a;Wheat;0
 Ecuador;-609;2080;A2a;Wheat;10462
 Egypt;-641584;2080;A2a;Wheat;6484274
 El Salvador;0;2080;A2a;Wheat;0
@@ -3050,8 +3050,8 @@ Japan;29863;2080;A2a;Wheat;836149
 Jordan;-1623;2080;A2a;Wheat;27160
 Kazakhstan;1157721;2080;A2a;Wheat;12679579
 Kenya;-25072;2080;A2a;Wheat;296853
-Korea Dem.People's Rep.;6338;2080;A2a;Wheat;177462
-Korea, Republic Of;249;2080;A2a;Wheat;6983
+North Korea;6338;2080;A2a;Wheat;177462
+South Korea;249;2080;A2a;Wheat;6983
 Kuwait;-28;2080;A2a;Wheat;475
 Kyrgyzstan;101783;2080;A2a;Wheat;1129586
 Laos;0;2080;A2a;Wheat;0
@@ -3161,7 +3161,7 @@ Burundi;-4226;2080;A2a;Rice;58244
 Cambodia;261706;2080;A2a;Rice;4987304
 Cameroon;-1863;2080;A2a;Rice;50975
 Canada;0;2080;A2a;Rice;0
-Central African Republic;-2045;2080;A2a;Rice;28184
+Central African Rep.;-2045;2080;A2a;Rice;28184
 Chad;-7847;2080;A2a;Rice;108160
 Chile;1389;2080;A2a;Rice;138176
 China;15603367;2080;A2a;Rice;194814111
@@ -3171,10 +3171,10 @@ Costa Rica;12904;2080;A2a;Rice;211188
 Croatia;0;2080;A2a;Rice;0
 Cuba;35813;2080;A2a;Rice;586142
 Cyprus;0;2080;A2a;Rice;0
-Czech Republic;0;2080;A2a;Rice;0
+Czechia;0;2080;A2a;Rice;0
 Denmark;0;2080;A2a;Rice;0
 Djibouti;0;2080;A2a;Rice;0
-Dominican Republic;41934;2080;A2a;Rice;686321
+Dominican Rep.;41934;2080;A2a;Rice;686321
 Ecuador;-92102;2080;A2a;Rice;1325404
 Egypt;-610814;2080;A2a;Rice;5495126
 El Salvador;319;2080;A2a;Rice;31677
@@ -3215,8 +3215,8 @@ Japan;384458;2080;A2a;Rice;11382030
 Jordan;0;2080;A2a;Rice;0
 Kazakhstan;23154;2080;A2a;Rice;279051
 Kenya;-4515;2080;A2a;Rice;46865
-Korea Dem.People's Rep.;77409;2080;A2a;Rice;2291723
-Korea, Republic Of;233728;2080;A2a;Rice;6919621
+North Korea;77409;2080;A2a;Rice;2291723
+South Korea;233728;2080;A2a;Rice;6919621
 Kuwait;0;2080;A2a;Rice;0
 Kyrgyzstan;1638;2080;A2a;Rice;20040
 Laos;135197;2080;A2a;Rice;2576440
@@ -3326,7 +3326,7 @@ Burundi;-19292;2080;A2a;Maize;104513
 Cambodia;-9874;2080;A2a;Maize;231185
 Cameroon;-117730;2080;A2a;Maize;752702
 Canada;306537;2080;A2a;Maize;9033365
-Central African Republic;-17490;2080;A2a;Maize;94753
+Central African Rep.;-17490;2080;A2a;Maize;94753
 Chad;-19240;2080;A2a;Maize;104232
 Chile;-59673;2080;A2a;Maize;1048145
 China;-3553998;2080;A2a;Maize;121227479
@@ -3336,10 +3336,10 @@ Costa Rica;827;2080;A2a;Maize;15885
 Croatia;-259382;2080;A2a;Maize;1762026
 Cuba;18113;2080;A2a;Maize;347784
 Cyprus;0;2080;A2a;Maize;0
-Czech Republic;-67204;2080;A2a;Maize;456530
+Czechia;-67204;2080;A2a;Maize;456530
 Denmark;0;2080;A2a;Maize;0
 Djibouti;0;2080;A2a;Maize;10
-Dominican Republic;1904;2080;A2a;Maize;36558
+Dominican Rep.;1904;2080;A2a;Maize;36558
 Ecuador;-15105;2080;A2a;Maize;677144
 Egypt;-1168568;2080;A2a;Maize;5456083
 El Salvador;-34965;2080;A2a;Maize;614157
@@ -3380,8 +3380,8 @@ Japan;-1;2080;A2a;Maize;159
 Jordan;-2513;2080;A2a;Maize;13748
 Kazakhstan;-3929;2080;A2a;Maize;408751
 Kenya;-505386;2080;A2a;Maize;2184520
-Korea Dem.People's Rep.;-8005;2080;A2a;Maize;1638423
-Korea, Republic Of;-334;2080;A2a;Maize;68292
+North Korea;-8005;2080;A2a;Maize;1638423
+South Korea;-334;2080;A2a;Maize;68292
 Kuwait;-111;2080;A2a;Maize;607
 Kyrgyzstan;-6697;2080;A2a;Maize;404936
 Laos;-8907;2080;A2a;Maize;208547
@@ -3491,7 +3491,7 @@ Burundi;34;2020;A2b;Wheat;8123
 Cambodia;0;2020;A2b;Wheat;0
 Cameroon;-3;2020;A2b;Wheat;397
 Canada;1344990;2020;A2b;Wheat;24485648
-Central African Republic;0;2020;A2b;Wheat;0
+Central African Rep.;0;2020;A2b;Wheat;0
 Chad;11;2020;A2b;Wheat;2560
 Chile;-77466;2020;A2b;Wheat;1646480
 China;3609722;2020;A2b;Wheat;98489093
@@ -3501,10 +3501,10 @@ Costa Rica;0;2020;A2b;Wheat;0
 Croatia;-36738;2020;A2b;Wheat;797693
 Cuba;0;2020;A2b;Wheat;0
 Cyprus;-59;2020;A2b;Wheat;10529
-Czech Republic;-174591;2020;A2b;Wheat;3790889
+Czechia;-174591;2020;A2b;Wheat;3790889
 Denmark;162273;2020;A2b;Wheat;4814027
 Djibouti;0;2020;A2b;Wheat;0
-Dominican Republic;0;2020;A2b;Wheat;0
+Dominican Rep.;0;2020;A2b;Wheat;0
 Ecuador;-1029;2020;A2b;Wheat;10042
 Egypt;111416;2020;A2b;Wheat;7237275
 El Salvador;0;2020;A2b;Wheat;0
@@ -3545,8 +3545,8 @@ Japan;13936;2020;A2b;Wheat;820221
 Jordan;-161;2020;A2b;Wheat;28622
 Kazakhstan;-232535;2020;A2b;Wheat;11289324
 Kenya;6163;2020;A2b;Wheat;328088
-Korea Dem.People's Rep.;2958;2020;A2b;Wheat;174081
-Korea, Republic Of;116;2020;A2b;Wheat;6850
+North Korea;2958;2020;A2b;Wheat;174081
+South Korea;116;2020;A2b;Wheat;6850
 Kuwait;-3;2020;A2b;Wheat;501
 Kyrgyzstan;22031;2020;A2b;Wheat;1049833
 Laos;0;2020;A2b;Wheat;0
@@ -3656,7 +3656,7 @@ Burundi;-987;2020;A2b;Rice;61483
 Cambodia;4964;2020;A2b;Rice;4730561
 Cameroon;-1439;2020;A2b;Rice;51399
 Canada;0;2020;A2b;Rice;0
-Central African Republic;-478;2020;A2b;Rice;29751
+Central African Rep.;-478;2020;A2b;Rice;29751
 Chad;-1833;2020;A2b;Rice;114174
 Chile;-8882;2020;A2b;Rice;127905
 China;-423787;2020;A2b;Rice;178786957
@@ -3666,10 +3666,10 @@ Costa Rica;-13729;2020;A2b;Rice;184555
 Croatia;0;2020;A2b;Rice;0
 Cuba;-38104;2020;A2b;Rice;512224
 Cyprus;0;2020;A2b;Rice;0
-Czech Republic;0;2020;A2b;Rice;0
+Czechia;0;2020;A2b;Rice;0
 Denmark;0;2020;A2b;Rice;0
 Djibouti;0;2020;A2b;Rice;0
-Dominican Republic;-44617;2020;A2b;Rice;599770
+Dominican Rep.;-44617;2020;A2b;Rice;599770
 Ecuador;-160074;2020;A2b;Rice;1257432
 Egypt;-26650;2020;A2b;Rice;6079291
 El Salvador;-2036;2020;A2b;Rice;29322
@@ -3710,8 +3710,8 @@ Japan;175838;2020;A2b;Rice;11173409
 Jordan;0;2020;A2b;Rice;0
 Kazakhstan;-10282;2020;A2b;Rice;245615
 Kenya;-44;2020;A2b;Rice;51337
-Korea Dem.People's Rep.;35404;2020;A2b;Rice;2249718
-Korea, Republic Of;106899;2020;A2b;Rice;6792792
+North Korea;35404;2020;A2b;Rice;2249718
+South Korea;106899;2020;A2b;Rice;6792792
 Kuwait;0;2020;A2b;Rice;0
 Kyrgyzstan;26;2020;A2b;Rice;18428
 Laos;2564;2020;A2b;Rice;2443807
@@ -3821,7 +3821,7 @@ Burundi;-5010;2020;A2b;Maize;118795
 Cambodia;-3205;2020;A2b;Maize;237854
 Cameroon;-32412;2020;A2b;Maize;838020
 Canada;-16397;2020;A2b;Maize;8710432
-Central African Republic;-4542;2020;A2b;Maize;107701
+Central African Rep.;-4542;2020;A2b;Maize;107701
 Chad;-4996;2020;A2b;Maize;118477
 Chile;-24647;2020;A2b;Maize;1083170
 China;-4419562;2020;A2b;Maize;120361915
@@ -3831,10 +3831,10 @@ Costa Rica;-201;2020;A2b;Maize;14856
 Croatia;-149640;2020;A2b;Maize;1871768
 Cuba;-4400;2020;A2b;Maize;325271
 Cyprus;0;2020;A2b;Maize;0
-Czech Republic;-38771;2020;A2b;Maize;484964
+Czechia;-38771;2020;A2b;Maize;484964
 Denmark;0;2020;A2b;Maize;0
 Djibouti;0;2020;A2b;Maize;10
-Dominican Republic;-463;2020;A2b;Maize;34192
+Dominican Rep.;-463;2020;A2b;Maize;34192
 Ecuador;-8126;2020;A2b;Maize;684124
 Egypt;-289443;2020;A2b;Maize;6335208
 El Salvador;-14442;2020;A2b;Maize;634680
@@ -3875,8 +3875,8 @@ Japan;6;2020;A2b;Maize;166
 Jordan;-817;2020;A2b;Maize;15444
 Kazakhstan;-20709;2020;A2b;Maize;391970
 Kenya;-29198;2020;A2b;Maize;2660708
-Korea Dem.People's Rep.;63519;2020;A2b;Maize;1709948
-Korea, Republic Of;2648;2020;A2b;Maize;71273
+North Korea;63519;2020;A2b;Maize;1709948
+South Korea;2648;2020;A2b;Maize;71273
 Kuwait;-36;2020;A2b;Maize;682
 Kyrgyzstan;-8325;2020;A2b;Maize;403309
 Laos;-2891;2020;A2b;Maize;214562
@@ -3986,7 +3986,7 @@ Burundi;79;2050;A2b;Wheat;8168
 Cambodia;0;2050;A2b;Wheat;0
 Cameroon;1;2050;A2b;Wheat;401
 Canada;1292007;2050;A2b;Wheat;24432664
-Central African Republic;0;2050;A2b;Wheat;0
+Central African Rep.;0;2050;A2b;Wheat;0
 Chad;25;2050;A2b;Wheat;2574
 Chile;-29657;2050;A2b;Wheat;1694289
 China;7426575;2050;A2b;Wheat;102305946
@@ -3996,10 +3996,10 @@ Costa Rica;0;2050;A2b;Wheat;0
 Croatia;-56485;2050;A2b;Wheat;777946
 Cuba;0;2050;A2b;Wheat;0
 Cyprus;-92;2050;A2b;Wheat;10497
-Czech Republic;-268435;2050;A2b;Wheat;3697046
+Czechia;-268435;2050;A2b;Wheat;3697046
 Denmark;414773;2050;A2b;Wheat;5066528
 Djibouti;0;2050;A2b;Wheat;0
-Dominican Republic;0;2050;A2b;Wheat;0
+Dominican Rep.;0;2050;A2b;Wheat;0
 Ecuador;-1142;2050;A2b;Wheat;9928
 Egypt;118434;2050;A2b;Wheat;7244293
 El Salvador;0;2050;A2b;Wheat;0
@@ -4040,8 +4040,8 @@ Japan;26170;2050;A2b;Wheat;832456
 Jordan;-250;2050;A2b;Wheat;28533
 Kazakhstan;-9215;2050;A2b;Wheat;11512643
 Kenya;1380;2050;A2b;Wheat;323305
-Korea Dem.People's Rep.;5554;2050;A2b;Wheat;176678
-Korea, Republic Of;219;2050;A2b;Wheat;6952
+North Korea;5554;2050;A2b;Wheat;176678
+South Korea;219;2050;A2b;Wheat;6952
 Kuwait;-4;2050;A2b;Wheat;499
 Kyrgyzstan;74697;2050;A2b;Wheat;1102500
 Laos;0;2050;A2b;Wheat;0
@@ -4151,7 +4151,7 @@ Burundi;-641;2050;A2b;Rice;61829
 Cambodia;110692;2050;A2b;Rice;4836289
 Cameroon;-906;2050;A2b;Rice;51933
 Canada;0;2050;A2b;Rice;0
-Central African Republic;-310;2050;A2b;Rice;29918
+Central African Rep.;-310;2050;A2b;Rice;29918
 Chad;-1190;2050;A2b;Rice;114817
 Chile;-5089;2050;A2b;Rice;131698
 China;5372490;2050;A2b;Rice;184583235
@@ -4161,10 +4161,10 @@ Costa Rica;-8444;2050;A2b;Rice;189840
 Croatia;0;2050;A2b;Rice;0
 Cuba;-23437;2050;A2b;Rice;526891
 Cyprus;0;2050;A2b;Rice;0
-Czech Republic;0;2050;A2b;Rice;0
+Czechia;0;2050;A2b;Rice;0
 Denmark;0;2050;A2b;Rice;0
 Djibouti;0;2050;A2b;Rice;0
-Dominican Republic;-27443;2050;A2b;Rice;616943
+Dominican Rep.;-27443;2050;A2b;Rice;616943
 Ecuador;-174620;2050;A2b;Rice;1242886
 Egypt;-20636;2050;A2b;Rice;6085305
 El Salvador;-1167;2050;A2b;Rice;30191
@@ -4205,8 +4205,8 @@ Japan;330846;2050;A2b;Rice;11328418
 Jordan;0;2050;A2b;Rice;0
 Kazakhstan;-5323;2050;A2b;Rice;250574
 Kenya;-807;2050;A2b;Rice;50573
-Korea Dem.People's Rep.;66614;2050;A2b;Rice;2280929
-Korea, Republic Of;201135;2050;A2b;Rice;6887028
+North Korea;66614;2050;A2b;Rice;2280929
+South Korea;201135;2050;A2b;Rice;6887028
 Kuwait;0;2050;A2b;Rice;0
 Kyrgyzstan;969;2050;A2b;Rice;19371
 Laos;57183;2050;A2b;Rice;2498426
@@ -4316,7 +4316,7 @@ Burundi;-9250;2050;A2b;Maize;114555
 Cambodia;-9087;2050;A2b;Maize;231972
 Cameroon;-58442;2050;A2b;Maize;811990
 Canada;172132;2050;A2b;Maize;8898960
-Central African Republic;-8386;2050;A2b;Maize;103857
+Central African Rep.;-8386;2050;A2b;Maize;103857
 Chad;-9225;2050;A2b;Maize;114248
 Chile;-40675;2050;A2b;Maize;1067143
 China;-7431990;2050;A2b;Maize;117349487
@@ -4326,10 +4326,10 @@ Costa Rica;77;2050;A2b;Maize;15134
 Croatia;-278333;2050;A2b;Maize;1743075
 Cuba;1676;2050;A2b;Maize;331347
 Cyprus;0;2050;A2b;Maize;0
-Czech Republic;-72115;2050;A2b;Maize;451620
+Czechia;-72115;2050;A2b;Maize;451620
 Denmark;0;2050;A2b;Maize;0
 Djibouti;0;2050;A2b;Maize;10
-Dominican Republic;176;2050;A2b;Maize;34831
+Dominican Rep.;176;2050;A2b;Maize;34831
 Ecuador;-6664;2050;A2b;Maize;685585
 Egypt;-545077;2050;A2b;Maize;6079574
 El Salvador;-23833;2050;A2b;Maize;625288
@@ -4370,8 +4370,8 @@ Japan;5;2050;A2b;Maize;165
 Jordan;-1514;2050;A2b;Maize;14747
 Kazakhstan;-29218;2050;A2b;Maize;383462
 Kenya;-176760;2050;A2b;Maize;2513146
-Korea Dem.People's Rep.;48431;2050;A2b;Maize;1694859
-Korea, Republic Of;2019;2050;A2b;Maize;70644
+North Korea;48431;2050;A2b;Maize;1694859
+South Korea;2019;2050;A2b;Maize;70644
 Kuwait;-67;2050;A2b;Maize;651
 Kyrgyzstan;-15801;2050;A2b;Maize;395832
 Laos;-8197;2050;A2b;Maize;209257
@@ -4481,7 +4481,7 @@ Burundi;-338;2080;A2b;Wheat;7752
 Cambodia;0;2080;A2b;Wheat;0
 Cameroon;-9;2080;A2b;Wheat;391
 Canada;-154029;2080;A2b;Wheat;22986628
-Central African Republic;0;2080;A2b;Wheat;0
+Central African Rep.;0;2080;A2b;Wheat;0
 Chad;-106;2080;A2b;Wheat;2443
 Chile;38656;2080;A2b;Wheat;1762601
 China;5457567;2080;A2b;Wheat;100336937
@@ -4491,10 +4491,10 @@ Costa Rica;0;2080;A2b;Wheat;0
 Croatia;-25006;2080;A2b;Wheat;809426
 Cuba;0;2080;A2b;Wheat;0
 Cyprus;-459;2080;A2b;Wheat;10129
-Czech Republic;-118836;2080;A2b;Wheat;3846644
+Czechia;-118836;2080;A2b;Wheat;3846644
 Denmark;611837;2080;A2b;Wheat;5263592
 Djibouti;0;2080;A2b;Wheat;0
-Dominican Republic;0;2080;A2b;Wheat;0
+Dominican Rep.;0;2080;A2b;Wheat;0
 Ecuador;-608;2080;A2b;Wheat;10463
 Egypt;-431057;2080;A2b;Wheat;6694802
 El Salvador;0;2080;A2b;Wheat;0
@@ -4535,8 +4535,8 @@ Japan;21831;2080;A2b;Wheat;828117
 Jordan;-1249;2080;A2b;Wheat;27534
 Kazakhstan;1251134;2080;A2b;Wheat;12772992
 Kenya;-23971;2080;A2b;Wheat;297954
-Korea Dem.People's Rep.;4633;2080;A2b;Wheat;175757
-Korea, Republic Of;182;2080;A2b;Wheat;6916
+North Korea;4633;2080;A2b;Wheat;175757
+South Korea;182;2080;A2b;Wheat;6916
 Kuwait;-22;2080;A2b;Wheat;482
 Kyrgyzstan;111279;2080;A2b;Wheat;1139082
 Laos;0;2080;A2b;Wheat;0
@@ -4646,7 +4646,7 @@ Burundi;-3232;2080;A2b;Rice;59239
 Cambodia;163799;2080;A2b;Rice;4889397
 Cameroon;-1742;2080;A2b;Rice;51096
 Canada;0;2080;A2b;Rice;0
-Central African Republic;-1564;2080;A2b;Rice;28665
+Central African Rep.;-1564;2080;A2b;Rice;28665
 Chad;-6001;2080;A2b;Rice;110006
 Chile;1699;2080;A2b;Rice;138486
 China;15965179;2080;A2b;Rice;195175924
@@ -4656,10 +4656,10 @@ Costa Rica;12926;2080;A2b;Rice;211210
 Croatia;0;2080;A2b;Rice;0
 Cuba;35876;2080;A2b;Rice;586204
 Cyprus;0;2080;A2b;Rice;0
-Czech Republic;0;2080;A2b;Rice;0
+Czechia;0;2080;A2b;Rice;0
 Denmark;0;2080;A2b;Rice;0
 Djibouti;0;2080;A2b;Rice;0
-Dominican Republic;42007;2080;A2b;Rice;686394
+Dominican Rep.;42007;2080;A2b;Rice;686394
 Ecuador;-92048;2080;A2b;Rice;1325458
 Egypt;-430420;2080;A2b;Rice;5675521
 El Salvador;390;2080;A2b;Rice;31748
@@ -4700,8 +4700,8 @@ Japan;-151907;2080;A2b;Rice;10845664
 Jordan;0;2080;A2b;Rice;0
 Kazakhstan;25228;2080;A2b;Rice;281125
 Kenya;-4340;2080;A2b;Rice;47041
-Korea Dem.People's Rep.;-30586;2080;A2b;Rice;2183728
-Korea, Republic Of;-92351;2080;A2b;Rice;6593542
+North Korea;-30586;2080;A2b;Rice;2183728
+South Korea;-92351;2080;A2b;Rice;6593542
 Kuwait;0;2080;A2b;Rice;0
 Kyrgyzstan;1808;2080;A2b;Rice;20210
 Laos;84619;2080;A2b;Rice;2525862
@@ -4811,7 +4811,7 @@ Burundi;-17350;2080;A2b;Maize;106455
 Cambodia;-8681;2080;A2b;Maize;232378
 Cameroon;-115745;2080;A2b;Maize;754687
 Canada;408341;2080;A2b;Maize;9135169
-Central African Republic;-15730;2080;A2b;Maize;96513
+Central African Rep.;-15730;2080;A2b;Maize;96513
 Chad;-17303;2080;A2b;Maize;106169
 Chile;-62327;2080;A2b;Maize;1045491
 China;-3053953;2080;A2b;Maize;121727524
@@ -4821,10 +4821,10 @@ Costa Rica;604;2080;A2b;Maize;15662
 Croatia;-282932;2080;A2b;Maize;1738476
 Cuba;13230;2080;A2b;Maize;342902
 Cyprus;0;2080;A2b;Maize;0
-Czech Republic;-73306;2080;A2b;Maize;450429
+Czechia;-73306;2080;A2b;Maize;450429
 Denmark;0;2080;A2b;Maize;0
 Djibouti;0;2080;A2b;Maize;10
-Dominican Republic;1391;2080;A2b;Maize;36045
+Dominican Rep.;1391;2080;A2b;Maize;36045
 Ecuador;-26546;2080;A2b;Maize;665703
 Egypt;-975847;2080;A2b;Maize;5648804
 El Salvador;-36520;2080;A2b;Maize;612601
@@ -4865,8 +4865,8 @@ Japan;1;2080;A2b;Maize;161
 Jordan;-2306;2080;A2b;Maize;13956
 Kazakhstan;-583;2080;A2b;Maize;412096
 Kenya;-496184;2080;A2b;Maize;2193722
-Korea Dem.People's Rep.;10617;2080;A2b;Maize;1657045
-Korea, Republic Of;443;2080;A2b;Maize;69068
+North Korea;10617;2080;A2b;Maize;1657045
+South Korea;443;2080;A2b;Maize;69068
 Kuwait;-102;2080;A2b;Maize;616
 Kyrgyzstan;-5580;2080;A2b;Maize;406053
 Laos;-7831;2080;A2b;Maize;209623
@@ -4976,7 +4976,7 @@ Burundi;68;2020;A2c;Wheat;8157
 Cambodia;0;2020;A2c;Wheat;0
 Cameroon;-1;2020;A2c;Wheat;399
 Canada;262379;2020;A2c;Wheat;23403036
-Central African Republic;0;2020;A2c;Wheat;0
+Central African Rep.;0;2020;A2c;Wheat;0
 Chad;21;2020;A2c;Wheat;2571
 Chile;-31531;2020;A2c;Wheat;1692415
 China;-2193959;2020;A2c;Wheat;92685411
@@ -4986,10 +4986,10 @@ Costa Rica;0;2020;A2c;Wheat;0
 Croatia;-24852;2020;A2c;Wheat;809580
 Cuba;0;2020;A2c;Wheat;0
 Cyprus;-105;2020;A2c;Wheat;10484
-Czech Republic;-118103;2020;A2c;Wheat;3847378
+Czechia;-118103;2020;A2c;Wheat;3847378
 Denmark;155558;2020;A2c;Wheat;4807313
 Djibouti;0;2020;A2c;Wheat;0
-Dominican Republic;0;2020;A2c;Wheat;0
+Dominican Rep.;0;2020;A2c;Wheat;0
 Ecuador;-746;2020;A2c;Wheat;10325
 Egypt;133257;2020;A2c;Wheat;7259116
 El Salvador;0;2020;A2c;Wheat;0
@@ -5030,8 +5030,8 @@ Japan;9627;2020;A2c;Wheat;815912
 Jordan;-285;2020;A2c;Wheat;28498
 Kazakhstan;81554;2020;A2c;Wheat;11603412
 Kenya;8714;2020;A2c;Wheat;330639
-Korea Dem.People's Rep.;2043;2020;A2c;Wheat;173167
-Korea, Republic Of;80;2020;A2c;Wheat;6814
+North Korea;2043;2020;A2c;Wheat;173167
+South Korea;80;2020;A2c;Wheat;6814
 Kuwait;-5;2020;A2c;Wheat;499
 Kyrgyzstan;16415;2020;A2c;Wheat;1044218
 Laos;0;2020;A2c;Wheat;0
@@ -5141,7 +5141,7 @@ Burundi;-726;2020;A2c;Rice;61744
 Cambodia;1783;2020;A2c;Rice;4727380
 Cameroon;-1160;2020;A2c;Rice;51678
 Canada;0;2020;A2c;Rice;0
-Central African Republic;-351;2020;A2c;Rice;29877
+Central African Rep.;-351;2020;A2c;Rice;29877
 Chad;-1349;2020;A2c;Rice;114659
 Chile;-5238;2020;A2c;Rice;131549
 China;-2356444;2020;A2c;Rice;176854301
@@ -5151,10 +5151,10 @@ Costa Rica;-10423;2020;A2c;Rice;187862
 Croatia;0;2020;A2c;Rice;0
 Cuba;-28927;2020;A2c;Rice;521401
 Cyprus;0;2020;A2c;Rice;0
-Czech Republic;0;2020;A2c;Rice;0
+Czechia;0;2020;A2c;Rice;0
 Denmark;0;2020;A2c;Rice;0
 Djibouti;0;2020;A2c;Rice;0
-Dominican Republic;-33871;2020;A2c;Rice;610515
+Dominican Rep.;-33871;2020;A2c;Rice;610515
 Ecuador;-123864;2020;A2c;Rice;1293641
 Egypt;-7935;2020;A2c;Rice;6098006
 El Salvador;-1201;2020;A2c;Rice;30157
@@ -5195,8 +5195,8 @@ Japan;196577;2020;A2c;Rice;11194149
 Jordan;0;2020;A2c;Rice;0
 Kazakhstan;-3307;2020;A2c;Rice;252590
 Kenya;363;2020;A2c;Rice;51744
-Korea Dem.People's Rep.;39580;2020;A2c;Rice;2253894
-Korea, Republic Of;119508;2020;A2c;Rice;6805400
+North Korea;39580;2020;A2c;Rice;2253894
+South Korea;119508;2020;A2c;Rice;6805400
 Kuwait;0;2020;A2c;Rice;0
 Kyrgyzstan;-74;2020;A2c;Rice;18328
 Laos;921;2020;A2c;Rice;2442164
@@ -5306,7 +5306,7 @@ Burundi;-4375;2020;A2c;Maize;119430
 Cambodia;-6208;2020;A2c;Maize;234851
 Cameroon;-27815;2020;A2c;Maize;842617
 Canada;-4800;2020;A2c;Maize;8722029
-Central African Republic;-3966;2020;A2c;Maize;108277
+Central African Rep.;-3966;2020;A2c;Maize;108277
 Chad;-4363;2020;A2c;Maize;119110
 Chile;-11901;2020;A2c;Maize;1095916
 China;-6620815;2020;A2c;Maize;118160661
@@ -5316,10 +5316,10 @@ Costa Rica;41;2020;A2c;Maize;15099
 Croatia;-120845;2020;A2c;Maize;1900563
 Cuba;906;2020;A2c;Maize;330577
 Cyprus;0;2020;A2c;Maize;0
-Czech Republic;-31310;2020;A2c;Maize;492424
+Czechia;-31310;2020;A2c;Maize;492424
 Denmark;0;2020;A2c;Maize;0
 Djibouti;0;2020;A2c;Maize;10
-Dominican Republic;95;2020;A2c;Maize;34750
+Dominican Rep.;95;2020;A2c;Maize;34750
 Ecuador;4406;2020;A2c;Maize;696656
 Egypt;-256480;2020;A2c;Maize;6368171
 El Salvador;-6974;2020;A2c;Maize;642148
@@ -5360,8 +5360,8 @@ Japan;3;2020;A2c;Maize;163
 Jordan;-872;2020;A2c;Maize;15390
 Kazakhstan;-9459;2020;A2c;Maize;403220
 Kenya;-7888;2020;A2c;Maize;2682018
-Korea Dem.People's Rep.;35095;2020;A2c;Maize;1681524
-Korea, Republic Of;1463;2020;A2c;Maize;70088
+North Korea;35095;2020;A2c;Maize;1681524
+South Korea;1463;2020;A2c;Maize;70088
 Kuwait;-38;2020;A2c;Maize;680
 Kyrgyzstan;-10972;2020;A2c;Maize;400661
 Laos;-5600;2020;A2c;Maize;211853
@@ -5471,7 +5471,7 @@ Burundi;149;2050;A2c;Wheat;8239
 Cambodia;0;2050;A2c;Wheat;0
 Cameroon;4;2050;A2c;Wheat;404
 Canada;1654934;2050;A2c;Wheat;24795591
-Central African Republic;0;2050;A2c;Wheat;0
+Central African Rep.;0;2050;A2c;Wheat;0
 Chad;47;2050;A2c;Wheat;2597
 Chile;-53761;2050;A2c;Wheat;1670184
 China;5784954;2050;A2c;Wheat;100664324
@@ -5481,10 +5481,10 @@ Costa Rica;0;2050;A2c;Wheat;0
 Croatia;-56959;2050;A2c;Wheat;777472
 Cuba;0;2050;A2c;Wheat;0
 Cyprus;-15;2050;A2c;Wheat;10573
-Czech Republic;-270688;2050;A2c;Wheat;3694792
+Czechia;-270688;2050;A2c;Wheat;3694792
 Denmark;422054;2050;A2c;Wheat;5073809
 Djibouti;0;2050;A2c;Wheat;0
-Dominican Republic;0;2050;A2c;Wheat;0
+Dominican Rep.;0;2050;A2c;Wheat;0
 Ecuador;-1159;2050;A2c;Wheat;9912
 Egypt;197001;2050;A2c;Wheat;7322860
 El Salvador;0;2050;A2c;Wheat;0
@@ -5525,8 +5525,8 @@ Japan;14476;2050;A2c;Wheat;820762
 Jordan;-42;2050;A2c;Wheat;28741
 Kazakhstan;21047;2050;A2c;Wheat;11542905
 Kenya;4489;2050;A2c;Wheat;326414
-Korea Dem.People's Rep.;3072;2050;A2c;Wheat;174196
-Korea, Republic Of;121;2050;A2c;Wheat;6855
+North Korea;3072;2050;A2c;Wheat;174196
+South Korea;121;2050;A2c;Wheat;6855
 Kuwait;-1;2050;A2c;Wheat;503
 Kyrgyzstan;70406;2050;A2c;Wheat;1098208
 Laos;0;2050;A2c;Wheat;0
@@ -5636,7 +5636,7 @@ Burundi;-96;2050;A2c;Rice;62375
 Cambodia;66179;2050;A2c;Rice;4791776
 Cameroon;-566;2050;A2c;Rice;52273
 Canada;0;2050;A2c;Rice;0
-Central African Republic;-46;2050;A2c;Rice;30182
+Central African Rep.;-46;2050;A2c;Rice;30182
 Chad;-177;2050;A2c;Rice;115830
 Chile;-7001;2050;A2c;Rice;129786
 China;-232897;2050;A2c;Rice;178977848
@@ -5646,10 +5646,10 @@ Costa Rica;-9390;2050;A2c;Rice;188895
 Croatia;0;2050;A2c;Rice;0
 Cuba;-26060;2050;A2c;Rice;524268
 Cyprus;0;2050;A2c;Rice;0
-Czech Republic;0;2050;A2c;Rice;0
+Czechia;0;2050;A2c;Rice;0
 Denmark;0;2050;A2c;Rice;0
 Djibouti;0;2050;A2c;Rice;0
-Dominican Republic;-30514;2050;A2c;Rice;613872
+Dominican Rep.;-30514;2050;A2c;Rice;613872
 Ecuador;-176768;2050;A2c;Rice;1240737
 Egypt;46686;2050;A2c;Rice;6152627
 El Salvador;-1605;2050;A2c;Rice;29753
@@ -5690,8 +5690,8 @@ Japan;318503;2050;A2c;Rice;11316075
 Jordan;0;2050;A2c;Rice;0
 Kazakhstan;-4651;2050;A2c;Rice;251246
 Kenya;-311;2050;A2c;Rice;51069
-Korea Dem.People's Rep.;64129;2050;A2c;Rice;2278444
-Korea, Republic Of;193632;2050;A2c;Rice;6879524
+North Korea;64129;2050;A2c;Rice;2278444
+South Korea;193632;2050;A2c;Rice;6879524
 Kuwait;0;2050;A2c;Rice;0
 Kyrgyzstan;893;2050;A2c;Rice;19294
 Laos;34188;2050;A2c;Rice;2475431
@@ -5801,7 +5801,7 @@ Burundi;-8707;2050;A2c;Maize;115098
 Cambodia;-13976;2050;A2c;Maize;227083
 Cameroon;-52839;2050;A2c;Maize;817593
 Canada;-4990;2050;A2c;Maize;8721839
-Central African Republic;-7894;2050;A2c;Maize;104349
+Central African Rep.;-7894;2050;A2c;Maize;104349
 Chad;-8684;2050;A2c;Maize;114789
 Chile;-33381;2050;A2c;Maize;1074436
 China;-9276385;2050;A2c;Maize;115505092
@@ -5811,10 +5811,10 @@ Costa Rica;30;2050;A2c;Maize;15087
 Croatia;-279482;2050;A2c;Maize;1741926
 Cuba;654;2050;A2c;Maize;330325
 Cyprus;0;2050;A2c;Maize;0
-Czech Republic;-72412;2050;A2c;Maize;451322
+Czechia;-72412;2050;A2c;Maize;451322
 Denmark;0;2050;A2c;Maize;0
 Djibouti;0;2050;A2c;Maize;10
-Dominican Republic;69;2050;A2c;Maize;34723
+Dominican Rep.;69;2050;A2c;Maize;34723
 Ecuador;-6175;2050;A2c;Maize;686074
 Egypt;-529653;2050;A2c;Maize;6094998
 El Salvador;-19560;2050;A2c;Maize;629562
@@ -5855,8 +5855,8 @@ Japan;2;2050;A2c;Maize;162
 Jordan;-1468;2050;A2c;Maize;14794
 Kazakhstan;-28134;2050;A2c;Maize;384545
 Kenya;-150786;2050;A2c;Maize;2539120
-Korea Dem.People's Rep.;20504;2050;A2c;Maize;1666933
-Korea, Republic Of;855;2050;A2c;Maize;69480
+North Korea;20504;2050;A2c;Maize;1666933
+South Korea;855;2050;A2c;Maize;69480
 Kuwait;-65;2050;A2c;Maize;653
 Kyrgyzstan;-16977;2050;A2c;Maize;394656
 Laos;-12608;2050;A2c;Maize;204846
@@ -5966,7 +5966,7 @@ Burundi;-348;2080;A2c;Wheat;7741
 Cambodia;0;2080;A2c;Wheat;0
 Cameroon;-6;2080;A2c;Wheat;394
 Canada;2426554;2080;A2c;Wheat;25567211
-Central African Republic;0;2080;A2c;Wheat;0
+Central African Rep.;0;2080;A2c;Wheat;0
 Chad;-110;2080;A2c;Wheat;2440
 Chile;-15850;2080;A2c;Wheat;1708096
 China;6257463;2080;A2c;Wheat;101136833
@@ -5976,10 +5976,10 @@ Costa Rica;0;2080;A2c;Wheat;0
 Croatia;-28501;2080;A2c;Wheat;805930
 Cuba;0;2080;A2c;Wheat;0
 Cyprus;-531;2080;A2c;Wheat;10058
-Czech Republic;-135446;2080;A2c;Wheat;3830034
+Czechia;-135446;2080;A2c;Wheat;3830034
 Denmark;628517;2080;A2c;Wheat;5280271
 Djibouti;0;2080;A2c;Wheat;0
-Dominican Republic;0;2080;A2c;Wheat;0
+Dominican Rep.;0;2080;A2c;Wheat;0
 Ecuador;-692;2080;A2c;Wheat;10379
 Egypt;-505957;2080;A2c;Wheat;6619901
 El Salvador;0;2080;A2c;Wheat;0
@@ -6020,8 +6020,8 @@ Japan;7735;2080;A2c;Wheat;814021
 Jordan;-1442;2080;A2c;Wheat;27340
 Kazakhstan;646377;2080;A2c;Wheat;12168235
 Kenya;-20184;2080;A2c;Wheat;301741
-Korea Dem.People's Rep.;1642;2080;A2c;Wheat;172765
-Korea, Republic Of;65;2080;A2c;Wheat;6798
+North Korea;1642;2080;A2c;Wheat;172765
+South Korea;65;2080;A2c;Wheat;6798
 Kuwait;-25;2080;A2c;Wheat;478
 Kyrgyzstan;126061;2080;A2c;Wheat;1153863
 Laos;0;2080;A2c;Wheat;0
@@ -6131,7 +6131,7 @@ Burundi;-3315;2080;A2c;Rice;59155
 Cambodia;192410;2080;A2c;Rice;4918007
 Cameroon;-1328;2080;A2c;Rice;51510
 Canada;0;2080;A2c;Rice;0
-Central African Republic;-1604;2080;A2c;Rice;28624
+Central African Rep.;-1604;2080;A2c;Rice;28624
 Chad;-6156;2080;A2c;Rice;109851
 Chile;-802;2080;A2c;Rice;135985
 China;13524916;2080;A2c;Rice;192735661
@@ -6141,10 +6141,10 @@ Costa Rica;20752;2080;A2c;Rice;219037
 Croatia;0;2080;A2c;Rice;0
 Cuba;57598;2080;A2c;Rice;607926
 Cyprus;0;2080;A2c;Rice;0
-Czech Republic;0;2080;A2c;Rice;0
+Czechia;0;2080;A2c;Rice;0
 Denmark;0;2080;A2c;Rice;0
 Djibouti;0;2080;A2c;Rice;0
-Dominican Republic;67442;2080;A2c;Rice;711828
+Dominican Rep.;67442;2080;A2c;Rice;711828
 Ecuador;-68074;2080;A2c;Rice;1349432
 Egypt;-494600;2080;A2c;Rice;5611341
 El Salvador;-184;2080;A2c;Rice;31174
@@ -6185,8 +6185,8 @@ Japan;392664;2080;A2c;Rice;11390235
 Jordan;0;2080;A2c;Rice;0
 Kazakhstan;11797;2080;A2c;Rice;267694
 Kenya;-3735;2080;A2c;Rice;47645
-Korea Dem.People's Rep.;79061;2080;A2c;Rice;2293375
-Korea, Republic Of;238717;2080;A2c;Rice;6924610
+North Korea;79061;2080;A2c;Rice;2293375
+South Korea;238717;2080;A2c;Rice;6924610
 Kuwait;0;2080;A2c;Rice;0
 Kyrgyzstan;2073;2080;A2c;Rice;20475
 Laos;99399;2080;A2c;Rice;2540642
@@ -6296,7 +6296,7 @@ Burundi;-18183;2080;A2c;Maize;105622
 Cambodia;-17345;2080;A2c;Maize;223714
 Cameroon;-108918;2080;A2c;Maize;761514
 Canada;144282;2080;A2c;Maize;8871110
-Central African Republic;-16485;2080;A2c;Maize;95758
+Central African Rep.;-16485;2080;A2c;Maize;95758
 Chad;-18134;2080;A2c;Maize;105339
 Chile;-74313;2080;A2c;Maize;1033505
 China;-5131885;2080;A2c;Maize;119649591
@@ -6306,10 +6306,10 @@ Costa Rica;958;2080;A2c;Maize;16015
 Croatia;-291398;2080;A2c;Maize;1730010
 Cuba;20966;2080;A2c;Maize;350638
 Cyprus;0;2080;A2c;Maize;0
-Czech Republic;-75500;2080;A2c;Maize;448235
+Czechia;-75500;2080;A2c;Maize;448235
 Denmark;0;2080;A2c;Maize;0
 Djibouti;-1;2080;A2c;Maize;10
-Dominican Republic;2204;2080;A2c;Maize;36858
+Dominican Rep.;2204;2080;A2c;Maize;36858
 Ecuador;-36533;2080;A2c;Maize;655716
 Egypt;-1116944;2080;A2c;Maize;5507707
 El Salvador;-43543;2080;A2c;Maize;605578
@@ -6350,8 +6350,8 @@ Japan;-5;2080;A2c;Maize;155
 Jordan;-2503;2080;A2c;Maize;13759
 Kazakhstan;-22243;2080;A2c;Maize;390436
 Kenya;-464538;2080;A2c;Maize;2225368
-Korea Dem.People's Rep.;-52854;2080;A2c;Maize;1593575
-Korea, Republic Of;-2203;2080;A2c;Maize;66423
+North Korea;-52854;2080;A2c;Maize;1593575
+South Korea;-2203;2080;A2c;Maize;66423
 Kuwait;-111;2080;A2c;Maize;608
 Kyrgyzstan;-8283;2080;A2c;Maize;403350
 Laos;-15647;2080;A2c;Maize;201807
@@ -6461,7 +6461,7 @@ Burundi;-32;2020;B1a;Wheat;8057
 Cambodia;0;2020;B1a;Wheat;0
 Cameroon;-5;2020;B1a;Wheat;395
 Canada;649418;2020;B1a;Wheat;23790075
-Central African Republic;0;2020;B1a;Wheat;0
+Central African Rep.;0;2020;B1a;Wheat;0
 Chad;-10;2020;B1a;Wheat;2539
 Chile;-105558;2020;B1a;Wheat;1618387
 China;3152919;2020;B1a;Wheat;98032289
@@ -6471,10 +6471,10 @@ Costa Rica;0;2020;B1a;Wheat;0
 Croatia;-65791;2020;B1a;Wheat;768640
 Cuba;0;2020;B1a;Wheat;0
 Cyprus;-93;2020;B1a;Wheat;10496
-Czech Republic;-312660;2020;B1a;Wheat;3652820
+Czechia;-312660;2020;B1a;Wheat;3652820
 Denmark;74756;2020;B1a;Wheat;4726510
 Djibouti;0;2020;B1a;Wheat;0
-Dominican Republic;0;2020;B1a;Wheat;0
+Dominican Rep.;0;2020;B1a;Wheat;0
 Ecuador;-1381;2020;B1a;Wheat;9690
 Egypt;24603;2020;B1a;Wheat;7150462
 El Salvador;0;2020;B1a;Wheat;0
@@ -6515,8 +6515,8 @@ Japan;11649;2020;B1a;Wheat;817935
 Jordan;-252;2020;B1a;Wheat;28531
 Kazakhstan;-653611;2020;B1a;Wheat;10868247
 Kenya;5736;2020;B1a;Wheat;327661
-Korea Dem.People's Rep.;2472;2020;B1a;Wheat;173596
-Korea, Republic Of;97;2020;B1a;Wheat;6831
+North Korea;2472;2020;B1a;Wheat;173596
+South Korea;97;2020;B1a;Wheat;6831
 Kuwait;-4;2020;B1a;Wheat;499
 Kyrgyzstan;-8441;2020;B1a;Wheat;1019361
 Laos;0;2020;B1a;Wheat;0
@@ -6626,7 +6626,7 @@ Burundi;-1499;2020;B1a;Rice;60971
 Cambodia;-36912;2020;B1a;Rice;4688686
 Cameroon;-1662;2020;B1a;Rice;51176
 Canada;0;2020;B1a;Rice;0
-Central African Republic;-726;2020;B1a;Rice;29503
+Central African Rep.;-726;2020;B1a;Rice;29503
 Chad;-2784;2020;B1a;Rice;113223
 Chile;-11111;2020;B1a;Rice;125676
 China;-1202758;2020;B1a;Rice;178007986
@@ -6636,10 +6636,10 @@ Costa Rica;-17603;2020;B1a;Rice;180681
 Croatia;0;2020;B1a;Rice;0
 Cuba;-48857;2020;B1a;Rice;501472
 Cyprus;0;2020;B1a;Rice;0
-Czech Republic;0;2020;B1a;Rice;0
+Czechia;0;2020;B1a;Rice;0
 Denmark;0;2020;B1a;Rice;0
 Djibouti;0;2020;B1a;Rice;0
-Dominican Republic;-57207;2020;B1a;Rice;587180
+Dominican Rep.;-57207;2020;B1a;Rice;587180
 Ecuador;-205177;2020;B1a;Rice;1212329
 Egypt;-101037;2020;B1a;Rice;6004904
 El Salvador;-2547;2020;B1a;Rice;28811
@@ -6680,8 +6680,8 @@ Japan;80067;2020;B1a;Rice;11077639
 Jordan;0;2020;B1a;Rice;0
 Kazakhstan;-19634;2020;B1a;Rice;236263
 Kenya;-112;2020;B1a;Rice;51268
-Korea Dem.People's Rep.;16121;2020;B1a;Rice;2230435
-Korea, Republic Of;48676;2020;B1a;Rice;6734569
+North Korea;16121;2020;B1a;Rice;2230435
+South Korea;48676;2020;B1a;Rice;6734569
 Kuwait;0;2020;B1a;Rice;0
 Kyrgyzstan;-519;2020;B1a;Rice;17883
 Laos;-19068;2020;B1a;Rice;2422174
@@ -6791,7 +6791,7 @@ Burundi;-5698;2020;B1a;Maize;118106
 Cambodia;-4594;2020;B1a;Maize;236465
 Cameroon;-36084;2020;B1a;Maize;834348
 Canada;-127709;2020;B1a;Maize;8599120
-Central African Republic;-5166;2020;B1a;Maize;107077
+Central African Rep.;-5166;2020;B1a;Maize;107077
 Chad;-5683;2020;B1a;Maize;117790
 Chile;-41132;2020;B1a;Maize;1066685
 China;-4181366;2020;B1a;Maize;120600111
@@ -6801,10 +6801,10 @@ Costa Rica;-357;2020;B1a;Maize;14701
 Croatia;-220021;2020;B1a;Maize;1801387
 Cuba;-7806;2020;B1a;Maize;321865
 Cyprus;0;2020;B1a;Maize;0
-Czech Republic;-57006;2020;B1a;Maize;466728
+Czechia;-57006;2020;B1a;Maize;466728
 Denmark;0;2020;B1a;Maize;0
 Djibouti;0;2020;B1a;Maize;10
-Dominican Republic;-821;2020;B1a;Maize;33834
+Dominican Rep.;-821;2020;B1a;Maize;33834
 Ecuador;-19347;2020;B1a;Maize;672902
 Egypt;-335209;2020;B1a;Maize;6289442
 El Salvador;-24101;2020;B1a;Maize;625020
@@ -6845,8 +6845,8 @@ Japan;5;2020;B1a;Maize;165
 Jordan;-826;2020;B1a;Maize;15436
 Kazakhstan;-35791;2020;B1a;Maize;376888
 Kenya;-32770;2020;B1a;Maize;2657136
-Korea Dem.People's Rep.;51186;2020;B1a;Maize;1697614
-Korea, Republic Of;2133;2020;B1a;Maize;70759
+North Korea;51186;2020;B1a;Maize;1697614
+South Korea;2133;2020;B1a;Maize;70759
 Kuwait;-36;2020;B1a;Maize;682
 Kyrgyzstan;-13472;2020;B1a;Maize;398162
 Laos;-4144;2020;B1a;Maize;213309
@@ -6956,7 +6956,7 @@ Burundi;-49;2050;B1a;Wheat;8040
 Cambodia;0;2050;B1a;Wheat;0
 Cameroon;-8;2050;B1a;Wheat;392
 Canada;1028338;2050;B1a;Wheat;24168996
-Central African Republic;0;2050;B1a;Wheat;0
+Central African Rep.;0;2050;B1a;Wheat;0
 Chad;-15;2050;B1a;Wheat;2534
 Chile;-87575;2050;B1a;Wheat;1636371
 China;4987676;2050;B1a;Wheat;99867046
@@ -6966,10 +6966,10 @@ Costa Rica;0;2050;B1a;Wheat;0
 Croatia;-50929;2050;B1a;Wheat;783502
 Cuba;0;2050;B1a;Wheat;0
 Cyprus;-178;2050;B1a;Wheat;10411
-Czech Republic;-242032;2050;B1a;Wheat;3723448
+Czechia;-242032;2050;B1a;Wheat;3723448
 Denmark;245663;2050;B1a;Wheat;4897417
 Djibouti;0;2050;B1a;Wheat;0
-Dominican Republic;0;2050;B1a;Wheat;0
+Dominican Rep.;0;2050;B1a;Wheat;0
 Ecuador;-1433;2050;B1a;Wheat;9638
 Egypt;50508;2050;B1a;Wheat;7176367
 El Salvador;0;2050;B1a;Wheat;0
@@ -7010,8 +7010,8 @@ Japan;12405;2050;B1a;Wheat;818691
 Jordan;-483;2050;B1a;Wheat;28300
 Kazakhstan;-305144;2050;B1a;Wheat;11216714
 Kenya;-2798;2050;B1a;Wheat;319126
-Korea Dem.People's Rep.;2633;2050;B1a;Wheat;173757
-Korea, Republic Of;104;2050;B1a;Wheat;6837
+North Korea;2633;2050;B1a;Wheat;173757
+South Korea;104;2050;B1a;Wheat;6837
 Kuwait;-8;2050;B1a;Wheat;495
 Kyrgyzstan;32809;2050;B1a;Wheat;1060611
 Laos;0;2050;B1a;Wheat;0
@@ -7121,7 +7121,7 @@ Burundi;-1001;2050;B1a;Rice;61469
 Cambodia;35481;2050;B1a;Rice;4761079
 Cameroon;-1539;2050;B1a;Rice;51299
 Canada;0;2050;B1a;Rice;0
-Central African Republic;-484;2050;B1a;Rice;29744
+Central African Rep.;-484;2050;B1a;Rice;29744
 Chad;-1858;2050;B1a;Rice;114149
 Chile;-8317;2050;B1a;Rice;128470
 China;1476410;2050;B1a;Rice;180687155
@@ -7131,10 +7131,10 @@ Costa Rica;-13574;2050;B1a;Rice;184710
 Croatia;0;2050;B1a;Rice;0
 Cuba;-37673;2050;B1a;Rice;512655
 Cyprus;0;2050;B1a;Rice;0
-Czech Republic;0;2050;B1a;Rice;0
+Czechia;0;2050;B1a;Rice;0
 Denmark;0;2050;B1a;Rice;0
 Djibouti;0;2050;B1a;Rice;0
-Dominican Republic;-44112;2050;B1a;Rice;600274
+Dominican Rep.;-44112;2050;B1a;Rice;600274
 Ecuador;-197695;2050;B1a;Rice;1219811
 Egypt;-17780;2050;B1a;Rice;6088160
 El Salvador;-1907;2050;B1a;Rice;29451
@@ -7175,8 +7175,8 @@ Japan;305036;2050;B1a;Rice;11302608
 Jordan;0;2050;B1a;Rice;0
 Kazakhstan;-9336;2050;B1a;Rice;246561
 Kenya;-960;2050;B1a;Rice;50420
-Korea Dem.People's Rep.;61418;2050;B1a;Rice;2275732
-Korea, Republic Of;185445;2050;B1a;Rice;6871337
+North Korea;61418;2050;B1a;Rice;2275732
+South Korea;185445;2050;B1a;Rice;6871337
 Kuwait;0;2050;B1a;Rice;0
 Kyrgyzstan;403;2050;B1a;Rice;18805
 Laos;18330;2050;B1a;Rice;2459573
@@ -7286,7 +7286,7 @@ Burundi;-8991;2050;B1a;Maize;114814
 Cambodia;-11789;2050;B1a;Maize;229270
 Cameroon;-60172;2050;B1a;Maize;810260
 Canada;-25104;2050;B1a;Maize;8701724
-Central African Republic;-8151;2050;B1a;Maize;104092
+Central African Rep.;-8151;2050;B1a;Maize;104092
 Chad;-8967;2050;B1a;Maize;114506
 Chile;-58540;2050;B1a;Maize;1049277
 China;-8256822;2050;B1a;Maize;116524655
@@ -7296,10 +7296,10 @@ Costa Rica;-278;2050;B1a;Maize;14780
 Croatia;-224446;2050;B1a;Maize;1796962
 Cuba;-6078;2050;B1a;Maize;323593
 Cyprus;0;2050;B1a;Maize;0
-Czech Republic;-58153;2050;B1a;Maize;465582
+Czechia;-58153;2050;B1a;Maize;465582
 Denmark;0;2050;B1a;Maize;0
 Djibouti;0;2050;B1a;Maize;10
-Dominican Republic;-639;2050;B1a;Maize;34015
+Dominican Rep.;-639;2050;B1a;Maize;34015
 Ecuador;-18075;2050;B1a;Maize;674175
 Egypt;-504219;2050;B1a;Maize;6120432
 El Salvador;-34301;2050;B1a;Maize;614820
@@ -7340,8 +7340,8 @@ Japan;4;2050;B1a;Maize;164
 Jordan;-1356;2050;B1a;Maize;14906
 Kazakhstan;-31563;2050;B1a;Maize;381116
 Kenya;-157879;2050;B1a;Maize;2532027
-Korea Dem.People's Rep.;38158;2050;B1a;Maize;1684586
-Korea, Republic Of;1590;2050;B1a;Maize;70216
+North Korea;38158;2050;B1a;Maize;1684586
+South Korea;1590;2050;B1a;Maize;70216
 Kuwait;-60;2050;B1a;Maize;658
 Kyrgyzstan;-19645;2050;B1a;Maize;391989
 Laos;-10635;2050;B1a;Maize;206819
@@ -7451,7 +7451,7 @@ Burundi;-182;2080;B1a;Wheat;7907
 Cambodia;0;2080;B1a;Wheat;0
 Cameroon;-15;2080;B1a;Wheat;385
 Canada;816296;2080;B1a;Wheat;23956953
-Central African Republic;0;2080;B1a;Wheat;0
+Central African Rep.;0;2080;B1a;Wheat;0
 Chad;-57;2080;B1a;Wheat;2492
 Chile;-80319;2080;B1a;Wheat;1643626
 China;5394581;2080;B1a;Wheat;100273951
@@ -7461,10 +7461,10 @@ Costa Rica;0;2080;B1a;Wheat;0
 Croatia;-70153;2080;B1a;Wheat;764278
 Cuba;0;2080;B1a;Wheat;0
 Cyprus;-348;2080;B1a;Wheat;10241
-Czech Republic;-333390;2080;B1a;Wheat;3632090
+Czechia;-333390;2080;B1a;Wheat;3632090
 Denmark;319276;2080;B1a;Wheat;4971031
 Djibouti;0;2080;B1a;Wheat;0
-Dominican Republic;0;2080;B1a;Wheat;0
+Dominican Rep.;0;2080;B1a;Wheat;0
 Ecuador;-1472;2080;B1a;Wheat;9599
 Egypt;-46445;2080;B1a;Wheat;7079414
 El Salvador;0;2080;B1a;Wheat;0
@@ -7505,8 +7505,8 @@ Japan;1172;2080;B1a;Wheat;807458
 Jordan;-945;2080;B1a;Wheat;27837
 Kazakhstan;-233797;2080;B1a;Wheat;11288061
 Kenya;-15363;2080;B1a;Wheat;306562
-Korea Dem.People's Rep.;249;2080;B1a;Wheat;171372
-Korea, Republic Of;10;2080;B1a;Wheat;6744
+North Korea;249;2080;B1a;Wheat;171372
+South Korea;10;2080;B1a;Wheat;6744
 Kuwait;-17;2080;B1a;Wheat;487
 Kyrgyzstan;49767;2080;B1a;Wheat;1077569
 Laos;0;2080;B1a;Wheat;0
@@ -7616,7 +7616,7 @@ Burundi;-3280;2080;B1a;Rice;59191
 Cambodia;-56354;2080;B1a;Rice;4669244
 Cameroon;-3618;2080;B1a;Rice;49220
 Canada;0;2080;B1a;Rice;0
-Central African Republic;-1587;2080;B1a;Rice;28642
+Central African Rep.;-1587;2080;B1a;Rice;28642
 Chad;-6090;2080;B1a;Rice;109917
 Chile;-10477;2080;B1a;Rice;126310
 China;-1121886;2080;B1a;Rice;178088859
@@ -7626,10 +7626,10 @@ Costa Rica;-14737;2080;B1a;Rice;183547
 Croatia;0;2080;B1a;Rice;0
 Cuba;-40901;2080;B1a;Rice;509428
 Cyprus;0;2080;B1a;Rice;0
-Czech Republic;0;2080;B1a;Rice;0
+Czechia;0;2080;B1a;Rice;0
 Denmark;0;2080;B1a;Rice;0
 Djibouti;0;2080;B1a;Rice;0
-Dominican Republic;-47891;2080;B1a;Rice;596495
+Dominican Rep.;-47891;2080;B1a;Rice;596495
 Ecuador;-230996;2080;B1a;Rice;1186510
 Egypt;-222976;2080;B1a;Rice;5882965
 El Salvador;-2402;2080;B1a;Rice;28956
@@ -7670,8 +7670,8 @@ Japan;-98192;2080;B1a;Rice;10899379
 Jordan;0;2080;B1a;Rice;0
 Kazakhstan;-12869;2080;B1a;Rice;243028
 Kenya;-3993;2080;B1a;Rice;47387
-Korea Dem.People's Rep.;-19771;2080;B1a;Rice;2194544
-Korea, Republic Of;-59695;2080;B1a;Rice;6626197
+North Korea;-19771;2080;B1a;Rice;2194544
+South Korea;-59695;2080;B1a;Rice;6626197
 Kuwait;0;2080;B1a;Rice;0
 Kyrgyzstan;339;2080;B1a;Rice;18741
 Laos;-29112;2080;B1a;Rice;2412131
@@ -7781,7 +7781,7 @@ Burundi;-12363;2080;B1a;Maize;111441
 Cambodia;-12985;2080;B1a;Maize;228073
 Cameroon;-85721;2080;B1a;Maize;784711
 Canada;-67874;2080;B1a;Maize;8658954
-Central African Republic;-11209;2080;B1a;Maize;101034
+Central African Rep.;-11209;2080;B1a;Maize;101034
 Chad;-12330;2080;B1a;Maize;111142
 Chile;-75214;2080;B1a;Maize;1032604
 China;-9740944;2080;B1a;Maize;115040533
@@ -7791,10 +7791,10 @@ Costa Rica;-167;2080;B1a;Maize;14890
 Croatia;-291230;2080;B1a;Maize;1730178
 Cuba;-3652;2080;B1a;Maize;326019
 Cyprus;0;2080;B1a;Maize;0
-Czech Republic;-75456;2080;B1a;Maize;448279
+Czechia;-75456;2080;B1a;Maize;448279
 Denmark;0;2080;B1a;Maize;0
 Djibouti;0;2080;B1a;Maize;10
-Dominican Republic;-384;2080;B1a;Maize;34271
+Dominican Rep.;-384;2080;B1a;Maize;34271
 Ecuador;-24438;2080;B1a;Maize;667811
 Egypt;-670710;2080;B1a;Maize;5953941
 El Salvador;-44071;2080;B1a;Maize;605050
@@ -7835,8 +7835,8 @@ Japan;1;2080;B1a;Maize;161
 Jordan;-1792;2080;B1a;Maize;14469
 Kazakhstan;-33135;2080;B1a;Maize;379544
 Kenya;-289759;2080;B1a;Maize;2400147
-Korea Dem.People's Rep.;12057;2080;B1a;Maize;1658485
-Korea, Republic Of;503;2080;B1a;Maize;69128
+North Korea;12057;2080;B1a;Maize;1658485
+South Korea;503;2080;B1a;Maize;69128
 Kuwait;-79;2080;B1a;Maize;639
 Kyrgyzstan;-22360;2080;B1a;Maize;389274
 Laos;-11714;2080;B1a;Maize;205740
@@ -7946,7 +7946,7 @@ Burundi;-107;2020;B2a;Wheat;7982
 Cambodia;0;2020;B2a;Wheat;0
 Cameroon;-7;2020;B2a;Wheat;393
 Canada;374093;2020;B2a;Wheat;23514750
-Central African Republic;0;2020;B2a;Wheat;0
+Central African Rep.;0;2020;B2a;Wheat;0
 Chad;-34;2020;B2a;Wheat;2516
 Chile;-45689;2020;B2a;Wheat;1678256
 China;710033;2020;B2a;Wheat;95589403
@@ -7956,10 +7956,10 @@ Costa Rica;0;2020;B2a;Wheat;0
 Croatia;-73915;2020;B2a;Wheat;760517
 Cuba;0;2020;B2a;Wheat;0
 Cyprus;-237;2020;B2a;Wheat;10351
-Czech Republic;-351267;2020;B2a;Wheat;3614213
+Czechia;-351267;2020;B2a;Wheat;3614213
 Denmark;170089;2020;B2a;Wheat;4821844
 Djibouti;0;2020;B2a;Wheat;0
-Dominican Republic;0;2020;B2a;Wheat;0
+Dominican Rep.;0;2020;B2a;Wheat;0
 Ecuador;-992;2020;B2a;Wheat;10079
 Egypt;-61473;2020;B2a;Wheat;7064386
 El Salvador;0;2020;B2a;Wheat;0
@@ -8000,8 +8000,8 @@ Japan;485;2020;B2a;Wheat;806771
 Jordan;-645;2020;B2a;Wheat;28138
 Kazakhstan;-701867;2020;B2a;Wheat;10819991
 Kenya;2628;2020;B2a;Wheat;324552
-Korea Dem.People's Rep.;103;2020;B2a;Wheat;171227
-Korea, Republic Of;4;2020;B2a;Wheat;6738
+North Korea;103;2020;B2a;Wheat;171227
+South Korea;4;2020;B2a;Wheat;6738
 Kuwait;-11;2020;B2a;Wheat;492
 Kyrgyzstan;22451;2020;B2a;Wheat;1050254
 Laos;0;2020;B2a;Wheat;0
@@ -8111,7 +8111,7 @@ Burundi;-2078;2020;B2a;Rice;60393
 Cambodia;-67617;2020;B2a;Rice;4657981
 Cameroon;-2002;2020;B2a;Rice;50836
 Canada;0;2020;B2a;Rice;0
-Central African Republic;-1005;2020;B2a;Rice;29223
+Central African Rep.;-1005;2020;B2a;Rice;29223
 Chad;-3858;2020;B2a;Rice;112149
 Chile;-6361;2020;B2a;Rice;130426
 China;-3006382;2020;B2a;Rice;176204362
@@ -8121,10 +8121,10 @@ Costa Rica;-13917;2020;B2a;Rice;184367
 Croatia;0;2020;B2a;Rice;0
 Cuba;-38626;2020;B2a;Rice;511703
 Cyprus;0;2020;B2a;Rice;0
-Czech Republic;0;2020;B2a;Rice;0
+Czechia;0;2020;B2a;Rice;0
 Denmark;0;2020;B2a;Rice;0
 Djibouti;0;2020;B2a;Rice;0
-Dominican Republic;-45227;2020;B2a;Rice;599159
+Dominican Rep.;-45227;2020;B2a;Rice;599159
 Ecuador;-155326;2020;B2a;Rice;1262179
 Egypt;-174793;2020;B2a;Rice;5931148
 El Salvador;-1458;2020;B2a;Rice;29900
@@ -8165,8 +8165,8 @@ Japan;16745;2020;B2a;Rice;11014317
 Jordan;0;2020;B2a;Rice;0
 Kazakhstan;-20706;2020;B2a;Rice;235191
 Kenya;-608;2020;B2a;Rice;50772
-Korea Dem.People's Rep.;3372;2020;B2a;Rice;2217686
-Korea, Republic Of;10180;2020;B2a;Rice;6696073
+North Korea;3372;2020;B2a;Rice;2217686
+South Korea;10180;2020;B2a;Rice;6696073
 Kuwait;0;2020;B2a;Rice;0
 Kyrgyzstan;34;2020;B2a;Rice;18436
 Laos;-34931;2020;B2a;Rice;2406312
@@ -8276,7 +8276,7 @@ Burundi;-7665;2020;B2a;Maize;116140
 Cambodia;-8581;2020;B2a;Maize;232478
 Cameroon;-41687;2020;B2a;Maize;828745
 Canada;-56989;2020;B2a;Maize;8669840
-Central African Republic;-6949;2020;B2a;Maize;105294
+Central African Rep.;-6949;2020;B2a;Maize;105294
 Chad;-7644;2020;B2a;Maize;115829
 Chile;-33653;2020;B2a;Maize;1074165
 China;-6943721;2020;B2a;Maize;117837756
@@ -8286,10 +8286,10 @@ Costa Rica;-335;2020;B2a;Maize;14722
 Croatia;-239701;2020;B2a;Maize;1781707
 Cuba;-7336;2020;B2a;Maize;322336
 Cyprus;0;2020;B2a;Maize;0
-Czech Republic;-62105;2020;B2a;Maize;461630
+Czechia;-62105;2020;B2a;Maize;461630
 Denmark;0;2020;B2a;Maize;0
 Djibouti;0;2020;B2a;Maize;10
-Dominican Republic;-771;2020;B2a;Maize;33883
+Dominican Rep.;-771;2020;B2a;Maize;33883
 Ecuador;-13151;2020;B2a;Maize;679099
 Egypt;-502995;2020;B2a;Maize;6121656
 El Salvador;-19719;2020;B2a;Maize;629403
@@ -8330,8 +8330,8 @@ Japan;3;2020;B2a;Maize;163
 Jordan;-1156;2020;B2a;Maize;15106
 Kazakhstan;-37519;2020;B2a;Maize;375160
 Kenya;-58742;2020;B2a;Maize;2631164
-Korea Dem.People's Rep.;29949;2020;B2a;Maize;1676377
-Korea, Republic Of;1248;2020;B2a;Maize;69874
+North Korea;29949;2020;B2a;Maize;1676377
+South Korea;1248;2020;B2a;Maize;69874
 Kuwait;-51;2020;B2a;Maize;667
 Kyrgyzstan;-18225;2020;B2a;Maize;393408
 Laos;-7741;2020;B2a;Maize;209713
@@ -8441,7 +8441,7 @@ Burundi;-208;2050;B2a;Wheat;7881
 Cambodia;0;2050;B2a;Wheat;0
 Cameroon;-10;2050;B2a;Wheat;390
 Canada;1042477;2050;B2a;Wheat;24183134
-Central African Republic;0;2050;B2a;Wheat;0
+Central African Rep.;0;2050;B2a;Wheat;0
 Chad;-66;2050;B2a;Wheat;2484
 Chile;-44296;2050;B2a;Wheat;1679650
 China;4013463;2050;B2a;Wheat;98892833
@@ -8451,10 +8451,10 @@ Costa Rica;0;2050;B2a;Wheat;0
 Croatia;-59835;2050;B2a;Wheat;774597
 Cuba;0;2050;B2a;Wheat;0
 Cyprus;-452;2050;B2a;Wheat;10137
-Czech Republic;-284354;2050;B2a;Wheat;3681126
+Czechia;-284354;2050;B2a;Wheat;3681126
 Denmark;238622;2050;B2a;Wheat;4890377
 Djibouti;0;2050;B2a;Wheat;0
-Dominican Republic;0;2050;B2a;Wheat;0
+Dominican Rep.;0;2050;B2a;Wheat;0
 Ecuador;-1379;2050;B2a;Wheat;9692
 Egypt;-186699;2050;B2a;Wheat;6939160
 El Salvador;0;2050;B2a;Wheat;0
@@ -8495,8 +8495,8 @@ Japan;2463;2050;B2a;Wheat;808749
 Jordan;-1227;2050;B2a;Wheat;27555
 Kazakhstan;-320747;2050;B2a;Wheat;11201111
 Kenya;-5786;2050;B2a;Wheat;316139
-Korea Dem.People's Rep.;523;2050;B2a;Wheat;171647
-Korea, Republic Of;21;2050;B2a;Wheat;6754
+North Korea;523;2050;B2a;Wheat;171647
+South Korea;21;2050;B2a;Wheat;6754
 Kuwait;-21;2050;B2a;Wheat;482
 Kyrgyzstan;31970;2050;B2a;Wheat;1059772
 Laos;0;2050;B2a;Wheat;0
@@ -8606,7 +8606,7 @@ Burundi;-2234;2050;B2a;Rice;60237
 Cambodia;16524;2050;B2a;Rice;4742121
 Cameroon;-1866;2050;B2a;Rice;50972
 Canada;0;2050;B2a;Rice;0
-Central African Republic;-1081;2050;B2a;Rice;29148
+Central African Rep.;-1081;2050;B2a;Rice;29148
 Chad;-4148;2050;B2a;Rice;111859
 Chile;-4883;2050;B2a;Rice;131904
 China;784335;2050;B2a;Rice;179995079
@@ -8616,10 +8616,10 @@ Costa Rica;-14254;2050;B2a;Rice;184030
 Croatia;0;2050;B2a;Rice;0
 Cuba;-39562;2050;B2a;Rice;510767
 Cyprus;0;2050;B2a;Rice;0
-Czech Republic;0;2050;B2a;Rice;0
+Czechia;0;2050;B2a;Rice;0
 Denmark;0;2050;B2a;Rice;0
 Djibouti;0;2050;B2a;Rice;0
-Dominican Republic;-46324;2050;B2a;Rice;598063
+Dominican Rep.;-46324;2050;B2a;Rice;598063
 Ecuador;-190724;2050;B2a;Rice;1226782
 Egypt;-221036;2050;B2a;Rice;5884905
 El Salvador;-1119;2050;B2a;Rice;30239
@@ -8660,8 +8660,8 @@ Japan;211393;2050;B2a;Rice;11208964
 Jordan;0;2050;B2a;Rice;0
 Kazakhstan;-9683;2050;B2a;Rice;246214
 Kenya;-1437;2050;B2a;Rice;49943
-Korea Dem.People's Rep.;42563;2050;B2a;Rice;2256877
-Korea, Republic Of;128515;2050;B2a;Rice;6814407
+North Korea;42563;2050;B2a;Rice;2256877
+South Korea;128515;2050;B2a;Rice;6814407
 Kuwait;0;2050;B2a;Rice;0
 Kyrgyzstan;388;2050;B2a;Rice;18790
 Laos;8536;2050;B2a;Rice;2449779
@@ -8771,7 +8771,7 @@ Burundi;-11346;2050;B2a;Maize;112459
 Cambodia;-13393;2050;B2a;Maize;227666
 Cameroon;-65556;2050;B2a;Maize;804875
 Canada;-41672;2050;B2a;Maize;8685157
-Central African Republic;-10286;2050;B2a;Maize;101956
+Central African Rep.;-10286;2050;B2a;Maize;101956
 Chad;-11316;2050;B2a;Maize;112157
 Chile;-44686;2050;B2a;Maize;1063131
 China;-9307590;2050;B2a;Maize;115473887
@@ -8781,10 +8781,10 @@ Costa Rica;-226;2050;B2a;Maize;14832
 Croatia;-246020;2050;B2a;Maize;1775388
 Cuba;-4941;2050;B2a;Maize;324730
 Cyprus;0;2050;B2a;Maize;0
-Czech Republic;-63742;2050;B2a;Maize;459992
+Czechia;-63742;2050;B2a;Maize;459992
 Denmark;0;2050;B2a;Maize;0
 Djibouti;0;2050;B2a;Maize;10
-Dominican Republic;-519;2050;B2a;Maize;34135
+Dominican Rep.;-519;2050;B2a;Maize;34135
 Ecuador;-10626;2050;B2a;Maize;681623
 Egypt;-715295;2050;B2a;Maize;5909356
 El Salvador;-26184;2050;B2a;Maize;622938
@@ -8825,8 +8825,8 @@ Japan;1;2050;B2a;Maize;161
 Jordan;-1765;2050;B2a;Maize;14497
 Kazakhstan;-32122;2050;B2a;Maize;380557
 Kenya;-182839;2050;B2a;Maize;2507067
-Korea Dem.People's Rep.;14566;2050;B2a;Maize;1660995
-Korea, Republic Of;607;2050;B2a;Maize;69233
+North Korea;14566;2050;B2a;Maize;1660995
+South Korea;607;2050;B2a;Maize;69233
 Kuwait;-78;2050;B2a;Maize;640
 Kyrgyzstan;-21292;2050;B2a;Maize;390341
 Laos;-12081;2050;B2a;Maize;205372
@@ -8936,7 +8936,7 @@ Burundi;-363;2080;B2a;Wheat;7726
 Cambodia;0;2080;B2a;Wheat;0
 Cameroon;-17;2080;B2a;Wheat;383
 Canada;1222170;2080;B2a;Wheat;24362827
-Central African Republic;0;2080;B2a;Wheat;0
+Central African Rep.;0;2080;B2a;Wheat;0
 Chad;-114;2080;B2a;Wheat;2435
 Chile;-45592;2080;B2a;Wheat;1678354
 China;6485079;2080;B2a;Wheat;101364449
@@ -8946,10 +8946,10 @@ Costa Rica;0;2080;B2a;Wheat;0
 Croatia;-48611;2080;B2a;Wheat;785821
 Cuba;0;2080;B2a;Wheat;0
 Cyprus;-502;2080;B2a;Wheat;10087
-Czech Republic;-231013;2080;B2a;Wheat;3734468
+Czechia;-231013;2080;B2a;Wheat;3734468
 Denmark;336962;2080;B2a;Wheat;4988717
 Djibouti;0;2080;B2a;Wheat;0
-Dominican Republic;0;2080;B2a;Wheat;0
+Dominican Rep.;0;2080;B2a;Wheat;0
 Ecuador;-1234;2080;B2a;Wheat;9837
 Egypt;-341604;2080;B2a;Wheat;6784255
 El Salvador;0;2080;B2a;Wheat;0
@@ -8990,8 +8990,8 @@ Japan;18788;2080;B2a;Wheat;825074
 Jordan;-1364;2080;B2a;Wheat;27419
 Kazakhstan;100629;2080;B2a;Wheat;11622487
 Kenya;-21798;2080;B2a;Wheat;300127
-Korea Dem.People's Rep.;3988;2080;B2a;Wheat;175111
-Korea, Republic Of;157;2080;B2a;Wheat;6891
+North Korea;3988;2080;B2a;Wheat;175111
+South Korea;157;2080;B2a;Wheat;6891
 Kuwait;-24;2080;B2a;Wheat;480
 Kyrgyzstan;37865;2080;B2a;Wheat;1065667
 Laos;0;2080;B2a;Wheat;0
@@ -9101,7 +9101,7 @@ Burundi;-3428;2080;B2a;Rice;59042
 Cambodia;128517;2080;B2a;Rice;4854114
 Cameroon;-2737;2080;B2a;Rice;50101
 Canada;0;2080;B2a;Rice;0
-Central African Republic;-1659;2080;B2a;Rice;28570
+Central African Rep.;-1659;2080;B2a;Rice;28570
 Chad;-6366;2080;B2a;Rice;109642
 Chile;-4985;2080;B2a;Rice;131802
 China;6859980;2080;B2a;Rice;186070725
@@ -9111,10 +9111,10 @@ Costa Rica;-4953;2080;B2a;Rice;193331
 Croatia;0;2080;B2a;Rice;0
 Cuba;-13748;2080;B2a;Rice;536580
 Cyprus;0;2080;B2a;Rice;0
-Czech Republic;0;2080;B2a;Rice;0
+Czechia;0;2080;B2a;Rice;0
 Denmark;0;2080;B2a;Rice;0
 Djibouti;0;2080;B2a;Rice;0
-Dominican Republic;-16098;2080;B2a;Rice;628288
+Dominican Rep.;-16098;2080;B2a;Rice;628288
 Ecuador;-172211;2080;B2a;Rice;1245295
 Egypt;-353770;2080;B2a;Rice;5752171
 El Salvador;-1143;2080;B2a;Rice;30215
@@ -9155,8 +9155,8 @@ Japan;414978;2080;B2a;Rice;11412549
 Jordan;0;2080;B2a;Rice;0
 Kazakhstan;-324;2080;B2a;Rice;255573
 Kenya;-3993;2080;B2a;Rice;47388
-Korea Dem.People's Rep.;83554;2080;B2a;Rice;2297868
-Korea, Republic Of;252283;2080;B2a;Rice;6938175
+North Korea;83554;2080;B2a;Rice;2297868
+South Korea;252283;2080;B2a;Rice;6938175
 Kuwait;0;2080;B2a;Rice;0
 Kyrgyzstan;494;2080;B2a;Rice;18896
 Laos;66392;2080;B2a;Rice;2507634
@@ -9266,7 +9266,7 @@ Burundi;-15350;2080;B2a;Maize;108455
 Cambodia;-11899;2080;B2a;Maize;229160
 Cameroon;-97320;2080;B2a;Maize;773112
 Canada;232144;2080;B2a;Maize;8958972
-Central African Republic;-13916;2080;B2a;Maize;98327
+Central African Rep.;-13916;2080;B2a;Maize;98327
 Chad;-15309;2080;B2a;Maize;108164
 Chile;-44767;2080;B2a;Maize;1063050
 China;-7758740;2080;B2a;Maize;117022736
@@ -9276,10 +9276,10 @@ Costa Rica;252;2080;B2a;Maize;15310
 Croatia;-259257;2080;B2a;Maize;1762151
 Cuba;5528;2080;B2a;Maize;335200
 Cyprus;0;2080;B2a;Maize;0
-Czech Republic;-67172;2080;B2a;Maize;456563
+Czechia;-67172;2080;B2a;Maize;456563
 Denmark;0;2080;B2a;Maize;0
 Djibouti;0;2080;B2a;Maize;10
-Dominican Republic;581;2080;B2a;Maize;35236
+Dominican Rep.;581;2080;B2a;Maize;35236
 Ecuador;-8645;2080;B2a;Maize;683604
 Egypt;-902023;2080;B2a;Maize;5722628
 El Salvador;-26231;2080;B2a;Maize;622890
@@ -9320,8 +9320,8 @@ Japan;3;2080;B2a;Maize;163
 Jordan;-2057;2080;B2a;Maize;14204
 Kazakhstan;-25283;2080;B2a;Maize;387396
 Kenya;-370427;2080;B2a;Maize;2319479
-Korea Dem.People's Rep.;30122;2080;B2a;Maize;1676551
-Korea, Republic Of;1256;2080;B2a;Maize;69881
+North Korea;30122;2080;B2a;Maize;1676551
+South Korea;1256;2080;B2a;Maize;69881
 Kuwait;-91;2080;B2a;Maize;627
 Kyrgyzstan;-15161;2080;B2a;Maize;396472
 Laos;-10734;2080;B2a;Maize;206720
@@ -9431,7 +9431,7 @@ Burundi;-61;2020;B2b;Wheat;8028
 Cambodia;0;2020;B2b;Wheat;0
 Cameroon;-7;2020;B2b;Wheat;393
 Canada;690450;2020;B2b;Wheat;23831107
-Central African Republic;0;2020;B2b;Wheat;0
+Central African Rep.;0;2020;B2b;Wheat;0
 Chad;-19;2020;B2b;Wheat;2530
 Chile;-50511;2020;B2b;Wheat;1673435
 China;77986;2020;B2b;Wheat;94957357
@@ -9441,10 +9441,10 @@ Costa Rica;0;2020;B2b;Wheat;0
 Croatia;-49956;2020;B2b;Wheat;784475
 Cuba;0;2020;B2b;Wheat;0
 Cyprus;-163;2020;B2b;Wheat;10426
-Czech Republic;-237407;2020;B2b;Wheat;3728073
+Czechia;-237407;2020;B2b;Wheat;3728073
 Denmark;146922;2020;B2b;Wheat;4798677
 Djibouti;0;2020;B2b;Wheat;0
-Dominican Republic;0;2020;B2b;Wheat;0
+Dominican Rep.;0;2020;B2b;Wheat;0
 Ecuador;-658;2020;B2b;Wheat;10413
 Egypt;17846;2020;B2b;Wheat;7143705
 El Salvador;0;2020;B2b;Wheat;0
@@ -9485,8 +9485,8 @@ Japan;7951;2020;B2b;Wheat;814236
 Jordan;-443;2020;B2b;Wheat;28340
 Kazakhstan;-243310;2020;B2b;Wheat;11278549
 Kenya;2756;2020;B2b;Wheat;324681
-Korea Dem.People's Rep.;1687;2020;B2b;Wheat;172811
-Korea, Republic Of;66;2020;B2b;Wheat;6800
+North Korea;1687;2020;B2b;Wheat;172811
+South Korea;66;2020;B2b;Wheat;6800
 Kuwait;-8;2020;B2b;Wheat;496
 Kyrgyzstan;12162;2020;B2b;Wheat;1039964
 Laos;0;2020;B2b;Wheat;0
@@ -9596,7 +9596,7 @@ Burundi;-1722;2020;B2b;Rice;60749
 Cambodia;-52992;2020;B2b;Rice;4672605
 Cameroon;-1988;2020;B2b;Rice;50850
 Canada;0;2020;B2b;Rice;0
-Central African Republic;-833;2020;B2b;Rice;29395
+Central African Rep.;-833;2020;B2b;Rice;29395
 Chad;-3197;2020;B2b;Rice;112810
 Chile;-6744;2020;B2b;Rice;130043
 China;-3181942;2020;B2b;Rice;176028803
@@ -9606,10 +9606,10 @@ Costa Rica;-10325;2020;B2b;Rice;187959
 Croatia;0;2020;B2b;Rice;0
 Cuba;-28656;2020;B2b;Rice;521672
 Cyprus;0;2020;B2b;Rice;0
-Czech Republic;0;2020;B2b;Rice;0
+Czechia;0;2020;B2b;Rice;0
 Denmark;0;2020;B2b;Rice;0
 Djibouti;0;2020;B2b;Rice;0
-Dominican Republic;-33554;2020;B2b;Rice;610832
+Dominican Rep.;-33554;2020;B2b;Rice;610832
 Ecuador;-112573;2020;B2b;Rice;1304933
 Egypt;-106827;2020;B2b;Rice;5999114
 El Salvador;-1546;2020;B2b;Rice;29812
@@ -9650,8 +9650,8 @@ Japan;12293;2020;B2b;Rice;11009865
 Jordan;0;2020;B2b;Rice;0
 Kazakhstan;-10522;2020;B2b;Rice;245375
 Kenya;-588;2020;B2b;Rice;50793
-Korea Dem.People's Rep.;2475;2020;B2b;Rice;2216789
-Korea, Republic Of;7474;2020;B2b;Rice;6693366
+North Korea;2475;2020;B2b;Rice;2216789
+South Korea;7474;2020;B2b;Rice;6693366
 Kuwait;0;2020;B2b;Rice;0
 Kyrgyzstan;-150;2020;B2b;Rice;18251
 Laos;-27376;2020;B2b;Rice;2413867
@@ -9761,7 +9761,7 @@ Burundi;-6502;2020;B2b;Maize;117303
 Cambodia;-5158;2020;B2b;Maize;235901
 Cameroon;-41455;2020;B2b;Maize;828977
 Canada;-62232;2020;B2b;Maize;8664596
-Central African Republic;-5894;2020;B2b;Maize;106348
+Central African Rep.;-5894;2020;B2b;Maize;106348
 Chad;-6484;2020;B2b;Maize;116988
 Chile;-21640;2020;B2b;Maize;1086177
 China;-7152399;2020;B2b;Maize;117629078
@@ -9771,10 +9771,10 @@ Costa Rica;-170;2020;B2b;Maize;14887
 Croatia;-181661;2020;B2b;Maize;1839747
 Cuba;-3718;2020;B2b;Maize;325954
 Cyprus;0;2020;B2b;Maize;0
-Czech Republic;-47067;2020;B2b;Maize;476667
+Czechia;-47067;2020;B2b;Maize;476667
 Denmark;0;2020;B2b;Maize;0
 Djibouti;0;2020;B2b;Maize;10
-Dominican Republic;-391;2020;B2b;Maize;34264
+Dominican Rep.;-391;2020;B2b;Maize;34264
 Ecuador;-3478;2020;B2b;Maize;688771
 Egypt;-380287;2020;B2b;Maize;6244364
 El Salvador;-12680;2020;B2b;Maize;636442
@@ -9815,8 +9815,8 @@ Japan;5;2020;B2b;Maize;165
 Jordan;-981;2020;B2b;Maize;15280
 Kazakhstan;-21095;2020;B2b;Maize;391584
 Kenya;-57669;2020;B2b;Maize;2632237
-Korea Dem.People's Rep.;56289;2020;B2b;Maize;1702717
-Korea, Republic Of;2346;2020;B2b;Maize;70972
+North Korea;56289;2020;B2b;Maize;1702717
+South Korea;2346;2020;B2b;Maize;70972
 Kuwait;-43;2020;B2b;Maize;675
 Kyrgyzstan;-16117;2020;B2b;Maize;395517
 Laos;-4653;2020;B2b;Maize;212801
@@ -9926,7 +9926,7 @@ Burundi;-129;2050;B2b;Wheat;7961
 Cambodia;0;2050;B2b;Wheat;0
 Cameroon;-13;2050;B2b;Wheat;387
 Canada;362011;2050;B2b;Wheat;23502668
-Central African Republic;0;2050;B2b;Wheat;0
+Central African Rep.;0;2050;B2b;Wheat;0
 Chad;-41;2050;B2b;Wheat;2509
 Chile;-109071;2050;B2b;Wheat;1614874
 China;4741732;2050;B2b;Wheat;99621102
@@ -9936,10 +9936,10 @@ Costa Rica;0;2050;B2b;Wheat;0
 Croatia;-83413;2050;B2b;Wheat;751018
 Cuba;0;2050;B2b;Wheat;0
 Cyprus;-215;2050;B2b;Wheat;10374
-Czech Republic;-396407;2050;B2b;Wheat;3569074
+Czechia;-396407;2050;B2b;Wheat;3569074
 Denmark;255804;2050;B2b;Wheat;4907559
 Djibouti;0;2050;B2b;Wheat;0
-Dominican Republic;0;2050;B2b;Wheat;0
+Dominican Rep.;0;2050;B2b;Wheat;0
 Ecuador;-1246;2050;B2b;Wheat;9825
 Egypt;10318;2050;B2b;Wheat;7136176
 El Salvador;0;2050;B2b;Wheat;0
@@ -9980,8 +9980,8 @@ Japan;7266;2050;B2b;Wheat;813552
 Jordan;-583;2050;B2b;Wheat;28199
 Kazakhstan;-287528;2050;B2b;Wheat;11234330
 Kenya;-9614;2050;B2b;Wheat;312310
-Korea Dem.People's Rep.;1542;2050;B2b;Wheat;172666
-Korea, Republic Of;61;2050;B2b;Wheat;6794
+North Korea;1542;2050;B2b;Wheat;172666
+South Korea;61;2050;B2b;Wheat;6794
 Kuwait;-10;2050;B2b;Wheat;493
 Kyrgyzstan;33654;2050;B2b;Wheat;1061456
 Laos;0;2050;B2b;Wheat;0
@@ -10091,7 +10091,7 @@ Burundi;-1618;2050;B2b;Rice;60852
 Cambodia;-10033;2050;B2b;Rice;4715565
 Cameroon;-2285;2050;B2b;Rice;50553
 Canada;0;2050;B2b;Rice;0
-Central African Republic;-783;2050;B2b;Rice;29446
+Central African Rep.;-783;2050;B2b;Rice;29446
 Chad;-3004;2050;B2b;Rice;113003
 Chile;-10022;2050;B2b;Rice;126765
 China;1460205;2050;B2b;Rice;180670949
@@ -10101,10 +10101,10 @@ Costa Rica;-11144;2050;B2b;Rice;187140
 Croatia;0;2050;B2b;Rice;0
 Cuba;-30930;2050;B2b;Rice;519399
 Cyprus;0;2050;B2b;Rice;0
-Czech Republic;0;2050;B2b;Rice;0
+Czechia;0;2050;B2b;Rice;0
 Denmark;0;2050;B2b;Rice;0
 Djibouti;0;2050;B2b;Rice;0
-Dominican Republic;-36216;2050;B2b;Rice;608170
+Dominican Rep.;-36216;2050;B2b;Rice;608170
 Ecuador;-173663;2050;B2b;Rice;1243843
 Egypt;-52219;2050;B2b;Rice;6053722
 El Salvador;-2298;2050;B2b;Rice;29060
@@ -10145,8 +10145,8 @@ Japan;57370;2050;B2b;Rice;11054941
 Jordan;0;2050;B2b;Rice;0
 Kazakhstan;-8945;2050;B2b;Rice;246952
 Kenya;-2048;2050;B2b;Rice;49332
-Korea Dem.People's Rep.;11551;2050;B2b;Rice;2225865
-Korea, Republic Of;34878;2050;B2b;Rice;6720770
+North Korea;11551;2050;B2b;Rice;2225865
+South Korea;34878;2050;B2b;Rice;6720770
 Kuwait;0;2050;B2b;Rice;0
 Kyrgyzstan;419;2050;B2b;Rice;18820
 Laos;-5183;2050;B2b;Rice;2436060
@@ -10256,7 +10256,7 @@ Burundi;-10177;2050;B2b;Maize;113628
 Cambodia;-9591;2050;B2b;Maize;231468
 Cameroon;-72458;2050;B2b;Maize;797974
 Canada;-22395;2050;B2b;Maize;8704434
-Central African Republic;-9226;2050;B2b;Maize;103017
+Central African Rep.;-9226;2050;B2b;Maize;103017
 Chad;-10149;2050;B2b;Maize;113323
 Chile;-47148;2050;B2b;Maize;1060670
 China;-9249894;2050;B2b;Maize;115531583
@@ -10266,10 +10266,10 @@ Costa Rica;-138;2050;B2b;Maize;14919
 Croatia;-303139;2050;B2b;Maize;1718269
 Cuba;-3028;2050;B2b;Maize;326643
 Cyprus;0;2050;B2b;Maize;0
-Czech Republic;-78541;2050;B2b;Maize;445193
+Czechia;-78541;2050;B2b;Maize;445193
 Denmark;0;2050;B2b;Maize;0
 Djibouti;0;2050;B2b;Maize;10
-Dominican Republic;-318;2050;B2b;Maize;34336
+Dominican Rep.;-318;2050;B2b;Maize;34336
 Ecuador;-13722;2050;B2b;Maize;678527
 Egypt;-537628;2050;B2b;Maize;6087023
 El Salvador;-27626;2050;B2b;Maize;621496
@@ -10310,8 +10310,8 @@ Japan;6;2050;B2b;Maize;166
 Jordan;-1408;2050;B2b;Maize;14854
 Kazakhstan;-30932;2050;B2b;Maize;381747
 Kenya;-214830;2050;B2b;Maize;2475076
-Korea Dem.People's Rep.;63899;2050;B2b;Maize;1710328
-Korea, Republic Of;2663;2050;B2b;Maize;71289
+North Korea;63899;2050;B2b;Maize;1710328
+South Korea;2663;2050;B2b;Maize;71289
 Kuwait;-62;2050;B2b;Maize;656
 Kyrgyzstan;-22041;2050;B2b;Maize;389592
 Laos;-8652;2050;B2b;Maize;208802
@@ -10421,7 +10421,7 @@ Burundi;-520;2080;B2b;Wheat;7570
 Cambodia;0;2080;B2b;Wheat;0
 Cameroon;-10;2080;B2b;Wheat;390
 Canada;554099;2080;B2b;Wheat;23694756
-Central African Republic;0;2080;B2b;Wheat;0
+Central African Rep.;0;2080;B2b;Wheat;0
 Chad;-164;2080;B2b;Wheat;2386
 Chile;-60160;2080;B2b;Wheat;1663785
 China;7174655;2080;B2b;Wheat;102054025
@@ -10431,10 +10431,10 @@ Costa Rica;0;2080;B2b;Wheat;0
 Croatia;-61545;2080;B2b;Wheat;772886
 Cuba;0;2080;B2b;Wheat;0
 Cyprus;-1002;2080;B2b;Wheat;9586
-Czech Republic;-292481;2080;B2b;Wheat;3672999
+Czechia;-292481;2080;B2b;Wheat;3672999
 Denmark;411854;2080;B2b;Wheat;5063608
 Djibouti;0;2080;B2b;Wheat;0
-Dominican Republic;0;2080;B2b;Wheat;0
+Dominican Rep.;0;2080;B2b;Wheat;0
 Ecuador;-1297;2080;B2b;Wheat;9774
 Egypt;-731844;2080;B2b;Wheat;6394014
 El Salvador;0;2080;B2b;Wheat;0
@@ -10475,8 +10475,8 @@ Japan;8437;2080;B2b;Wheat;814722
 Jordan;-2725;2080;B2b;Wheat;26058
 Kazakhstan;47814;2080;B2b;Wheat;11569672
 Kenya;-14043;2080;B2b;Wheat;307882
-Korea Dem.People's Rep.;1791;2080;B2b;Wheat;172914
-Korea, Republic Of;70;2080;B2b;Wheat;6804
+North Korea;1791;2080;B2b;Wheat;172914
+South Korea;70;2080;B2b;Wheat;6804
 Kuwait;-48;2080;B2b;Wheat;456
 Kyrgyzstan;72017;2080;B2b;Wheat;1099820
 Laos;0;2080;B2b;Wheat;0
@@ -10586,7 +10586,7 @@ Burundi;-4637;2080;B2b;Rice;57833
 Cambodia;149216;2080;B2b;Rice;4874813
 Cameroon;-1889;2080;B2b;Rice;50949
 Canada;0;2080;B2b;Rice;0
-Central African Republic;-2244;2080;B2b;Rice;27985
+Central African Rep.;-2244;2080;B2b;Rice;27985
 Chad;-8611;2080;B2b;Rice;107397
 Chile;-6141;2080;B2b;Rice;130646
 China;7682990;2080;B2b;Rice;186893734
@@ -10596,10 +10596,10 @@ Costa Rica;-6578;2080;B2b;Rice;191706
 Croatia;0;2080;B2b;Rice;0
 Cuba;-18258;2080;B2b;Rice;532071
 Cyprus;0;2080;B2b;Rice;0
-Czech Republic;0;2080;B2b;Rice;0
+Czechia;0;2080;B2b;Rice;0
 Denmark;0;2080;B2b;Rice;0
 Djibouti;0;2080;B2b;Rice;0
-Dominican Republic;-21378;2080;B2b;Rice;623008
+Dominican Rep.;-21378;2080;B2b;Rice;623008
 Ecuador;-180195;2080;B2b;Rice;1237311
 Egypt;-688156;2080;B2b;Rice;5417785
 El Salvador;-1408;2080;B2b;Rice;29950
@@ -10640,8 +10640,8 @@ Japan;396300;2080;B2b;Rice;11393872
 Jordan;0;2080;B2b;Rice;0
 Kazakhstan;-1497;2080;B2b;Rice;254400
 Kenya;-2755;2080;B2b;Rice;48625
-Korea Dem.People's Rep.;79793;2080;B2b;Rice;2294108
-Korea, Republic Of;240928;2080;B2b;Rice;6926820
+North Korea;79793;2080;B2b;Rice;2294108
+South Korea;240928;2080;B2b;Rice;6926820
 Kuwait;0;2080;B2b;Rice;0
 Kyrgyzstan;1105;2080;B2b;Rice;19507
 Laos;77085;2080;B2b;Rice;2518328
@@ -10751,7 +10751,7 @@ Burundi;-18253;2080;B2b;Maize;105552
 Cambodia;-11859;2080;B2b;Maize;229199
 Cameroon;-83342;2080;B2b;Maize;787089
 Canada;167679;2080;B2b;Maize;8894508
-Central African Republic;-16548;2080;B2b;Maize;95694
+Central African Rep.;-16548;2080;B2b;Maize;95694
 Chad;-18204;2080;B2b;Maize;105269
 Chile;-47517;2080;B2b;Maize;1060300
 China;-6809669;2080;B2b;Maize;117971808
@@ -10761,10 +10761,10 @@ Costa Rica;177;2080;B2b;Maize;15235
 Croatia;-290591;2080;B2b;Maize;1730817
 Cuba;3881;2080;B2b;Maize;333552
 Cyprus;0;2080;B2b;Maize;0
-Czech Republic;-75290;2080;B2b;Maize;448444
+Czechia;-75290;2080;B2b;Maize;448444
 Denmark;0;2080;B2b;Maize;0
 Djibouti;0;2080;B2b;Maize;10
-Dominican Republic;408;2080;B2b;Maize;35062
+Dominican Rep.;408;2080;B2b;Maize;35062
 Ecuador;-11900;2080;B2b;Maize;680349
 Egypt;-1319105;2080;B2b;Maize;5305546
 El Salvador;-27843;2080;B2b;Maize;621279
@@ -10805,8 +10805,8 @@ Japan;1;2080;B2b;Maize;161
 Jordan;-2893;2080;B2b;Maize;13369
 Kazakhstan;-27175;2080;B2b;Maize;385504
 Kenya;-305634;2080;B2b;Maize;2384272
-Korea Dem.People's Rep.;12758;2080;B2b;Maize;1659186
-Korea, Republic Of;532;2080;B2b;Maize;69157
+North Korea;12758;2080;B2b;Maize;1659186
+South Korea;532;2080;B2b;Maize;69157
 Kuwait;-128;2080;B2b;Maize;590
 Kyrgyzstan;-14990;2080;B2b;Maize;396643
 Laos;-10698;2080;B2b;Maize;206755

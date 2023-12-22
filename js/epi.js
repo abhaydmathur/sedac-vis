@@ -81,7 +81,11 @@ function createEpiViz(cdaData, pmdData, recData, tclData, gdpData) {
 
 	createEPIPlot(d3.select("#svgCDA"), "CO2 growth rate", "cda");
 	createEPIPlot(d3.select("#svgTCL"), "Tree Cover Loss", "tcl");
-	createEPIPlot(d3.select("#svgPMD"), "Ambient particulate matter pollution", "pmd");
+	createEPIPlot(
+		d3.select("#svgPMD"),
+		"Ambient particulate matter pollution",
+		"pmd"
+	);
 	createEPIPlot(d3.select("#svgREC"), "Recycling Rates", "rec");
 
 	updateEPIViz();
@@ -90,6 +94,7 @@ function createEpiViz(cdaData, pmdData, recData, tclData, gdpData) {
 function createEPIPlot(svg, title) {
 	svg.append("text")
 		.style("font-size", "12px")
+		.attr("class", "epiXlabel")
 		.text("GDP per capita (USD thousand)")
 		.attr("x", ctx.width / 4 - ctx.width / 10)
 		.attr("y", ctx.height / 2 - 5)
@@ -97,6 +102,7 @@ function createEPIPlot(svg, title) {
 
 	svg.append("text")
 		.style("font-size", "12px")
+		.attr("class", "epiYlabel")
 		.text(title)
 		.attr("x", -ctx.width / 4 + ctx.width / 40)
 		.attr("y", 10)

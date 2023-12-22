@@ -6478,8 +6478,8 @@ long,lat,city,country_code,country_name
 45,42,T'ianet'i,GE,Georgia
 45,41,Voskevan,AM,Armenia
 45,40,Zangakatun,AM,Armenia
-45,38,Salmas,IR,"Iran, Islamic Republic of"
-45,37,Oshnaviyeh,IR,"Iran, Islamic Republic of"
+45,38,Salmas,IR,Iran
+45,37,Oshnaviyeh,IR,Iran
 45,36,Dukan,IQ,Iraq
 45,35,Kifri,IQ,Iraq
 45,34,Al Miqdadiyah,IQ,Iraq
@@ -6538,11 +6538,11 @@ long,lat,city,country_code,country_name
 46,42,Bezhta,RU,Russia
 46,41,Dolyar,AZ,Azerbaijan
 46,40,Kerbakhiar,AZ,Azerbaijan
-46,38,Osku,IR,"Iran, Islamic Republic of"
-46,37,Miandoab,IR,"Iran, Islamic Republic of"
-46,36,Baneh,IR,"Iran, Islamic Republic of"
+46,38,Osku,IR,Iran
+46,37,Miandoab,IR,Iran
+46,36,Baneh,IR,Iran
 46,35,Halabjah,IQ,Iraq
-46,34,Gilan-e Gharb,IR,"Iran, Islamic Republic of"
+46,34,Gilan-e Gharb,IR,Iran
 46,33,Badrah,IQ,Iraq
 46,32,Al Hayy,IQ,Iraq
 46,31,An Nasiriyah,IQ,Iraq
@@ -6594,13 +6594,13 @@ long,lat,city,country_code,country_name
 47,42,Kumukh,RU,Russia
 47,41,Mingelchaur,AZ,Azerbaijan
 47,40,Agdam,AZ,Azerbaijan
-47,39,Kaleybar,IR,"Iran, Islamic Republic of"
-47,38,Bostanabad,IR,"Iran, Islamic Republic of"
-47,37,Qarah Aghaj,IR,"Iran, Islamic Republic of"
-47,36,Divandarreh,IR,"Iran, Islamic Republic of"
-47,35,Kamyaran,IR,"Iran, Islamic Republic of"
-47,34,Kermanshah,IR,"Iran, Islamic Republic of"
-47,33,Darreh Shahr,IR,"Iran, Islamic Republic of"
+47,39,Kaleybar,IR,Iran
+47,38,Bostanabad,IR,Iran
+47,37,Qarah Aghaj,IR,Iran
+47,36,Divandarreh,IR,Iran
+47,35,Kamyaran,IR,Iran
+47,34,Kermanshah,IR,Iran
+47,33,Darreh Shahr,IR,Iran
 47,32,Al `Amarah,IQ,Iraq
 47,31,Al Jabayish,IQ,Iraq
 47,30,Az Zubayr,IQ,Iraq
@@ -6644,15 +6644,15 @@ long,lat,city,country_code,country_name
 48,42,Khuchni,RU,Russia
 48,41,Qutqashen,AZ,Azerbaijan
 48,40,Imishli,AZ,Azerbaijan
-48,39,Germi,IR,"Iran, Islamic Republic of"
-48,38,Nir,IR,"Iran, Islamic Republic of"
-48,37,Mahneshan,IR,"Iran, Islamic Republic of"
-48,36,Bijar,IR,"Iran, Islamic Republic of"
-48,35,Asadabad,IR,"Iran, Islamic Republic of"
-48,34,Nurabad,IR,"Iran, Islamic Republic of"
-48,33,Poldokhtar,IR,"Iran, Islamic Republic of"
-48,32,Shush,IR,"Iran, Islamic Republic of"
-48,31,Hoveyzeh,IR,"Iran, Islamic Republic of"
+48,39,Germi,IR,Iran
+48,38,Nir,IR,Iran
+48,37,Mahneshan,IR,Iran
+48,36,Bijar,IR,Iran
+48,35,Asadabad,IR,Iran
+48,34,Nurabad,IR,Iran
+48,33,Poldokhtar,IR,Iran
+48,32,Shush,IR,Iran
+48,31,Hoveyzeh,IR,Iran
 48,30,Umm Qasr,IQ,Iraq
 48,29,Al Ahmadi,KW,Kuwait
 48,27,Mulayjah,SA,Saudi Arabia
@@ -6691,14 +6691,14 @@ long,lat,city,country_code,country_name
 49,50,Kaztalovka,KZ,Kazakhstan
 49,49,Zhumysker,KZ,Kazakhstan
 49,40,Haciqabul,AZ,Azerbaijan
-49,37,Ab Bar,IR,"Iran, Islamic Republic of"
-49,36,Abhar,IR,"Iran, Islamic Republic of"
-49,35,Famenin,IR,"Iran, Islamic Republic of"
-49,34,Borujerd,IR,"Iran, Islamic Republic of"
-49,33,Dorud,IR,"Iran, Islamic Republic of"
-49,32,Shushtar,IR,"Iran, Islamic Republic of"
-49,31,Ramshir,IR,"Iran, Islamic Republic of"
-49,30,Bandar-e Emam Khomeyni,IR,"Iran, Islamic Republic of"
+49,37,Ab Bar,IR,Iran
+49,36,Abhar,IR,Iran
+49,35,Famenin,IR,Iran
+49,34,Borujerd,IR,Iran
+49,33,Dorud,IR,Iran
+49,32,Shushtar,IR,Iran
+49,31,Ramshir,IR,Iran
+49,30,Bandar-e Emam Khomeyni,IR,Iran
 49,26,Abqaiq,SA,Saudi Arabia
 49,25,Al Hufuf,SA,Saudi Arabia
 49,24,Al Hufuf,SA,Saudi Arabia
@@ -6731,14 +6731,14 @@ long,lat,city,country_code,country_name
 50,51,Kamenka,KZ,Kazakhstan
 50,50,Dzhangala,KZ,Kazakhstan
 50,49,Dzhangala,KZ,Kazakhstan
-50,36,Alvand,IR,"Iran, Islamic Republic of"
-50,35,Tafresh,IR,"Iran, Islamic Republic of"
-50,34,Arak,IR,"Iran, Islamic Republic of"
-50,33,Fareydunshahr,IR,"Iran, Islamic Republic of"
-50,32,Izeh,IR,"Iran, Islamic Republic of"
-50,31,Likak,IR,"Iran, Islamic Republic of"
-50,30,Bandar-e Deylam,IR,"Iran, Islamic Republic of"
-50,29,Khark,IR,"Iran, Islamic Republic of"
+50,36,Alvand,IR,Iran
+50,35,Tafresh,IR,Iran
+50,34,Arak,IR,Iran
+50,33,Fareydunshahr,IR,Iran
+50,32,Izeh,IR,Iran
+50,31,Likak,IR,Iran
+50,30,Bandar-e Deylam,IR,Iran
+50,29,Khark,IR,Iran
 50,28,Al Jubayl,SA,Saudi Arabia
 50,26,Dhahran,SA,Saudi Arabia
 50,25,At Taraf,SA,Saudi Arabia
@@ -6763,15 +6763,15 @@ long,lat,city,country_code,country_name
 51,49,Dzhangala,KZ,Kazakhstan
 51,47,Balyqshy,KZ,Kazakhstan
 51,43,Omirzaq,KZ,Kazakhstan
-51,36,Karaj,IR,"Iran, Islamic Republic of"
-51,35,Qom,IR,"Iran, Islamic Republic of"
-51,34,Delijan,IR,"Iran, Islamic Republic of"
-51,33,Tiran,IR,"Iran, Islamic Republic of"
-51,32,Shalamzar,IR,"Iran, Islamic Republic of"
-51,31,Sisakht,IR,"Iran, Islamic Republic of"
-51,30,Basht,IR,"Iran, Islamic Republic of"
-51,29,Bandar-e Bushehr,IR,"Iran, Islamic Republic of"
-51,28,Khvormuj,IR,"Iran, Islamic Republic of"
+51,36,Karaj,IR,Iran
+51,35,Qom,IR,Iran
+51,34,Delijan,IR,Iran
+51,33,Tiran,IR,Iran
+51,32,Shalamzar,IR,Iran
+51,31,Sisakht,IR,Iran
+51,30,Basht,IR,Iran
+51,29,Bandar-e Bushehr,IR,Iran
+51,28,Khvormuj,IR,Iran
 51,26,Madinat ash Shamal,QA,Qatar
 51,25,Umm Bab,QA,Qatar
 51,24,Umm Sa'id,QA,Qatar
@@ -6790,16 +6790,16 @@ long,lat,city,country_code,country_name
 52,51,Fedorovka,KZ,Kazakhstan
 52,50,Dzhambeyty,KZ,Kazakhstan
 52,47,Balyqshy,KZ,Kazakhstan
-52,36,Damavand,IR,"Iran, Islamic Republic of"
-52,35,Istgah-e Rah Ahan-e Garmsar,IR,"Iran, Islamic Republic of"
-52,34,Natanz,IR,"Iran, Islamic Republic of"
-52,33,Dowlatabad,IR,"Iran, Islamic Republic of"
-52,32,Shahreza,IR,"Iran, Islamic Republic of"
-52,31,Yasuj,IR,"Iran, Islamic Republic of"
-52,30,Sepidan,IR,"Iran, Islamic Republic of"
-52,29,Farashband,IR,"Iran, Islamic Republic of"
-52,28,Deyr,IR,"Iran, Islamic Republic of"
-52,27,Bandar-e `Asaluyeh,IR,"Iran, Islamic Republic of"
+52,36,Damavand,IR,Iran
+52,35,Istgah-e Rah Ahan-e Garmsar,IR,Iran
+52,34,Natanz,IR,Iran
+52,33,Dowlatabad,IR,Iran
+52,32,Shahreza,IR,Iran
+52,31,Yasuj,IR,Iran
+52,30,Sepidan,IR,Iran
+52,29,Farashband,IR,Iran
+52,28,Deyr,IR,Iran
+52,27,Bandar-e `Asaluyeh,IR,Iran
 52,18,Shihan as Sufla,YE,Yemen
 52,17,Bi'r Hat,YE,Yemen
 52,16,Al Ghayzah,YE,Yemen
@@ -6820,15 +6820,15 @@ long,lat,city,country_code,country_name
 53,43,Zhanaozen,KZ,Kazakhstan
 53,40,Turkmenbasy,TM,Turkmenistan
 53,39,Turkmenbasy,TM,Turkmenistan
-53,36,Pol-e Sefid,IR,"Iran, Islamic Republic of"
-53,35,Sorkheh,IR,"Iran, Islamic Republic of"
-53,33,Na'in,IR,"Iran, Islamic Republic of"
-53,32,Khavas Kuh,IR,"Iran, Islamic Republic of"
-53,31,Abarkuh,IR,"Iran, Islamic Republic of"
-53,30,Sa`adat Shahr,IR,"Iran, Islamic Republic of"
-53,29,Akbarabad,IR,"Iran, Islamic Republic of"
-53,28,Khonj,IR,"Iran, Islamic Republic of"
-53,27,Gavbandi,IR,"Iran, Islamic Republic of"
+53,36,Pol-e Sefid,IR,Iran
+53,35,Sorkheh,IR,Iran
+53,33,Na'in,IR,Iran
+53,32,Khavas Kuh,IR,Iran
+53,31,Abarkuh,IR,Iran
+53,30,Sa`adat Shahr,IR,Iran
+53,29,Akbarabad,IR,Iran
+53,28,Khonj,IR,Iran
+53,27,Gavbandi,IR,Iran
 53,23,Muzayri`,AE,United Arab Emirates
 53,18,Shihan as Sufla,YE,Yemen
 53,17,Hawf,YE,Yemen
@@ -6848,14 +6848,14 @@ long,lat,city,country_code,country_name
 54,49,Miyaly,KZ,Kazakhstan
 54,46,Qaraton,KZ,Kazakhstan
 54,39,Gumdag,TM,Turkmenistan
-54,37,Gomishan,IR,"Iran, Islamic Republic of"
-54,36,Damghan,IR,"Iran, Islamic Republic of"
-54,35,Semnan,IR,"Iran, Islamic Republic of"
-54,33,Ardakan,IR,"Iran, Islamic Republic of"
-54,31,Surian,IR,"Iran, Islamic Republic of"
-54,29,Estahban,IR,"Iran, Islamic Republic of"
-54,28,Gerash,IR,"Iran, Islamic Republic of"
-54,27,Bastak,IR,"Iran, Islamic Republic of"
+54,37,Gomishan,IR,Iran
+54,36,Damghan,IR,Iran
+54,35,Semnan,IR,Iran
+54,33,Ardakan,IR,Iran
+54,31,Surian,IR,Iran
+54,29,Estahban,IR,Iran
+54,28,Gerash,IR,Iran
+54,27,Bastak,IR,Iran
 54,24,Abu Dhabi,AE,United Arab Emirates
 54,23,Muzayri`,AE,United Arab Emirates
 54,18,Salalah,OM,Oman
@@ -6877,12 +6877,12 @@ long,lat,city,country_code,country_name
 55,44,Beyneu,KZ,Kazakhstan
 55,43,Sayotesh,KZ,Kazakhstan
 55,42,Zhanaozen,KZ,Kazakhstan
-55,37,Ramian,IR,"Iran, Islamic Republic of"
-55,36,Shahrud,IR,"Iran, Islamic Republic of"
-55,31,Anar,IR,"Iran, Islamic Republic of"
-55,30,Shahr-e Babak,IR,"Iran, Islamic Republic of"
-55,29,Darab,IR,"Iran, Islamic Republic of"
-55,28,Hajjiabad,IR,"Iran, Islamic Republic of"
+55,37,Ramian,IR,Iran
+55,36,Shahrud,IR,Iran
+55,31,Anar,IR,Iran
+55,30,Shahr-e Babak,IR,Iran
+55,29,Darab,IR,Iran
+55,28,Hajjiabad,IR,Iran
 55,25,Dubai,AE,United Arab Emirates
 55,24,Al Ain,AE,United Arab Emirates
 55,22,Muzayri`,AE,United Arab Emirates
@@ -6911,13 +6911,13 @@ long,lat,city,country_code,country_name
 56,44,Beyneu,KZ,Kazakhstan
 56,43,Beyneu,KZ,Kazakhstan
 56,42,Gazanjyk,TM,Turkmenistan
-56,38,Maraveh Tappeh,IR,"Iran, Islamic Republic of"
-56,36,Jajarm,IR,"Iran, Islamic Republic of"
-56,31,Shahrak-e Pabedana,IR,"Iran, Islamic Republic of"
-56,30,Rafsanjan,IR,"Iran, Islamic Republic of"
-56,29,Sirjan,IR,"Iran, Islamic Republic of"
-56,28,Hajjiabad,IR,"Iran, Islamic Republic of"
-56,27,Qeshm,IR,"Iran, Islamic Republic of"
+56,38,Maraveh Tappeh,IR,Iran
+56,36,Jajarm,IR,Iran
+56,31,Shahrak-e Pabedana,IR,Iran
+56,30,Rafsanjan,IR,Iran
+56,29,Sirjan,IR,Iran
+56,28,Hajjiabad,IR,Iran
+56,27,Qeshm,IR,Iran
 56,24,Al Ain,AE,United Arab Emirates
 56,23,`Ibri,OM,Oman
 56,22,`Ibri,OM,Oman
@@ -6942,15 +6942,15 @@ long,lat,city,country_code,country_name
 57,44,Muynoq,UZ,Uzbekistan
 57,43,Qo'ng'irot Shahri,UZ,Uzbekistan
 57,42,Shumanay Shahri,UZ,Uzbekistan
-57,38,Ashkhaneh,IR,"Iran, Islamic Republic of"
-57,37,Joghatay,IR,"Iran, Islamic Republic of"
-57,36,Joghatay,IR,"Iran, Islamic Republic of"
-57,35,Bardaskan,IR,"Iran, Islamic Republic of"
-57,33,Tabas,IR,"Iran, Islamic Republic of"
-57,30,Kerman,IR,"Iran, Islamic Republic of"
-57,29,Rabor,IR,"Iran, Islamic Republic of"
-57,28,Faryab,IR,"Iran, Islamic Republic of"
-57,27,Minab,IR,"Iran, Islamic Republic of"
+57,38,Ashkhaneh,IR,Iran
+57,37,Joghatay,IR,Iran
+57,36,Joghatay,IR,Iran
+57,35,Bardaskan,IR,Iran
+57,33,Tabas,IR,Iran
+57,30,Kerman,IR,Iran
+57,29,Rabor,IR,Iran
+57,28,Faryab,IR,Iran
+57,27,Minab,IR,Iran
 57,26,Dib Dibba,OM,Oman
 57,23,Bahla',OM,Oman
 57,22,Adam,OM,Oman
@@ -6969,15 +6969,15 @@ long,lat,city,country_code,country_name
 58,43,Qo'ng'irot Shahri,UZ,Uzbekistan
 58,42,Shumanay Shahri,UZ,Uzbekistan
 58,38,Arcabil,TM,Turkmenistan
-58,37,Faruj,IR,"Iran, Islamic Republic of"
-58,36,Sabzevar,IR,"Iran, Islamic Republic of"
-58,35,Bardaskan,IR,"Iran, Islamic Republic of"
-58,34,Ferdows,IR,"Iran, Islamic Republic of"
-58,33,Khusf,IR,"Iran, Islamic Republic of"
-58,32,Khusf,IR,"Iran, Islamic Republic of"
-58,29,Bam,IR,"Iran, Islamic Republic of"
-58,28,Eslamabad,IR,"Iran, Islamic Republic of"
-58,26,Jask,IR,"Iran, Islamic Republic of"
+58,37,Faruj,IR,Iran
+58,36,Sabzevar,IR,Iran
+58,35,Bardaskan,IR,Iran
+58,34,Ferdows,IR,Iran
+58,33,Khusf,IR,Iran
+58,32,Khusf,IR,Iran
+58,29,Bam,IR,Iran
+58,28,Eslamabad,IR,Iran
+58,26,Jask,IR,Iran
 58,23,Izki,OM,Oman
 58,22,Adam,OM,Oman
 59,59,Teplaya Gora,RU,Russia
@@ -6993,14 +6993,14 @@ long,lat,city,country_code,country_name
 59,42,Koeneuergench,TM,Turkmenistan
 59,41,Yylanly,TM,Turkmenistan
 59,38,Annau,TM,Turkmenistan
-59,37,Chenaran,IR,"Iran, Islamic Republic of"
-59,36,Nishabur,IR,"Iran, Islamic Republic of"
-59,35,Feyzabad,IR,"Iran, Islamic Republic of"
-59,33,Khusf,IR,"Iran, Islamic Republic of"
-59,32,Khusf,IR,"Iran, Islamic Republic of"
-59,28,Mohammadabad,IR,"Iran, Islamic Republic of"
-59,26,Sardasht,IR,"Iran, Islamic Republic of"
-59,25,Jask,IR,"Iran, Islamic Republic of"
+59,37,Chenaran,IR,Iran
+59,36,Nishabur,IR,Iran
+59,35,Feyzabad,IR,Iran
+59,33,Khusf,IR,Iran
+59,32,Khusf,IR,Iran
+59,28,Mohammadabad,IR,Iran
+59,26,Sardasht,IR,Iran
+59,25,Jask,IR,Iran
 60,66,Inta,RU,Russia
 60,61,Polunochnoye,RU,Russia
 60,60,Volchansk,RU,Russia
@@ -7017,16 +7017,16 @@ long,lat,city,country_code,country_name
 60,42,Manghit,UZ,Uzbekistan
 60,41,Khiwa,UZ,Uzbekistan
 60,40,Khiwa,UZ,Uzbekistan
-60,37,Kalat-e Naderi,IR,"Iran, Islamic Republic of"
-60,36,Fariman,IR,"Iran, Islamic Republic of"
-60,35,Shahrak-e Bakharz,IR,"Iran, Islamic Republic of"
-60,34,Hajjiabad,IR,"Iran, Islamic Republic of"
-60,33,Asadiyeh,IR,"Iran, Islamic Republic of"
-60,32,Nehbandan,IR,"Iran, Islamic Republic of"
-60,31,Nehbandan,IR,"Iran, Islamic Republic of"
-60,29,Nosratabad,IR,"Iran, Islamic Republic of"
-60,28,Dalgan,IR,"Iran, Islamic Republic of"
-60,25,Konarak,IR,"Iran, Islamic Republic of"
+60,37,Kalat-e Naderi,IR,Iran
+60,36,Fariman,IR,Iran
+60,35,Shahrak-e Bakharz,IR,Iran
+60,34,Hajjiabad,IR,Iran
+60,33,Asadiyeh,IR,Iran
+60,32,Nehbandan,IR,Iran
+60,31,Nehbandan,IR,Iran
+60,29,Nosratabad,IR,Iran
+60,28,Dalgan,IR,Iran
+60,25,Konarak,IR,Iran
 61,63,Khulimsunt,RU,Russia
 61,60,Serov,RU,Russia
 61,59,Verkhotur'ye,RU,Russia
@@ -7044,17 +7044,17 @@ long,lat,city,country_code,country_name
 61,42,Bo'ston Shahri,UZ,Uzbekistan
 61,41,Hazorasp,UZ,Uzbekistan
 61,40,Gazojak,TM,Turkmenistan
-61,37,Sarakhs,IR,"Iran, Islamic Republic of"
-61,36,Sarakhs,IR,"Iran, Islamic Republic of"
+61,37,Sarakhs,IR,Iran
+61,36,Sarakhs,IR,Iran
 61,35,Kafir Qala,AF,Afghanistan
 61,34,Ghoriyan,AF,Afghanistan
 61,33,Anar Darah,AF,Afghanistan
 61,32,Du Qal`ah,AF,Afghanistan
-61,31,Zabol,IR,"Iran, Islamic Republic of"
-61,29,Zahedan,IR,"Iran, Islamic Republic of"
-61,28,Khash,IR,"Iran, Islamic Republic of"
-61,26,Qasr-e Qand,IR,"Iran, Islamic Republic of"
-61,25,Chabahar,IR,"Iran, Islamic Republic of"
+61,31,Zabol,IR,Iran
+61,29,Zahedan,IR,Iran
+61,28,Khash,IR,Iran
+61,26,Qasr-e Qand,IR,Iran
+61,25,Chabahar,IR,Iran
 62,61,Pelym,RU,Russia
 62,60,Gari,RU,Russia
 62,59,Sos'va,RU,Russia
@@ -7079,9 +7079,9 @@ long,lat,city,country_code,country_name
 62,32,Farah,AF,Afghanistan
 62,31,Zaranj,AF,Afghanistan
 62,30,Mirabad,AF,Afghanistan
-62,28,Saravan,IR,"Iran, Islamic Republic of"
-62,27,Suran,IR,"Iran, Islamic Republic of"
-62,26,Rasak,IR,"Iran, Islamic Republic of"
+62,28,Saravan,IR,Iran
+62,27,Suran,IR,Iran
+62,26,Rasak,IR,Iran
 62,25,Jiwani,PK,Pakistan
 63,67,Zapolyarnyy,RU,Russia
 63,62,Agirish,RU,Russia
@@ -7109,8 +7109,8 @@ long,lat,city,country_code,country_name
 63,31,Khash,AF,Afghanistan
 63,30,Rudbar,AF,Afghanistan
 63,29,Rudbar,AF,Afghanistan
-63,28,Saravan,IR,"Iran, Islamic Republic of"
-63,27,Saravan,IR,"Iran, Islamic Republic of"
+63,28,Saravan,IR,Iran
+63,27,Saravan,IR,Iran
 63,26,Turbat,PK,Pakistan
 63,25,Pasni,PK,Pakistan
 64,68,Tsementnozavodskiy,RU,Russia
@@ -9245,9 +9245,9 @@ long,lat,city,country_code,country_name
 125,43,Baiquan,CN,China
 125,42,Dasuhe,CN,China
 125,41,Bahechuan,CN,China
-125,40,Kusong,KP,"Korea, Democratic People's Republic of"
-125,39,Yonggang-up,KP,"Korea, Democratic People's Republic of"
-125,38,Changyon,KP,"Korea, Democratic People's Republic of"
+125,40,Kusong,KP,North Korea
+125,39,Yonggang-up,KP,North Korea
+125,38,Changyon,KP,North Korea
 125,11,San Jose,PH,Philippines
 125,8,Balila,PH,Philippines
 125,7,Kalaisan,PH,Philippines
@@ -9271,8 +9271,8 @@ long,lat,city,country_code,country_name
 126,43,Panshi,CN,China
 126,42,Guanghua,CN,China
 126,41,Yulin,CN,China
-126,39,Sungho 1-tong,KP,"Korea, Democratic People's Republic of"
-126,38,Yonan-up,KP,"Korea, Democratic People's Republic of"
+126,39,Sungho 1-tong,KP,North Korea
+126,38,Yonan-up,KP,North Korea
 126,37,Taesal-li,KR,"Korea, Republic of"
 126,36,Taisen-ri,KR,"Korea, Republic of"
 126,35,Sinan,KR,"Korea, Republic of"
@@ -9300,9 +9300,9 @@ long,lat,city,country_code,country_name
 127,44,Jishu,CN,China
 127,43,Hongshi,CN,China
 127,42,Naozhi,CN,China
-127,41,Kanggye-si,KP,"Korea, Democratic People's Republic of"
-127,40,Yonggwang-up,KP,"Korea, Democratic People's Republic of"
-127,39,Sangsong-ni,KP,"Korea, Democratic People's Republic of"
+127,41,Kanggye-si,KP,North Korea
+127,40,Yonggwang-up,KP,North Korea
+127,39,Sangsong-ni,KP,North Korea
 127,38,Jeongok,KR,"Korea, Republic of"
 127,37,Seonghwan,KR,"Korea, Republic of"
 127,36,Iksan,KR,"Korea, Republic of"
@@ -9328,8 +9328,8 @@ long,lat,city,country_code,country_name
 128,44,Huangnihe,CN,China
 128,43,Dapuchaihe,CN,China
 128,42,Manjiang,CN,China
-128,41,Kapsan-up,KP,"Korea, Democratic People's Republic of"
-128,40,Hongwon,KP,"Korea, Democratic People's Republic of"
+128,41,Kapsan-up,KP,North Korea
+128,40,Hongwon,KP,North Korea
 128,38,Yanggu,KR,"Korea, Republic of"
 128,37,Koesan,KR,"Korea, Republic of"
 128,36,Gimcheon,KR,"Korea, Republic of"
@@ -9354,8 +9354,8 @@ long,lat,city,country_code,country_name
 129,44,Shalan,CN,China
 129,43,Shimen,CN,China
 129,42,Chongshan,CN,China
-129,41,Sungjibaegam,KP,"Korea, Democratic People's Republic of"
-129,40,Iwon-up,KP,"Korea, Democratic People's Republic of"
+129,41,Sungjibaegam,KP,North Korea
+129,40,Iwon-up,KP,North Korea
 129,37,T'aebaek,KR,"Korea, Republic of"
 129,36,Eisen,KR,"Korea, Republic of"
 129,35,Busan,KR,"Korea, Republic of"
@@ -9374,7 +9374,7 @@ long,lat,city,country_code,country_name
 130,46,Sandaogang,CN,China
 130,45,Liushu,CN,China
 130,44,Gonghe,CN,China
-130,42,Puryong,KP,"Korea, Democratic People's Republic of"
+130,42,Puryong,KP,North Korea
 130,33,Omura,JP,Japan
 130,32,Ushibuka,JP,Japan
 130,31,Makurazaki,JP,Japan
