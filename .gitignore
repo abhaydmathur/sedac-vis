@@ -1,7 +1,6 @@
 # File Types
 *.txt
 *.ipynb
-*.zip
 
 # Folders
 docs/dump/
