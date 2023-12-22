@@ -141,9 +141,13 @@
         <h2 class="title is-3">Introduction</h2>
         <div class="content has-text-justified">
           <p>
-          <span class="dnerf">Sedac-Vis</span> is 
+          <span class="dnerf">Sedac-Vis</span> is a comprehensive tool for visualising datasets curated by NASA's Socioeconomic Data and Applications Center (SEDAC), offering insights into the interplay between socio-economic factors and environmental conditions. Focused on current and projected performance based on IPCC scenarios, the visualization aims to provide a nuanced understanding of the relationship between sustainability considerations and wealth across diverse nations.
           </p>
           <p>
+            Key inquiries prompted by this visualization include the correlation between wealth and environmental concerns, global distribution of emissions, the evolving landscape of environmental issues, and the potential impact of food shortages on affluent and high-emission countries. Additionally, the study explores the variation in food production based on the global emission trajectory.
+            </p>
+            <p>
+Spanning the years from 1990 to 2100, the dataset encompasses all countries worldwide. The featured indicators comprise wealth per capita, greenhouse gas emissions, environmental performance indices, and crop production, collectively contributing to a comprehensive analysis of the intricate dynamics between socio-economic and environmental variables.
           </p>
         </div>
       </div>
@@ -183,35 +187,33 @@
 
       <div class="column">
         <div class="content has-text-centered">
-          <h2 class="title is-3 has-text-centered">Column 1</h2>
+          <h2 class="title is-3 has-text-centered">Navigation</h2>
           <p>
-            ...
+          
           </p>
-          <video id="?" autoplay controls muted loop playsinline height="100%">
-            <source src=""
-                    type="video/mp4">
+          <video id="globe_vid" autoplay controls muted loop playsinline height="100%" loop autoplay>
+            <source src="static/videos/globe.webm"
+                    type="video/webm">
           </video>
         </div>
       </div>
 
-      <!-- Matting. -->
       <div class="column">
-        <h2 class="title is-3 has-text-centered">Column 2</h2>
+        <h2 class="title is-3 has-text-centered">EPI vs Time</h2>
         <div class="columns is-centered">
           <div class="column content has-text-centered">
             <p>
-              ...
+            
             </p>
-            <video id="?" controls playsinline height="100%">
-              <source src=""
-                      type="video/mp4">
+            <video id="epi_vid" controls playsinline height="100%" loop autoplay>
+              <source src="static/videos/epi_france_animation.webm"
+                      type="video/webm">
             </video>
           </div>
 
         </div>
       </div>
     </div>
-    <!--/ Matting. -->
 
 
 
@@ -222,7 +224,13 @@
 <section class="section" id="References">
   <div class="container is-max-desktop content">
     <h2 class="title">References</h2>
-    ...
+    <ol>
+      <li>Intergovernmental Panel on Climate Change-IPCC,. IPCC special report on emissions scenarios (SRES) 1x1 degree gridded emissions dataset, 2000.</li>
+      <li>Yale Center for Environmental Law + Policy-YCELP - Yale University, and Center for International Earth Science Information Network-CIESIN - Columbia University,. 2022 environmental performance index (EPI), 2022.</li>
+      <li>M J Wolf, J W Emerson, D C Etsy, Z A Wendling, and Et al. Environmental performance index 2022. Technical report, Yale Center for Environmental Law and Policy, New Haven, CT, 2022.</li>
+      <li>A Iglesias and C Rosensweig. Effects of climate change on global food production from SRES emissions and socioeconomic scenarios, 2009.</li>
+      <li>M L Parrya, C Rosenzweig, A Iglesias, M Livermored, and G Fischer. Effects of climate change on global food production under SRES emissions and socio-economic scenarios. Global Environmental Change, 14:53–67, 2004.</li>
+  </ol>
   </div>
 </section>
 
