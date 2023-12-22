@@ -28,7 +28,7 @@
 </head>
 <body>
 
-<nav class="navbar" role="navigation" aria-label="main navigation">
+<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
       <span aria-hidden="true"></span>
@@ -46,7 +46,7 @@
     </div>
 
   </div>
-</nav>
+</nav> -->
 
 
 <section class="hero">
@@ -71,9 +71,19 @@
 
           <div class="column has-text-centered">
             <div class="publication-links">
+              <!-- Launch Link. -->
+              <span class="link-block">
+                <a href="index.html"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-rocket"></i>
+                  </span>
+                  <span>Launch</span>
+                </a>
+              </span>
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="<insert_doc_link>"
+                <a href="docs/SedacVis_Report.pdf"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -130,7 +140,10 @@
         A visualiser for NASA's Socioeconomic Data and Applications Center.
       </h2>
     </div>
+    <img src="./static/images/screen.png" alt="SEDAC Visualiser">
   </div>
+
+
 </section>
 
 <section class="section">
@@ -158,13 +171,96 @@ Spanning the years from 1990 to 2100, the dataset encompasses all countries worl
     <div class="columns is-centered has-text-centered" id="Usage">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Usage</h2>
-        <p>
-        Help me.
-        </p>
       </div>
     </div>
 
     <!-- /Usage -->
+
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+  
+        <div class="column">
+          <div class="content has-text-centered">
+            <h4 class="title is-5 has-text-centered">Navigation</h4>
+            <p>
+            Drag your cursor to rotate the globe and select the country, or simply enter its name in the searchbox.
+            </p>
+            <video id="globe_vid" autoplay controls muted loop playsinline height="100%" loop autoplay>
+              <source src="static/videos/globe.webm"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content has-text-centered">
+            <h4 class="title is-5 has-text-centered">Emission Scenarios and Reactive Gas</h4>
+            <p>
+            Configure the dataset instance to visualise using the two dropdown lists.
+            </p>
+            <video id="globe_vid" autoplay controls muted loop playsinline height="100%" loop autoplay>
+              <source src="static/videos/config.webm"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  
+  
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+  
+  
+        <div class="column">
+          <h4 class="title is-5 has-text-centered">EPI vs Time</h4>
+          <div class="columns is-centered">
+            <div class="column content has-text-centered">
+              <p>
+              An illustration of the variation of Environmental performance indices vs GDP per capita over time. [France]
+              </p>
+              <video id="epi_vid" controls playsinline height="100%" loop autoplay>
+                <source src="static/videos/epi_france_animation.webm"
+                        type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content has-text-centered">
+            <h4 class="title is-5 has-text-centered">Emissions and GDP vs Time</h4>
+            <p>
+            Move the sliders along the timeline to update visualisations in real time.
+            </p>
+            <video id="globe_vid" autoplay controls muted loop playsinline height="100%" loop autoplay>
+              <source src="static/videos/emissions_animation.webm"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+  
+      </div>
+
+      <div class="columns is-centered">
+      <div class="column">
+        <h4 class="title is-5 has-text-centered">Projected Crop Production</h4>
+        <div class="columns is-centered">
+          <div class="column content has-text-centered" style="width: 25vw; height: 25vw; margin:0%;">
+            <p>
+            Projected crop yields for maize, rice and wheat for the selected country for different SRES scenarios. 
+            </p>
+            <video id="epi_vid" controls playsinline height="100%" loop autoplay>
+                <source src="static/videos/crop_animation.webm" type="video/mp4">
+            </video>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <br>
 
     <!-- Paper video. -->
     <div class="columns is-centered has-text-centered" id="Video">
@@ -182,48 +278,6 @@ Spanning the years from 1990 to 2100, the dataset encompasses all countries worl
     <!--/ Paper video. -->
   </div>
 </section>
-
-
-<section class="section">
-  <div class="container is-max-desktop">
-
-    <div class="columns is-centered">
-
-      <div class="column">
-        <div class="content has-text-centered">
-          <h4 class="title is-5 has-text-centered">Navigation</h4>
-          <p>
-          Drag your cursor to rotate the globe and select the country, or simply enter its name in the searchbox.
-          </p>
-          <video id="globe_vid" autoplay controls muted loop playsinline height="100%" loop autoplay>
-            <source src="static/videos/globe.webm"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-
-      <div class="column">
-        <h4 class="title is-5 has-text-centered">EPI vs Time</h4>
-        <div class="columns is-centered">
-          <div class="column content has-text-centered">
-            <p>
-            An illustration of the variation of Environmental performance indices vs GDP per capita over time. [France]
-            </p>
-            <video id="epi_vid" controls playsinline height="100%" loop autoplay>
-              <source src="static/videos/epi_france_animation.webm"
-                      type="video/mp4">
-            </video>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-
-
-  </div>
-</section>
-
 
 <section class="section" id="References">
   <div class="container is-max-desktop content">
