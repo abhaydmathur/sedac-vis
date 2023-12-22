@@ -14,6 +14,7 @@ ctx_em = {
 	rad_scale: 4,
 	scale_factor: 1,
 	year_gdp: "2020",
+	highlightCountry: true,
 };
 
 scenario_descriptions = {
@@ -249,7 +250,7 @@ function setScenarioOptions() {
 		.append("text")
 		.attr("id", "scenario-title")
 		.attr("x", margin.left)
-		.attr("y", 0.43*ctx_em.height)
+		.attr("y", 0.43 * ctx_em.height)
 		.text("Emissions Scenario")
 		.attr("fill", "white");
 
@@ -257,7 +258,7 @@ function setScenarioOptions() {
 		.append("text")
 		.attr("id", "scenario-description")
 		.attr("x", margin.left)
-		.attr("y", 0.5*ctx_em.height)
+		.attr("y", 0.5 * ctx_em.height)
 		.text(scenario_descriptions[ctx_em.sce])
 		.attr("fill", "white")
 		.call(wrapText, (3 * ctx.width) / 6);
@@ -447,7 +448,7 @@ function drawEmissions(svgEl) {
 		.text(`Gridwise Emissions of ${ctx_em.gas} in ${ctx_em.year}`);
 
 	createColorBar(ctx_em.svg_colorbar);
-
+	checkHighlightCountry(ctx_em.svg);
 	moveToCountry();
 }
 
@@ -478,7 +479,7 @@ function moveToCountry() {
 		(feature) => feature.properties.name === ctx_globe.selectedCountry
 	);
 
-	//Update EPI Viz
+	//Upda<span class="dnerf">Sedac-Vis</span>te EPI Viz
 	updateEPIViz();
 
 	ctx_em.zoom = d3
@@ -499,14 +500,18 @@ function moveToCountry() {
 				);
 		});
 
-	svg.selectAll("path").attr("opacity", function (d) {
-		try {
-			return d.properties.name === ctx_globe.selectedCountry ? 1 : 0.3;
-		} catch {
-			console.log(d);
-			return 0.3;
-		}
-	});
+	if (ctx_em.highlightCountry) {
+		svg.selectAll("path").attr("opacity", function (d) {
+			try {
+				return d.properties.name === ctx_globe.selectedCountry
+					? 1
+					: 0.3;
+			} catch {
+				console.log(d);
+				return 0.3;
+			}
+		});
+	}
 
 	svg.selectAll(".blobs")
 		.transition()
@@ -535,7 +540,7 @@ function moveToCountry() {
 	y = (bounds[0][1] + bounds[1][1]) / 2;
 	den = Math.max(dx / ctx_em.width, dy / ctx_em.height);
 
-	console.log(x, y, den)
+	console.log(x, y, den);
 
 	try {
 		if (selectedCountry.properties.name === "United States of America") {
@@ -551,8 +556,7 @@ function moveToCountry() {
 			flag = 1;
 			den = 0.074;
 		}
-		if (flag){
-
+		if (flag) {
 		}
 	} catch {
 		console.log("Unable to read selectedCountry.properties.name");
@@ -575,6 +579,25 @@ function moveToCountry() {
 		);
 
 	svg.call(ctx_em.zoom);
+}
+
+function checkHighlightCountry(svgEl) {
+	document.getElementById('highlightCountryCheckbox').addEventListener('change', function() {
+		ctx_em.highlightCountry = this.checked;
+	
+		if(ctx_em.highlightCountry) {
+			svgEl.selectAll("path").attr("opacity", function (d) {
+				try {
+					return d.properties.name === ctx_globe.selectedCountry ? 1 : 0.3;
+				} catch {
+					console.log("Couldn't read properties for : ", d);
+					return 0.3;
+				}
+			});
+		} else {	
+			svgEl.selectAll("path").attr("opacity", 1);
+		}
+	});
 }
 
 function updateEmissionsData() {

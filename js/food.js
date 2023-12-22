@@ -2,7 +2,7 @@ ctx.scenarios = ["A1F", "A2a", "A2b", "A2c", "B1a", "B2a", "B2b"];
 ctx.border = 60;
 ctx.bheight = ctx.height / 20;
 ctx.bwidth = ctx.width / 20;
-ctx_food = { button_flag: false, axis_flag: false };
+ctx_food = { button_flag: false, axis_flag: false, TRANSITION_DURATION: 1000 };
 
 function createFoodViz(fooddata) {
 	ctx.fooddata = fooddata;
@@ -68,7 +68,7 @@ function createFoodViz(fooddata) {
 	// Add Title
 	createOrClear(divFood, "Title", "text")
 		.attr("class", "Title")
-		.text(`Crop production prediction in ${ctx_globe.selectedCountry}`)
+		.text(`Predicted Crop Production in ${ctx_globe.selectedCountry}`)
 		.attr("x", ctx.width / 2 - ctx.width / 20)
 		.attr("y", ctx.border / 2)
 		.style("text-anchor", "middle")
@@ -153,7 +153,7 @@ function loadCountryData(country, fooddata, wheat, rice, maize, animate) {
 				update.call((update) =>
 					update
 						.transition()
-						.duration(animate ? 10 : 0)
+						.duration(animate ? ctx_food.TRANSITION_DURATION : 0)
 						.attr(
 							(d) =>
 								`translate(${xscale(d.Year) + ctx.border},${
@@ -188,7 +188,7 @@ function loadCountryData(country, fooddata, wheat, rice, maize, animate) {
 			update.call((update) =>
 				update
 					.transition()
-					.duration(animate ? 10 : 0)
+					.duration(animate ? ctx_food.TRANSITION_DURATION : 0)
 					.attr(
 						(d) =>
 							`translate(${xscale(d.Year) + ctx.border},${
@@ -222,7 +222,7 @@ function loadCountryData(country, fooddata, wheat, rice, maize, animate) {
 				update.call((update) =>
 					update
 						.transition()
-						.duration(animate ? 10 : 0)
+						.duration(animate ? ctx_food.TRANSITION_DURATION : 0)
 						.attr(
 							(d) =>
 								`translate(${xscale(d.Year) + ctx.border},${

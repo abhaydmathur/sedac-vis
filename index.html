@@ -241,6 +241,12 @@
 				font-weight: bold;
 			}
 
+			#highlightCountryCheckbox {
+				top: 80vh;
+				color:white;
+				z-index: 9999;
+			}
+
 
 			#scenario-description {
 				position: absolute;
@@ -304,6 +310,13 @@
 			<div class="gas-selector">
 				<select id="gas-select"></select>
 			</div>
+		</div>
+		<div id="divEmissions">
+			<label style="color: white; position: absolute; top: 95vh; left: 10px; font-family: sans-serif; text-shadow: 0.2px 0.2px;">
+				<input type="checkbox" id="highlightCountryCheckbox" checked>
+				Highlight Selected Country
+			</label>
+			<!-- <input type="checkbox" id="highlightCountryCheckbox" style="position: absolute; top: 90vh; left: 10px; color:white"> Highlight Selected Country -->
 		</div>
 	</body>
 </html>
